@@ -5,6 +5,9 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.Button;
+import android.widget.TextView;
+
 
 public class PageCalendrier extends AppCompatActivity{
 
@@ -16,6 +19,9 @@ public class PageCalendrier extends AppCompatActivity{
     ImageButton buttonStatistiques;
     ImageButton buttonCompte;
     ImageButton test;
+    private static final String TAG = "Calendar";
+    private TextView thedate;
+    private Button btngocalendar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -93,6 +99,10 @@ public class PageCalendrier extends AppCompatActivity{
                 startActivity(intentLoad);
             }
         });
+    }
+
+
+
 
     }
-}
+
