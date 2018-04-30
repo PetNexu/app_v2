@@ -5,15 +5,49 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
+        android:label=""
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".PageInventaire">
+        </activity>
+
+        <activity android:name=".PageCalendrier">
+        </activity>
+
+        <activity android:name=".PageProgramme">
+        </activity>
+
+        <activity android:name=".PageMap">
+        </activity>
+
+        <activity android:name=".PageStatistiques">
+        </activity>
+
+        <activity android:name=".PageCompte">
+        </activity>
+
+        <activity android:name=".PageInformations">
+        </activity>
+
+        <activity android:name=".PageParametresCompte">
+        </activity>
+
+        <activity android:name=".PageCreerProgramme">
+        </activity>
+
+        <activity android:name=".PageCreerAmbiance">
+        </activity>
+
+        <activity android:name=".PageParametresNotications">
+        </activity>
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
+                <!--Launcher permet de dire que la page "MainActivity est pas la page d'accueil -->
             </intent-filter>
         </activity>
     </application>
