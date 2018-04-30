@@ -1,19 +1,12 @@
 package com.nexu.projet.miashs.nexu;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.TextView;
-import android.view.MenuInflater;
 
-
-public class MainActivity extends AppCompatActivity {
+public class PageStatistiques extends AppCompatActivity {
 
     ImageButton buttonInventaire;
     ImageButton buttonAccueil;
@@ -25,16 +18,16 @@ public class MainActivity extends AppCompatActivity {
     ImageButton test;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.statistiques);
 
         //Bouton vers accueil
         buttonAccueil = (ImageButton) findViewById(R.id.logo);
         buttonAccueil.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intentLoad = new Intent(MainActivity.this, MainActivity.class);
+                Intent intentLoad = new Intent(PageStatistiques.this, MainActivity.class);
                 startActivity(intentLoad);
             }
         });
@@ -46,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
         buttonInventaire.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intentLoad = new Intent(MainActivity.this, PageInventaire.class);
+                Intent intentLoad = new Intent(PageStatistiques.this, PageInventaire.class);
                 startActivity(intentLoad);
             }
         });
@@ -56,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
         buttonCalendrier.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intentLoad = new Intent(MainActivity.this, PageCalendrier.class);
+                Intent intentLoad = new Intent(PageStatistiques.this, PageCalendrier.class);
                 startActivity(intentLoad);
             }
         });
@@ -66,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
         buttonProgramme.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intentLoad = new Intent(MainActivity.this, PageProgramme.class);
+                Intent intentLoad = new Intent(PageStatistiques.this, PageProgramme.class);
                 startActivity(intentLoad);
             }
         });
@@ -76,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
         buttonMap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intentLoad = new Intent(MainActivity.this, PageMap.class);
+                Intent intentLoad = new Intent(PageStatistiques.this, PageMap.class);
                 startActivity(intentLoad);
             }
         });
@@ -86,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
         buttonStatistiques.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intentLoad = new Intent(MainActivity.this, PageStatistiques.class);
+                Intent intentLoad = new Intent(PageStatistiques.this, PageStatistiques.class);
                 startActivity(intentLoad);
             }
         });
@@ -96,12 +89,10 @@ public class MainActivity extends AppCompatActivity {
         buttonCompte.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intentLoad = new Intent(MainActivity.this, PageCompte.class);
+                Intent intentLoad = new Intent(PageStatistiques.this, PageCompte.class);
                 startActivity(intentLoad);
             }
         });
+
     }
-
-
-
 }

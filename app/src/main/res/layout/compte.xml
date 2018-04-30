@@ -25,8 +25,10 @@
         android:theme="?attr/actionBarTheme"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/inventaire" />
+        app:layout_constraintTop_toTopOf="@+id/inventaire"
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/textView"
@@ -36,15 +38,13 @@
         android:layout_marginEnd="11dp"
         android:layout_marginRight="11dp"
         android:layout_marginTop="5dp"
-        android:text="Mon appartement"
+        android:text="Mon compte"
         android:textAlignment="center"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="@+id/Haut"
         app:layout_constraintEnd_toEndOf="@+id/logo"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
         android:id="@+id/logo"
@@ -131,121 +131,67 @@
         app:layout_constraintStart_toEndOf="@+id/map"
         app:srcCompat="@drawable/bars" />
 
+    <ImageButton
+        android:id="@+id/parametresCompte"
+        android:layout_width="293dp"
+        android:layout_height="40dp"
+        android:background="@android:color/transparent"
+        app:srcCompat="@android:color/transparent"
+        tools:layout_editor_absoluteX="23dp"
+        tools:layout_editor_absoluteY="103dp" />
+
     <TextView
-        android:id="@+id/DonnesAppart"
+        android:id="@+id/textView8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Données de l'appartement"
-        android:textAllCaps="false"
+        android:layout_marginLeft="36dp"
+        android:layout_marginStart="36dp"
+        android:text="Informations"
         android:textColor="#000000"
         android:textSize="26sp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView7"
-        app:layout_constraintStart_toEndOf="@+id/imageView7" />
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="230dp" />
 
     <TextView
-        android:id="@+id/textLum"
+        android:id="@+id/textView9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="15dp"
-        android:layout_marginStart="15dp"
-        android:text="Luminosité : "
-        android:textColor="@android:color/black"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
-        app:layout_constraintStart_toEndOf="@+id/imageView2" />
+        android:layout_marginLeft="36dp"
+        android:layout_marginStart="36dp"
+        android:text="Paramètres des notifications"
+        android:textColor="#000000"
+        android:textSize="26sp"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="166dp" />
+
+    <ImageButton
+        android:id="@+id/informations"
+        android:layout_width="182dp"
+        android:layout_height="38dp"
+        android:background="@android:color/transparent"
+        app:srcCompat="@drawable/test"
+        tools:layout_editor_absoluteX="25dp"
+        tools:layout_editor_absoluteY="230dp" />
+
+    <ImageButton
+        android:id="@+id/parametresNotifications"
+        android:layout_width="353dp"
+        android:layout_height="42dp"
+        android:background="@drawable/test"
+        app:srcCompat="@drawable/test"
+        tools:layout_editor_absoluteX="31dp"
+        tools:layout_editor_absoluteY="166dp" />
 
     <TextView
-        android:id="@+id/textUV"
+        android:id="@+id/textView10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="14dp"
-        android:layout_marginStart="14dp"
-        android:text="UV : "
-        android:textColor="@android:color/black"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView4"
-        app:layout_constraintStart_toEndOf="@+id/imageView4" />
-
-    <TextView
-        android:id="@+id/textHumidite"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="15dp"
-        android:layout_marginStart="15dp"
-        android:text="Humidité : "
-        android:textColor="@android:color/black"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
-        app:layout_constraintStart_toEndOf="@+id/imageView" />
-
-    <TextView
-        android:id="@+id/textTemperature"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="12dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="10dp"
-        android:text="Température ambiante : "
-        android:textColor="@android:color/black"
-        android:textSize="24sp"
-        app:layout_constraintStart_toEndOf="@+id/imageView3"
-        app:layout_constraintTop_toTopOf="@+id/imageView3" />
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="26dp"
-        android:layout_marginStart="26dp"
-        android:layout_marginTop="22dp"
+        android:layout_marginLeft="36dp"
+        android:layout_marginStart="36dp"
+        android:text="Paramètres du compte"
+        android:textColor="#000000"
+        android:textSize="26sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView4"
-        app:srcCompat="@drawable/humidity" />
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="26dp"
-        android:layout_marginStart="26dp"
-        android:layout_marginTop="173dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/contrast" />
-
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="30dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
-        app:srcCompat="@drawable/thermometer" />
-
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="26dp"
-        android:layout_marginStart="26dp"
-        android:layout_marginTop="20dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2"
-        app:srcCompat="@drawable/uv" />
-
-    <ImageView
-        android:id="@+id/imageView7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="89dp"
-        android:layout_marginLeft="26dp"
-        android:layout_marginStart="26dp"
-        android:layout_marginTop="89dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textView"
-        app:srcCompat="@drawable/arrow" />
+        tools:layout_editor_absoluteY="103dp" />
 
 </android.support.constraint.ConstraintLayout>
