@@ -5,8 +5,13 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
-public class PageProgramme extends AppCompatActivity {
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+
+public class PageNotes extends AppCompatActivity {
 
     ImageButton buttonInventaire;
     ImageButton buttonAccueil;
@@ -15,20 +20,34 @@ public class PageProgramme extends AppCompatActivity {
     ImageButton buttonMap;
     ImageButton buttonStatistiques;
     ImageButton buttonCompte;
-    ImageButton buttonAjouterProgramme;
-    ImageButton buttonCreerAmbiance;
-
+    Date date;
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.programme);
-
+        setContentView(R.layout.notepreview);
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.notepreview);
+        Intent intent = getIntent();
+        TextView note = (TextView) findViewById(R.id.note);
+        if (intent != null) {
+            Object event = intent.getParcelableExtra(MainActivity.EVENT);
+            if(event instanceof MyEventDay){
+                MyEventDay myEventDay = (MyEventDay)event;
+                getSupportActionBar().setTitle(getFormattedDate(myEventDay.getCalendar().getTime()));
+                note.setText(myEventDay.getNote());
+                return;
+            }
+            if(event instanceof EventDay){
+                EventDay eventDay = (EventDay)event;
+                getSupportActionBar().setTitle(getFormattedDate(eventDay.getCalendar().getTime()));
+            }
+        }
         //Bouton vers accueil
         buttonAccueil = (ImageButton) findViewById(R.id.logo);
         buttonAccueil.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intentLoad = new Intent(PageProgramme.this, MainActivity.class);
+                Intent intentLoad = new Intent(PageNotes.this, MainActivity.class);
                 startActivity(intentLoad);
             }
         });
@@ -40,7 +59,7 @@ public class PageProgramme extends AppCompatActivity {
         buttonInventaire.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intentLoad = new Intent(PageProgramme.this, PageInventaire.class);
+                Intent intentLoad = new Intent(PageNotes.this, PageInventaire.class);
                 startActivity(intentLoad);
             }
         });
@@ -50,7 +69,7 @@ public class PageProgramme extends AppCompatActivity {
         buttonCalendrier.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intentLoad = new Intent(PageProgramme.this, PageCalendrier.class);
+                Intent intentLoad = new Intent(PageNotes.this, PageCalendrier.class);
                 startActivity(intentLoad);
             }
         });
@@ -60,7 +79,7 @@ public class PageProgramme extends AppCompatActivity {
         buttonProgramme.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intentLoad = new Intent(PageProgramme.this, PageProgramme.class);
+                Intent intentLoad = new Intent(PageNotes.this, PageProgramme.class);
                 startActivity(intentLoad);
             }
         });
@@ -70,7 +89,7 @@ public class PageProgramme extends AppCompatActivity {
         buttonMap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intentLoad = new Intent(PageProgramme.this, PageMap.class);
+                Intent intentLoad = new Intent(PageNotes.this, PageMap.class);
                 startActivity(intentLoad);
             }
         });
@@ -80,30 +99,26 @@ public class PageProgramme extends AppCompatActivity {
         buttonStatistiques.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intentLoad = new Intent(PageProgramme.this, PageStatistiques.class);
+                Intent intentLoad = new Intent(PageNotes.this, PageStatistiques.class);
                 startActivity(intentLoad);
             }
         });
 
         //Bouton vers compte
-        buttonCreerAmbiance = (ImageButton) findViewById(R.id.imageButton2);
-        buttonCreerAmbiance.setOnClickListener(new View.OnClickListener() {
+        buttonCompte = (ImageButton) findViewById(R.id.Compte);
+        buttonCompte.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intentLoad = new Intent(PageProgramme.this, PageCreerAmbiance.class);
+                Intent intentLoad = new Intent(PageNotes.this, PageCompte.class);
                 startActivity(intentLoad);
             }
         });
 
-        //Bouton ajouter programme
-        buttonAjouterProgramme = (ImageButton) findViewById(R.id.creerprogramme);
-        buttonAjouterProgramme.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intentLoad = new Intent(PageProgramme.this, PageCreerProgramme.class);
-                startActivity(intentLoad);
+            public static String getFormattedDate(Date date) {
+                SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd MMMM yyyy", Locale.getDefault());
+                return simpleDateFormat.format(date);
             }
-        });
+        }
 
     }
 }

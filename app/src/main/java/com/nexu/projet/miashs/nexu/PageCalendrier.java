@@ -7,6 +7,13 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.CalendarView;
+import android.widget.Toast;
+import android.widget.DatePicker;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.List;
+
 
 
 public class PageCalendrier extends AppCompatActivity{
@@ -23,11 +30,26 @@ public class PageCalendrier extends AppCompatActivity{
     private TextView thedate;
     private Button btngocalendar;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.calendrier);
+        mCalendarView = (CalendarView) findViewById(R.id.calendarView);
+        ImageButton floatingActionButton = (ImageButton) findViewById(R.id.floatingActionButton);
+        floatingActionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                addNote();
+            }
+        });
 
+        mCalendarView.setOnDayClickListener(new OnDayClickListener() {
+            @Override
+            public void onDayClick(EventDay eventDay) {
+                previewNote(eventDay);
+            }
+        });
         //Bouton vers accueil
         buttonAccueil = (ImageButton) findViewById(R.id.logo);
         buttonAccueil.setOnClickListener(new View.OnClickListener() {
@@ -99,8 +121,43 @@ public class PageCalendrier extends AppCompatActivity{
                 startActivity(intentLoad);
             }
         });
+        //Bouton vers notes
+        buttonCompte = (ImageButton) findViewById(R.id.floatingActionButton);
+        buttonCompte.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intentLoad = new Intent(PageCalendrier.this, PageNotes.class);
+                startActivity(intentLoad);
+            }
+        });
     }
+        public static final String RESULT = "result";
+        public static final String EVENT = "event";
+        private static final int ADD_NOTE = 44;
+        private CalendarView mCalendarView;
+        private List<EventDay> mEventDays = new ArrayList<>();
 
+        @Override
+        protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+            if (requestCode == ADD_NOTE && resultCode == RESULT_OK) {
+                MyEventDay myEventDay = data.getParcelableExtra(RESULT);
+                mCalendarView.setDate(myEventDay.getCalendar());
+                mEventDays.add(myEventDay);
+                mCalendarView.setEvents(mEventDays);
+            }
+        }
+        private void addNote() {
+            Intent intent = new Intent(this, AddNoteActivity.class);
+            startActivityForResult(intent, ADD_NOTE);
+        }
+        private void previewNote(EventDay eventDay) {
+            Intent intent = new Intent(this, NotePreviewActivity.class);
+            if(eventDay instanceof MyEventDay){
+                intent.putExtra(EVENT, (MyEventDay) eventDay);
+            }
+            startActivity(intent);
+        }
+    }
 
 
 
