@@ -15,6 +15,9 @@ import android.view.MenuInflater;
 
 public class MainActivity extends AppCompatActivity {
 
+
+    //commentaire pour tester
+
     ImageButton buttonInventaire;
     ImageButton buttonAccueil;
     ImageButton buttonCalendrier;
