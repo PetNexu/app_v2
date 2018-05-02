@@ -36,7 +36,7 @@
         android:layout_marginEnd="11dp"
         android:layout_marginRight="11dp"
         android:layout_marginTop="5dp"
-        android:text="Mon compte"
+        android:text="Notification"
         android:textAlignment="center"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="@+id/Haut"
@@ -129,4 +129,21 @@
         app:layout_constraintStart_toEndOf="@+id/map"
         app:srcCompat="@drawable/bars" />
 
+    <Button
+        android:id="@+id/add_notification"
+        android:layout_width="151dp"
+        android:layout_height="93dp"
+        android:text="Ajouter notification"
+        tools:layout_editor_absoluteX="107dp"
+        tools:layout_editor_absoluteY="148dp" />
+
+    <Button
+        android:id="@+id/delete_notification"
+        android:layout_width="151dp"
+        android:layout_height="100dp"
+        android:text="Supprimer notification"
+        tools:layout_editor_absoluteX="104dp"
+        tools:layout_editor_absoluteY="338dp" />
+
 </android.support.constraint.ConstraintLayout>
+

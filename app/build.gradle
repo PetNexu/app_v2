@@ -32,9 +32,9 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     //add de la librairy localisation ASHLEY
     //noinspection UseOfBundledGooglePlayServices,GradleCompatible
-    implementation 'com.google.android.gms:play-services:8.3.0'
-    apply plugin: 'com.google.gms.google-services'
+    implementation 'com.google.android.gms:play-services:12.0.1'
 
+    implementation 'com.android.support:design:27.1.1'
 }
 ////Add localisation ASHLEY
 apply plugin: 'com.android.application'
