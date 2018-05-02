@@ -7,8 +7,11 @@ android {
         minSdkVersion 15
         targetSdkVersion 27
         versionCode 1
-        versionName "1.0"
+        versi
+        onName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        //Add localisation ASHLEY
+        multiDexEnabled true
     }
     buildTypes {
         release {
@@ -26,6 +29,10 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
-
-
+    //add de la librairy localisation ASHLEY
+    //noinspection UseOfBundledGooglePlayServices,GradleCompatible
+    implementation 'com.google.android.gms:play-services:12.0.1'
+    implementation 'com.google.android.gms:play-services-maps:15.0.0'
 }
+////Add localisation ASHLEY
+apply plugin: 'com.android.application'
