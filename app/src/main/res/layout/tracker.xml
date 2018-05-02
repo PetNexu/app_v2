@@ -23,11 +23,7 @@
         android:layout_marginLeft="20dp"
         android:textSize="25dp"
         android:text="" />
-    <Button
-        android:id="@+id/getcoordonnees"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        />
+
     <android.support.v7.widget.Toolbar
         android:id="@+id/Haut"
         android:layout_width="0dp"
@@ -64,8 +60,10 @@
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="@+id/Haut"
         app:layout_constraintEnd_toEndOf="@+id/logo"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
     <ImageButton
         android:id="@+id/logo"
@@ -151,5 +149,22 @@
         app:layout_constraintEnd_toStartOf="@+id/Compte"
         app:layout_constraintStart_toEndOf="@+id/map"
         app:srcCompat="@drawable/bars" />
+
+    <Button
+        android:id="@+id/getcoordonnees"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Avoir les coordonnées"
+        tools:layout_editor_absoluteX="41dp"
+        tools:layout_editor_absoluteY="116dp"
+      />
+
+    <Button
+        android:id="@+id/getlocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Update localisation"
+        tools:layout_editor_absoluteX="41dp"
+        tools:layout_editor_absoluteY="189dp" />
 
 </android.support.constraint.ConstraintLayout>
