@@ -14,7 +14,14 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
-
+import android.content.Intent;
+import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
+import android.view.View;
+import android.widget.CalendarView;
+import android.widget.ImageButton;
 
 public class PageCalendrier extends AppCompatActivity{
 
@@ -26,30 +33,14 @@ public class PageCalendrier extends AppCompatActivity{
     ImageButton buttonStatistiques;
     ImageButton buttonCompte;
     ImageButton test;
-    private static final String TAG = "Calendar";
-    private TextView thedate;
-    private Button btngocalendar;
-
+    private static final String TAG = "PageCalendrier";
+    private CalendarView mCalendarView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.calendrier);
-        mCalendarView = (CalendarView) findViewById(R.id.calendarView);
-        ImageButton floatingActionButton = (ImageButton) findViewById(R.id.floatingActionButton);
-        floatingActionButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                addNote();
-            }
-        });
 
-        mCalendarView.setOnDayClickListener(new OnDayClickListener() {
-            @Override
-            public void onDayClick(EventDay eventDay) {
-                previewNote(eventDay);
-            }
-        });
         //Bouton vers accueil
         buttonAccueil = (ImageButton) findViewById(R.id.logo);
         buttonAccueil.setOnClickListener(new View.OnClickListener() {
@@ -121,45 +112,35 @@ public class PageCalendrier extends AppCompatActivity{
                 startActivity(intentLoad);
             }
         });
-        //Bouton vers notes
-        buttonCompte = (ImageButton) findViewById(R.id.floatingActionButton);
-        buttonCompte.setOnClickListener(new View.OnClickListener() {
+
+        //Calendrier
+
+        mCalendarView = (CalendarView) findViewById(R.id.calendarView);
+        mCalendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
-            public void onClick(View view) {
-                Intent intentLoad = new Intent(PageCalendrier.this, PageNotes.class);
-                startActivity(intentLoad);
+            public void onSelectedDayChange(@NonNull CalendarView calendarView, int i, int i1, int i2) {
+                String mois;
+                switch(i1+1){
+                    case 1: mois=" Janvier "; break;
+                    case 2: mois=" Février "; break;
+                    case 3: mois=" Mars "; break;
+                    case 4: mois=" Avril "; break;
+                    case 5: mois=" Mai "; break;
+                    case 6: mois=" Juin"; break;
+                    case 7: mois=" Juillet "; break;
+                    case 8: mois=" Août "; break;
+                    case 9: mois=" Septembre "; break;
+                    case 10: mois=" Octobre "; break;
+                    case 11: mois=" Novembre "; break;
+                    default: mois=" Décembre";
+                }
+                String date =  i2 +mois+ i;
+                Log.d(TAG, "onSelectedDayChange: mm/dd/yyyy:"+date);
+                Intent intent = new Intent(PageCalendrier.this, PageEvenement.class);
+                intent.putExtra("date", date);
+                startActivity(intent);
             }
         });
-    }
-        public static final String RESULT = "result";
-        public static final String EVENT = "event";
-        private static final int ADD_NOTE = 44;
-        private CalendarView mCalendarView;
-        private List<EventDay> mEventDays = new ArrayList<>();
-
-        @Override
-        protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-            if (requestCode == ADD_NOTE && resultCode == RESULT_OK) {
-                MyEventDay myEventDay = data.getParcelableExtra(RESULT);
-                mCalendarView.setDate(myEventDay.getCalendar());
-                mEventDays.add(myEventDay);
-                mCalendarView.setEvents(mEventDays);
-            }
-        }
-        private void addNote() {
-            Intent intent = new Intent(this, AddNoteActivity.class);
-            startActivityForResult(intent, ADD_NOTE);
-        }
-        private void previewNote(EventDay eventDay) {
-            Intent intent = new Intent(this, NotePreviewActivity.class);
-            if(eventDay instanceof MyEventDay){
-                intent.putExtra(EVENT, (MyEventDay) eventDay);
-            }
-            startActivity(intent);
-        }
-    }
-
-
 
     }
-
+}
