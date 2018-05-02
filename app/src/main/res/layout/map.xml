@@ -213,15 +213,6 @@
         app:srcCompat="@drawable/bed"
         tools:layout_editor_absoluteY="95dp" />
 
-    <ImageView
-        android:id="@+id/imageView15"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="3dp"
-        android:layout_marginRight="3dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/plate-with-fork-and-knife-eating-set-tools-from-top-view"
-        tools:layout_editor_absoluteY="203dp" />
 
     <ImageView
         android:id="@+id/imageView16"
