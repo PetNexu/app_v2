@@ -163,7 +163,7 @@
         android:id="@+id/getlocation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Update localisation"
+        android:text="Start update localisation"
         tools:layout_editor_absoluteX="41dp"
         tools:layout_editor_absoluteY="189dp" />
 
