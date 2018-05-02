@@ -7,8 +7,7 @@ android {
         minSdkVersion 15
         targetSdkVersion 27
         versionCode 1
-        versi
-        onName "1.0"
+        versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         //Add localisation ASHLEY
         multiDexEnabled true
@@ -25,6 +24,7 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     //noinspection GradleCompatible
     implementation 'com.google.code.gson:gson:2.8.0'
+    //noinspection GradleCompatible
     implementation 'com.android.support:appcompat-v7:27.1.1'
     implementation 'com.android.support.constraint:constraint-layout:1.1.0'
     testImplementation 'junit:junit:4.12'
@@ -33,7 +33,7 @@ dependencies {
     //add de la librairy localisation ASHLEY
     //noinspection UseOfBundledGooglePlayServices,GradleCompatible
     implementation 'com.google.android.gms:play-services:12.0.1'
-    implementation 'com.google.android.gms:play-services-maps:15.0.0'
+
 }
 ////Add localisation ASHLEY
 apply plugin: 'com.android.application'
