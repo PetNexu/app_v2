@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "134930275291",
+    "firebase_url": "https://nexu-202912.firebaseio.com",
+    "project_id": "nexu-202912",
+    "storage_bucket": "nexu-202912.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:134930275291:android:ae4ff2280bfc832b",
+        "android_client_info": {
+          "package_name": "com.nexu.android"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "134930275291-i9ih583v9ceplmltq5c4op6r0sgorhn4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAnB_3B9MzHh0pTZf9pZn_76gAQjbDqENA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

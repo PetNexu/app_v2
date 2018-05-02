@@ -1,29 +1,20 @@
 package com.nexu.projet.miashs.nexu;
 
+import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
+import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.ImageButton;
 import android.widget.Button;
-import android.widget.TextView;
-import android.widget.CalendarView;
-import android.widget.Toast;
-import android.widget.DatePicker;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.List;
-
-import android.content.Intent;
-import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
-import android.view.View;
-import android.widget.CalendarView;
 import android.widget.ImageButton;
+import android.widget.TextView;
+import android.widget.TimePicker;
 
-public class PageCalendrier extends AppCompatActivity{
+import org.w3c.dom.Text;
+
+public class PageCreerEvenement extends AppCompatActivity implements TimePickerDialog.OnTimeSetListener{
 
     ImageButton buttonInventaire;
     ImageButton buttonAccueil;
@@ -32,21 +23,20 @@ public class PageCalendrier extends AppCompatActivity{
     ImageButton buttonMap;
     ImageButton buttonStatistiques;
     ImageButton buttonCompte;
-    ImageButton test;
-    private static final String TAG = "PageCalendrier";
-    private CalendarView mCalendarView;
+    ImageButton buttonValider;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState){
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.calendrier);
+        setContentView(R.layout.creer_evenement);
+
 
         //Bouton vers accueil
         buttonAccueil = (ImageButton) findViewById(R.id.logo);
         buttonAccueil.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intentLoad = new Intent(PageCalendrier.this, MainActivity.class);
+                Intent intentLoad = new Intent(PageCreerEvenement.this, MainActivity.class);
                 startActivity(intentLoad);
             }
         });
@@ -58,7 +48,7 @@ public class PageCalendrier extends AppCompatActivity{
         buttonInventaire.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intentLoad = new Intent(PageCalendrier.this, PageInventaire.class);
+                Intent intentLoad = new Intent(PageCreerEvenement.this, PageInventaire.class);
                 startActivity(intentLoad);
             }
         });
@@ -68,7 +58,7 @@ public class PageCalendrier extends AppCompatActivity{
         buttonCalendrier.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intentLoad = new Intent(PageCalendrier.this, PageCalendrier.class);
+                Intent intentLoad = new Intent(PageCreerEvenement.this, PageCalendrier.class);
                 startActivity(intentLoad);
             }
         });
@@ -78,7 +68,7 @@ public class PageCalendrier extends AppCompatActivity{
         buttonProgramme.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intentLoad = new Intent(PageCalendrier.this, PageProgramme.class);
+                Intent intentLoad = new Intent(PageCreerEvenement.this, PageProgramme.class);
                 startActivity(intentLoad);
             }
         });
@@ -88,7 +78,7 @@ public class PageCalendrier extends AppCompatActivity{
         buttonMap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intentLoad = new Intent(PageCalendrier.this, PageMap.class);
+                Intent intentLoad = new Intent(PageCreerEvenement.this, PageMap.class);
                 startActivity(intentLoad);
             }
         });
@@ -98,7 +88,7 @@ public class PageCalendrier extends AppCompatActivity{
         buttonStatistiques.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intentLoad = new Intent(PageCalendrier.this, PageStatistiques.class);
+                Intent intentLoad = new Intent(PageCreerEvenement.this, PageStatistiques.class);
                 startActivity(intentLoad);
             }
         });
@@ -108,39 +98,50 @@ public class PageCalendrier extends AppCompatActivity{
         buttonCompte.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intentLoad = new Intent(PageCalendrier.this, PageCompte.class);
+                Intent intentLoad = new Intent(PageCreerEvenement.this, PageCompte.class);
                 startActivity(intentLoad);
             }
         });
 
-        //Calendrier
+        //bouton valider
 
-        mCalendarView = (CalendarView) findViewById(R.id.calendarView);
-        mCalendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
+        buttonValider = (ImageButton) findViewById(R.id.valider);
+        buttonValider.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onSelectedDayChange(@NonNull CalendarView calendarView, int i, int i1, int i2) {
-                String mois;
-                switch(i1+1){
-                    case 1: mois=" Janvier "; break;
-                    case 2: mois=" Février "; break;
-                    case 3: mois=" Mars "; break;
-                    case 4: mois=" Avril "; break;
-                    case 5: mois=" Mai "; break;
-                    case 6: mois=" Juin"; break;
-                    case 7: mois=" Juillet "; break;
-                    case 8: mois=" Août "; break;
-                    case 9: mois=" Septembre "; break;
-                    case 10: mois=" Octobre "; break;
-                    case 11: mois=" Novembre "; break;
-                    default: mois=" Décembre";
-                }
-                String date =  i2 +mois+ i;
-                Log.d(TAG, "onSelectedDayChange: mm/dd/yyyy:"+date);
-                Intent intent = new Intent(PageCalendrier.this, PageEvenement.class);
-                intent.putExtra("date", date);
-                startActivity(intent);
+            public void onClick(View view) {
+                Intent intentLoad = new Intent(PageCreerEvenement.this, PageCalendrier.class);
+                startActivity(intentLoad);
             }
         });
 
+
+        Button buttonDebut = (Button) findViewById(R.id.debut);
+        Button buttonFin = (Button) findViewById(R.id.fin);
+
+        buttonDebut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                DialogFragment timePicker = new TimePickerFragment();
+                timePicker.show(getSupportFragmentManager(), "time picker debut");
+
+            }
+        });
+
+        buttonFin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                DialogFragment timePickerFin = new TimePickerFragment();
+                timePickerFin.show(getSupportFragmentManager(), "time picker debut");
+
+            }
+        });
     }
+
+    @Override
+    public void onTimeSet(TimePicker timePicker, int hourOfDay, int minute) {
+        TextView heure = (TextView)findViewById(R.id.hDeb);
+        heure.setText(hourOfDay+" : "+minute);
+
+    }
+
 }

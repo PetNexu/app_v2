@@ -7,12 +7,11 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Locale;
+public class PageEvenement extends AppCompatActivity{
 
-public class PageNotes extends AppCompatActivity {
-
+    private static final String TAG = "PageCalendrier";
+    private TextView theDate;
+    ImageButton buttonCreerEvent;
     ImageButton buttonInventaire;
     ImageButton buttonAccueil;
     ImageButton buttonCalendrier;
@@ -20,34 +19,18 @@ public class PageNotes extends AppCompatActivity {
     ImageButton buttonMap;
     ImageButton buttonStatistiques;
     ImageButton buttonCompte;
-    Date date;
-    @Override
-    protected void onCreate(Bundle savedInstanceState){
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.notepreview);
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.notepreview);
-        Intent intent = getIntent();
-        TextView note = (TextView) findViewById(R.id.note);
-        if (intent != null) {
-            Object event = intent.getParcelableExtra(MainActivity.EVENT);
-            if(event instanceof MyEventDay){
-                MyEventDay myEventDay = (MyEventDay)event;
-                getSupportActionBar().setTitle(getFormattedDate(myEventDay.getCalendar().getTime()));
-                note.setText(myEventDay.getNote());
-                return;
-            }
-            if(event instanceof EventDay){
-                EventDay eventDay = (EventDay)event;
-                getSupportActionBar().setTitle(getFormattedDate(eventDay.getCalendar().getTime()));
-            }
-        }
+
+
+    protected void onCreate(Bundle SavedInstanceState){
+        super.onCreate(SavedInstanceState);
+        setContentView(R.layout.evenement);
+
         //Bouton vers accueil
         buttonAccueil = (ImageButton) findViewById(R.id.logo);
         buttonAccueil.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intentLoad = new Intent(PageNotes.this, MainActivity.class);
+                Intent intentLoad = new Intent(PageEvenement.this, MainActivity.class);
                 startActivity(intentLoad);
             }
         });
@@ -59,7 +42,7 @@ public class PageNotes extends AppCompatActivity {
         buttonInventaire.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intentLoad = new Intent(PageNotes.this, PageInventaire.class);
+                Intent intentLoad = new Intent(PageEvenement.this, PageInventaire.class);
                 startActivity(intentLoad);
             }
         });
@@ -69,7 +52,7 @@ public class PageNotes extends AppCompatActivity {
         buttonCalendrier.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intentLoad = new Intent(PageNotes.this, PageCalendrier.class);
+                Intent intentLoad = new Intent(PageEvenement.this, PageCalendrier.class);
                 startActivity(intentLoad);
             }
         });
@@ -79,7 +62,7 @@ public class PageNotes extends AppCompatActivity {
         buttonProgramme.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intentLoad = new Intent(PageNotes.this, PageProgramme.class);
+                Intent intentLoad = new Intent(PageEvenement.this, PageProgramme.class);
                 startActivity(intentLoad);
             }
         });
@@ -89,7 +72,7 @@ public class PageNotes extends AppCompatActivity {
         buttonMap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intentLoad = new Intent(PageNotes.this, PageMap.class);
+                Intent intentLoad = new Intent(PageEvenement.this, PageMap.class);
                 startActivity(intentLoad);
             }
         });
@@ -99,7 +82,7 @@ public class PageNotes extends AppCompatActivity {
         buttonStatistiques.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intentLoad = new Intent(PageNotes.this, PageStatistiques.class);
+                Intent intentLoad = new Intent(PageEvenement.this, PageStatistiques.class);
                 startActivity(intentLoad);
             }
         });
@@ -109,16 +92,26 @@ public class PageNotes extends AppCompatActivity {
         buttonCompte.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intentLoad = new Intent(PageNotes.this, PageCompte.class);
+                Intent intentLoad = new Intent(PageEvenement.this, PageCompte.class);
                 startActivity(intentLoad);
             }
         });
 
-            public static String getFormattedDate(Date date) {
-                SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd MMMM yyyy", Locale.getDefault());
-                return simpleDateFormat.format(date);
-            }
-        }
 
-    }
+        //calendrier
+
+        theDate = (TextView) findViewById(R.id.date);
+        Intent incomingIntent = getIntent();
+        String date = incomingIntent.getStringExtra("date");
+        theDate.setText(date);
+
+        buttonCreerEvent = (ImageButton) findViewById(R.id.creerEvent);
+        buttonCreerEvent.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intentLoad = new Intent(PageEvenement.this, PageCreerEvenement.class);
+                startActivity(intentLoad);
+            }
+        });    }
+
 }
