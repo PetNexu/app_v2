@@ -9,9 +9,11 @@
         android:id="@+id/Haut"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="7dp"
         android:background="@color/colorPrimary"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
+        app:layout_constraintBottom_toTopOf="@+id/scrollView2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -128,5 +130,49 @@
         app:layout_constraintEnd_toStartOf="@+id/Compte"
         app:layout_constraintStart_toEndOf="@+id/map"
         app:srcCompat="@drawable/bars" />
+
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="348dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="72dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/programme"
+        app:layout_constraintStart_toEndOf="@+id/programme"
+        app:layout_constraintTop_toBottomOf="@+id/Haut">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/editText3"
+                android:layout_width="336dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textMultiLine"
+                android:text="	    La température minimale d’un logement est de 18°C au centre des pièces. La température obligatoire de chauffage de l’intégralité de l’habitation est fixée à 19°C. Mais les logements étudiants ne comprenant souvent qu’une pièce, il est conseillé d’augmenter la température à 20-21°C en journée et remettre 18°C pour la nuit.\n
+    \n
+        L’éclairage direct, qui dirige la lumière du haut vers le bas, est convenable pour des activités qui demandent plus de concentration et d’attention au détail, comme le travail dans la cuisine, les activités manuelles, l’écriture et la lecture.\n
+    \n
+	    L’éclairage indirect, quant à lui, se diffuse dans la pièce d’une manière plus ou moins homogène. La lumière se reflète alors sur les surfaces verticales et au plafond pour se répandre dans tous les coins de la pièce. Pour cette raison, ce type d’éclairage est aussi appelé un éclairage d’ambiance. Il est adapté aux moments de relaxation.\n
+    \n
+	    Pour ces raisons nous vous conseillons, de maintenir votre logement à 16°C en cas d’absence et le programmer à 20°C pour votre retour. Concernant l’éclairage, nous vous proposons pour les moments de concentrations une lumière blanche neutre (température de couleur entre 4000 et 6000K), une lumière blanche chaude ou des couleurs chaudes (par exemple:orange) pour les moments de détentes (température de couleur entre 2700 et 4000k).\n
+    \n
+        Sources\n
+        \n
+ www.service-public.fr\n
+ www.18h39.fr\n
+ www.temperatureideale.fr\n
+ www.leclubled.fr\n
+ www.designmag.fr\n"
+                android:textColor="#000000"
+                android:textSize="10pt"
+                tools:layout_editor_absoluteX="26dp"
+                tools:layout_editor_absoluteY="70dp" />
+        </LinearLayout>
+    </ScrollView>
 
 </android.support.constraint.ConstraintLayout>
