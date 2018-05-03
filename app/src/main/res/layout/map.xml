@@ -325,6 +325,16 @@
         app:srcCompat="@drawable/bed" />
 
     <ImageView
+<<<<<<< HEAD
+        android:id="@+id/imageView16"
+        android:layout_width="78dp"
+        android:layout_height="154dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginRight="30dp"
+        app:layout_constraintEnd_toStartOf="@+id/imageView15"
+        app:srcCompat="@drawable/beater"
+        tools:layout_editor_absoluteY="206dp" />
+=======
         android:id="@+id/Kitchen"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -336,6 +346,7 @@
         app:layout_constraintStart_toEndOf="@+id/blindBed"
         app:layout_constraintTop_toBottomOf="@+id/Haut"
         app:srcCompat="@drawable/beater" />
+>>>>>>> d199cb1a45b2d8f88dae78c473d71e93be6d0f2c
 
     <ImageView
         android:id="@+id/Bath"
