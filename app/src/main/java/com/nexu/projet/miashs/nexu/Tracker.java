@@ -2,11 +2,9 @@ package com.nexu.projet.miashs.nexu;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
-import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
-import android.location.LocationManager;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -24,8 +22,14 @@ import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.LocationListener;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationServices;
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
 
-public class Tracker extends AppCompatActivity implements GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener, LocationListener {
+public class Tracker extends AppCompatActivity implements GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener, LocationListener,OnMapReadyCallback {
 
     ImageButton buttonInventaire;
     ImageButton buttonAccueil;
@@ -49,6 +53,8 @@ public class Tracker extends AppCompatActivity implements GoogleApiClient.Connec
     static private int UPDATE_INTERVAL = 5000; //sec
     static private int FASTEST_INTERVAL = 3000; //sec
     static private int DISPLACEMENT = 10;//meters
+
+    private GoogleMap mMap;
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int grantResults[]) {
@@ -170,6 +176,11 @@ public class Tracker extends AppCompatActivity implements GoogleApiClient.Connec
                 tooglePeriodicLocationUpdates();
             }
         });
+
+        //google map
+        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
+                .findFragmentById(R.id.map);
+        mapFragment.getMapAsync(this);
     }
     @Override
         protected void onStart() {
@@ -284,6 +295,15 @@ public class Tracker extends AppCompatActivity implements GoogleApiClient.Connec
     public void onLocationChanged(Location location) {
             mLastLocation=location;
             displayLocation();
+    }
+
+    @Override
+    public void onMapReady(GoogleMap googleMap) {
+        mMap = googleMap;
+        LatLng sydney= new LatLng( -34,151 );
+        mMap.addMarker( new MarkerOptions().position( sydney).title("Marker in Sydney"));
+        mMap.moveCamera( CameraUpdateFactory.newLatLng( sydney ) );
+
     }
 }
 
