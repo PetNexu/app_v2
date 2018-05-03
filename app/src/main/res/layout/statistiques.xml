@@ -112,7 +112,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Je voudrais travailler : \n heures cette semaine"
-        android:textAlignment="left"
+
         android:textColor="#000000"
         android:textSize="27sp"
         tools:layout_editor_absoluteX="16dp"

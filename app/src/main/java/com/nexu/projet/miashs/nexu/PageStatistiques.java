@@ -27,8 +27,8 @@ public class PageStatistiques extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.statistiques);
-        simpleProgressBar = (ProgressBar)findViewById(R.id.progressBar2);
-        loading =(TextView)findViewById(R.id.loading);
+      //  simpleProgressBar = (ProgressBar)findViewById(R.id.progressBar2);
+        //loading =(TextView)findViewById(R.id.loading);
         //timer_runtime = R.id.max * 3600;
 
         //Bouton vers accueil
