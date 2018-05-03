@@ -2,20 +2,18 @@ package com.nexu.projet.miashs.nexu;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
-import android.os.Build;
+import android.location.LocationManager;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.annotation.RequiresApi;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.CalendarView;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -26,8 +24,6 @@ import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.LocationListener;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationServices;
-
-import static com.google.android.gms.common.api.GoogleApiClient.*;
 
 public class Tracker extends AppCompatActivity implements GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener, LocationListener {
 
@@ -48,6 +44,7 @@ public class Tracker extends AppCompatActivity implements GoogleApiClient.Connec
     private LocationRequest mLocationRequest;
     private GoogleApiClient mGoogleApiClient;
     private Location mLocation;
+    private Location mLastLocation;
 
     static private int UPDATE_INTERVAL = 5000; //sec
     static private int FASTEST_INTERVAL = 3000; //sec
@@ -57,7 +54,7 @@ public class Tracker extends AppCompatActivity implements GoogleApiClient.Connec
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int grantResults[]) {
         switch (requestCode) {
             case MY_PERMISSION_REQUEST_CODE:
-                if (grantResults.length > 0 && grantResults[0] == com.nexu.projet.miashs.nexu.PERMISSION_GRANTED) {
+                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                     if (checkPlayServices())
                         buildGoogleApiClient();
                 }
@@ -148,8 +145,8 @@ public class Tracker extends AppCompatActivity implements GoogleApiClient.Connec
         getcoordonnees = (Button) findViewById(R.id.getcoordonnees);
         getlocation = (Button) findViewById(R.id.getlocation);
 
-        if ((ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != com.nexu.projet.miashs.nexu.PERMISSION_GRANTED )
-                && (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != com.nexu.projet.miashs.nexu.PERMISSION_GRANTED))
+        if ((ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED )
+                && (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED))
             {
                 ActivityCompat.requestPermissions(this, new String[]{
                         Manifest.permission.ACCESS_FINE_LOCATION,
@@ -208,14 +205,15 @@ public class Tracker extends AppCompatActivity implements GoogleApiClient.Connec
     }
 
     private void displayLocation() {
-        if ((ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) != com.nexu.projet.miashs.nexu.PERMISSION_GRANTED)
-                && (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_COARSE_LOCATION) != com.nexu.projet.miashs.nexu.PERMISSION_GRANTED)) {
+        if ((ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED)
+                && (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED)) {
             return;
         }
+
         mLastLocation = LocationServices.FusedLocationApi.getLastLocation(mGoogleApiClient);
         if (mLastLocation != null) {
-            double latitude = mLastLocation.getLatitude;
-            double longitude = mLastLocation.getLongitude;
+            double latitude = mLastLocation.getLatitude();
+            double longitude = mLastLocation.getLongitude();
             coordonnees.setText(latitude + " / " + longitude);
         } else
             coordonnees.setText("Localisation introuvable ");

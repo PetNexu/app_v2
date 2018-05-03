@@ -9,28 +9,38 @@
     <!--Add LOCATION ASHLEY-->
     <TextView
         android:id="@+id/localisation"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:layout_marginTop="60dp"
         android:layout_marginLeft="20dp"
+        android:text="Vous êtes : "
         android:textSize="25dp"
-        android:text="Vous êtes : " />
+        app:layout_constraintBaseline_toBaselineOf="@+id/coordonnees"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/coordonnees" />
+
     <TextView
         android:id="@+id/coordonnees"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginStart="4dp"
         android:layout_marginTop="60dp"
-        android:layout_marginLeft="20dp"
+        android:text=""
         android:textSize="25dp"
-        android:text="" />
+        app:layout_constraintBottom_toTopOf="@+id/getcoordonnees"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/inventaire"
+        app:layout_constraintTop_toBottomOf="@+id/Haut" />
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/Haut"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
         android:background="@color/colorPrimary"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
+        app:layout_constraintBottom_toTopOf="@+id/coordonnees"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -154,17 +164,32 @@
         android:id="@+id/getcoordonnees"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="25dp"
+        android:layout_marginLeft="21dp"
+        android:layout_marginStart="21dp"
         android:text="Avoir les coordonnées"
-        tools:layout_editor_absoluteX="41dp"
-        tools:layout_editor_absoluteY="116dp"
-      />
+        app:layout_constraintBottom_toTopOf="@+id/getlocation"
+        app:layout_constraintStart_toStartOf="@+id/localisation"
+        app:layout_constraintTop_toBottomOf="@+id/coordonnees" />
 
     <Button
         android:id="@+id/getlocation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="330dp"
+        android:layout_marginLeft="21dp"
+        android:layout_marginStart="21dp"
         android:text="Start update localisation"
-        tools:layout_editor_absoluteX="41dp"
-        tools:layout_editor_absoluteY="189dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/localisation"
+        app:layout_constraintTop_toBottomOf="@+id/getcoordonnees" />
+
+    <com.google.android.gms.maps.MapView
+        android:id="@+id/mapView2"
+        android:layout_width="314dp"
+        android:layout_height="183dp"
+        tools:layout_editor_absoluteX="42dp"
+        tools:layout_editor_absoluteY="291dp"
+        tools:ignore="MissingConstraints" />
 
 </android.support.constraint.ConstraintLayout>
