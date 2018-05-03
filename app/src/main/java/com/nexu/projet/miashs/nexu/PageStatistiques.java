@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-
+import android.widget.ImageView;
 public class PageStatistiques extends AppCompatActivity {
 
     ImageButton buttonInventaire;
@@ -18,18 +18,27 @@ public class PageStatistiques extends AppCompatActivity {
     ImageButton buttonStatistiques;
     ImageButton buttonCompte;
     ImageButton test;
-    protected static int timer_runtime = 1000;
-    private ProgressBar simpleProgressBar;
-    private TextView loading;
-    protected boolean nbActive;
+    ImageView bar0;
+    ImageView bar020;
+    ImageView bar20;
+    ImageView bar40;
+    ImageView bar60;
+    ImageView bar80;
+    ImageView bar100;
+    protected ProgressBar simpleProgressBar;
+    protected TextView loading;
+    private int tempsDetravail;
+    private int tempsPasse;
+    private int value;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState){
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.statistiques);
-        simpleProgressBar = (ProgressBar)findViewById(R.id.progressBar2);
-        loading =(TextView)findViewById(R.id.loading);
-        //timer_runtime = R.id.max * 3600;
+        simpleProgressBar = (ProgressBar) findViewById(R.id.progressBar2);
+        loading = (TextView) findViewById(R.id.loading);
+        tempsDetravail = R.id.max;
+        tempsPasse = 0;
 
         //Bouton vers accueil
         buttonAccueil = (ImageButton) findViewById(R.id.logo);
@@ -40,7 +49,6 @@ public class PageStatistiques extends AppCompatActivity {
                 startActivity(intentLoad);
             }
         });
-
 
 
         //Bouton vers inventaire
@@ -102,38 +110,37 @@ public class PageStatistiques extends AppCompatActivity {
                 startActivity(intentLoad);
             }
         });
-        final Thread timerThread = new Thread(){
-            @Override
-            public void run(){
-                nbActive = true;
-                try{
-                    int waited=0;
-                    while(nbActive&&(waited<timer_runtime)){
-                        sleep(200) ;
-                        if(nbActive){
-                            waited+=200;
-                            updateProgress(waited);
-                        }
-                    }
-                }catch(InterruptedException e){
-                    //En cas d'ereur
-                }finally{
-                    onContinue();
-                }
-            }
-        };
-        timerThread.start();
     }
-    public void updateProgress(int timePassed){
-        if(null!=simpleProgressBar){
-            int progress= simpleProgressBar.getMax() *timePassed / timer_runtime;
-            simpleProgressBar.setProgress(progress);
+    public void setTempsPasse(int temps){
+        this.tempsPasse = temps;
+    }
+
+    public void update(int tempsPasse){
+        value =(100-(tempsDetravail - tempsPasse) * 100 / tempsDetravail);
+
+        if((value<20) && (value>0)){
+            bar0.setVisibility(View.INVISIBLE);
+            bar020.setVisibility(View.VISIBLE);
         }
-
+        else if((value>=20)&&(value<40)){
+                bar020.setVisibility(View.INVISIBLE);
+                bar20.setVisibility(View.VISIBLE);
+        }
+        else if((value>=40)&&(value<60)){
+            bar20.setVisibility(View.INVISIBLE);
+            bar40.setVisibility(View.VISIBLE);
+        }
+        else if((value>=60)&&(value<80)){
+            bar40.setVisibility(View.INVISIBLE);
+            bar60.setVisibility(View.VISIBLE);
+        }
+        else if((value>=80)&&(value<100)){
+            bar60.setVisibility(View.INVISIBLE);
+            bar80.setVisibility(View.VISIBLE);
+        }
+        else{
+            bar80.setVisibility(View.INVISIBLE);
+            bar100.setVisibility(View.VISIBLE);
+        }
     }
-
-    public void onContinue(){
-        loading.setVisibility(View.VISIBLE);
-    }
-
 }
