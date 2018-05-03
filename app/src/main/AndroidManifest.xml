@@ -26,6 +26,9 @@
         <activity android:name=".PageMap">
         </activity>
 
+        <activity android:name=".PageObjet">
+        </activity>
+
         <activity android:name=".PageStatistiques">
         </activity>
 

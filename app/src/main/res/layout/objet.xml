@@ -36,15 +36,13 @@
         android:layout_marginEnd="11dp"
         android:layout_marginRight="11dp"
         android:layout_marginTop="5dp"
-        android:text="Mes statistiques"
+        android:text="Objets"
         android:textAlignment="center"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="@+id/Haut"
         app:layout_constraintEnd_toEndOf="@+id/logo"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
         android:id="@+id/logo"
@@ -131,33 +129,4 @@
         app:layout_constraintStart_toEndOf="@+id/map"
         app:srcCompat="@drawable/bars" />
 
-    <TextView
-        android:id="@+id/encouragement"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Mes objectifs : "
-        android:textAlignment="center"
-        android:textColor="#000000"
-        android:textSize="30sp"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="70dp" />
-
-    <ImageView
-        android:id="@+id/imageView6"
-        android:layout_width="16dp"
-        android:layout_height="22dp"
-        app:srcCompat="@drawable/arrow"
-        tools:layout_editor_absoluteX="105dp"
-        tools:layout_editor_absoluteY="129dp" />
-
-    <TextView
-        android:id="@+id/travail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Travail:"
-        android:textAlignment="center"
-        android:textColor="#000000"
-        android:textSize="27sp"
-        tools:layout_editor_absoluteX="121dp"
-        tools:layout_editor_absoluteY="120dp" />
 </android.support.constraint.ConstraintLayout>

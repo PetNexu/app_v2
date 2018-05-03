@@ -3,89 +3,193 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:layout_editor_absoluteY="25dp">
 
     <ImageButton
-        android:id="@+id/imageButton4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/radiatorBath"
+        android:layout_width="35dp"
+        android:layout_height="39dp"
+        android:layout_marginEnd="84dp"
+        android:layout_marginLeft="228dp"
+        android:layout_marginRight="84dp"
+        android:layout_marginStart="228dp"
+        android:layout_marginTop="184dp"
         android:background="@android:color/transparent"
-        app:srcCompat="@drawable/lightbulb"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="263dp" />
-
-    <ImageButton
-        android:id="@+id/imageButton23"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@android:color/transparent"
-        app:srcCompat="@drawable/lightbulb"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="263dp" />
-
-    <TextView
-        android:id="@+id/textView14"
-        android:layout_width="wrap_content"
-        android:layout_height="32dp"
-        android:layout_marginEnd="30dp"
-        android:layout_marginLeft="284dp"
-        android:layout_marginRight="30dp"
-        android:layout_marginStart="284dp"
-        android:text="Cuisine "
-        android:textColor="#000000"
-        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="133dp" />
+        app:layout_constraintHorizontal_bias="0.68"
+        app:layout_constraintStart_toStartOf="@+id/lightBed1"
+        app:layout_constraintTop_toTopOf="@+id/lightBed1"
+        app:srcCompat="@drawable/radiator" />
 
-    <TextView
-        android:id="@+id/textView15"
-        android:layout_width="wrap_content"
-        android:layout_height="32dp"
-        android:layout_marginEnd="123dp"
+    <ImageButton
+        android:id="@+id/radiatorBed"
+        android:layout_width="35dp"
+        android:layout_height="39dp"
         android:layout_marginLeft="124dp"
-        android:layout_marginRight="123dp"
         android:layout_marginStart="124dp"
-        android:text="Salle de Bain"
-        android:textColor="#000000"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="377dp" />
+        android:background="@android:color/transparent"
+        app:layout_constraintStart_toStartOf="@+id/lightBed1"
+        app:layout_constraintTop_toTopOf="@+id/lightBed1"
+        app:srcCompat="@drawable/radiator" />
+
+    <ImageButton
+        android:id="@+id/plugBath"
+        android:layout_width="35dp"
+        android:layout_height="39dp"
+        android:layout_marginLeft="88dp"
+        android:layout_marginStart="88dp"
+        android:layout_marginTop="144dp"
+        android:background="@android:color/transparent"
+        app:layout_constraintStart_toStartOf="@+id/lightBed1"
+        app:layout_constraintTop_toTopOf="@+id/lightBed1"
+        app:srcCompat="@drawable/plug" />
+
+    <ImageButton
+        android:id="@+id/plugKitchen2"
+        android:layout_width="35dp"
+        android:layout_height="39dp"
+        android:layout_marginLeft="280dp"
+        android:layout_marginStart="280dp"
+        android:background="@android:color/transparent"
+        app:layout_constraintStart_toStartOf="@+id/lightBed1"
+        app:layout_constraintTop_toTopOf="@+id/lightBed1"
+        app:srcCompat="@drawable/plug" />
+
+    <ImageButton
+        android:id="@+id/plugKitchen1"
+        android:layout_width="35dp"
+        android:layout_height="39dp"
+        android:layout_marginLeft="244dp"
+        android:layout_marginStart="244dp"
+        android:background="@android:color/transparent"
+        app:layout_constraintStart_toStartOf="@+id/lightBed1"
+        app:layout_constraintTop_toTopOf="@+id/lightBed1"
+        app:srcCompat="@drawable/plug" />
+
+    <ImageButton
+        android:id="@+id/plugBed"
+        android:layout_width="35dp"
+        android:layout_height="39dp"
+        android:layout_marginLeft="88dp"
+        android:layout_marginStart="88dp"
+        android:background="@android:color/transparent"
+        app:layout_constraintStart_toStartOf="@+id/lightBed1"
+        app:layout_constraintTop_toTopOf="@+id/lightBed1"
+        app:srcCompat="@drawable/plug" />
 
     <TextView
-        android:id="@+id/textView7"
+        android:id="@+id/Cuisine"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginRight="40dp"
+        android:text="Cuisine"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/Chambre"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/Bed"
+        app:layout_constraintTop_toTopOf="@+id/Chambre" />
+
+    <TextView
+        android:id="@+id/SalleDeBain"
         android:layout_width="wrap_content"
         android:layout_height="29dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginStart="30dp"
+        android:layout_marginTop="40dp"
+        android:text="Salle de bain"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lightBed1" />
+
+    <ImageButton
+        android:id="@+id/lightBed1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="208dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="208dp"
+        android:layout_marginStart="12dp"
+        android:background="@android:color/transparent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/Kitchen"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/lightbulb" />
+
+    <ImageButton
+        android:id="@+id/lightBed2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="44dp"
+        android:layout_marginStart="44dp"
+        android:background="@android:color/transparent"
+        app:layout_constraintStart_toStartOf="@+id/lightBed1"
+        app:layout_constraintTop_toTopOf="@+id/lightBed1"
+        app:srcCompat="@drawable/lightbulb" />
+
+    <ImageButton
+        android:id="@+id/lightKitchen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="12dp"
+        android:layout_marginLeft="316dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginStart="316dp"
+        android:background="@android:color/transparent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/lightBed1"
+        app:layout_constraintTop_toTopOf="@+id/lightBed1"
+        app:srcCompat="@drawable/lightbulb" />
+
+    <ImageButton
+        android:id="@+id/lightBath"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="84dp"
+        android:layout_marginStart="84dp"
+        android:layout_marginTop="184dp"
+        android:background="@android:color/transparent"
+        app:layout_constraintStart_toStartOf="@+id/lightBed1"
+        app:layout_constraintTop_toTopOf="@+id/lightBed1"
+        app:srcCompat="@drawable/lightbulb" />
+
+    <TextView
+        android:id="@+id/Chambre"
+        android:layout_width="wrap_content"
+        android:layout_height="29dp"
+        android:layout_marginLeft="41dp"
+        android:layout_marginStart="41dp"
+        android:layout_marginTop="41dp"
         android:text="Chambre"
         android:textColor="#000000"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="133dp" />
+        app:layout_constraintTop_toBottomOf="@+id/Titre" />
 
     <TextView
-        android:id="@+id/textView11"
+        android:id="@+id/Titre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="21dp"
+        android:layout_marginRight="21dp"
         android:text="Objets enregistrés par Lieux :  "
         android:textColor="#000000"
         android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.507"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="81dp" />
+        app:layout_constraintEnd_toEndOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/logo" />
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/Haut"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="36dp"
         android:background="@color/colorPrimary"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
+        app:layout_constraintBottom_toTopOf="@+id/Kitchen"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -106,15 +210,13 @@
         android:id="@+id/textView"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="2dp"
-        android:layout_marginEnd="11dp"
-        android:layout_marginRight="11dp"
+        android:layout_marginBottom="6dp"
         android:layout_marginTop="5dp"
         android:text="Objets et Lieux"
         android:textAlignment="center"
         android:textSize="30sp"
-        app:layout_constraintBottom_toBottomOf="@+id/Haut"
-        app:layout_constraintEnd_toEndOf="@+id/logo"
+        app:layout_constraintBottom_toBottomOf="@+id/logo"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -123,7 +225,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@android:color/transparent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/Haut"
         app:layout_constraintTop_toTopOf="@+id/Haut"
         app:srcCompat="@drawable/logopet1" />
 
@@ -132,6 +234,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="3dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginRight="1dp"
         android:background="@android:color/transparent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -143,11 +247,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="3dp"
-        android:layout_marginEnd="9dp"
-        android:layout_marginRight="9dp"
+        android:layout_marginEnd="85dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="85dp"
+        android:layout_marginStart="16dp"
         android:background="@android:color/transparent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/calendrier"
+        app:layout_constraintEnd_toStartOf="@+id/Bath"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/list" />
 
@@ -156,8 +262,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="3dp"
-        android:layout_marginEnd="7dp"
-        android:layout_marginRight="7dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
         android:background="@android:color/transparent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/programme"
@@ -169,8 +275,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="3dp"
-        android:layout_marginEnd="7dp"
-        android:layout_marginRight="7dp"
+        android:layout_marginEnd="9dp"
+        android:layout_marginRight="9dp"
         android:background="@android:color/transparent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/map"
@@ -182,8 +288,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="3dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
+        android:layout_marginEnd="9dp"
+        android:layout_marginRight="9dp"
         android:background="@android:color/transparent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/statistiques"
@@ -195,8 +301,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="3dp"
-        android:layout_marginEnd="1dp"
-        android:layout_marginRight="1dp"
+        android:layout_marginEnd="3dp"
+        android:layout_marginRight="3dp"
         android:background="@android:color/transparent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/Compte"
@@ -204,17 +310,22 @@
         app:srcCompat="@drawable/bars" />
 
     <ImageView
-        android:id="@+id/imageView12"
+        android:id="@+id/Bed"
         android:layout_width="95dp"
-        android:layout_height="251dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginStart="30dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="201dp"
+        android:layout_marginEnd="129dp"
+        android:layout_marginLeft="41dp"
+        android:layout_marginRight="129dp"
+        android:layout_marginStart="41dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/Cuisine"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/bed"
-        tools:layout_editor_absoluteY="95dp" />
-
+        app:layout_constraintTop_toBottomOf="@+id/Haut"
+        app:srcCompat="@drawable/bed" />
 
     <ImageView
+<<<<<<< HEAD
         android:id="@+id/imageView16"
         android:layout_width="78dp"
         android:layout_height="154dp"
@@ -223,112 +334,69 @@
         app:layout_constraintEnd_toStartOf="@+id/imageView15"
         app:srcCompat="@drawable/beater"
         tools:layout_editor_absoluteY="206dp" />
+=======
+        android:id="@+id/Kitchen"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="227dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginRight="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/blindBed"
+        app:layout_constraintTop_toBottomOf="@+id/Haut"
+        app:srcCompat="@drawable/beater" />
+>>>>>>> d199cb1a45b2d8f88dae78c473d71e93be6d0f2c
 
     <ImageView
-        android:id="@+id/imageView17"
-        android:layout_width="82dp"
-        android:layout_height="249dp"
-        app:srcCompat="@drawable/bathtub"
-        tools:layout_editor_absoluteX="151dp"
-        tools:layout_editor_absoluteY="335dp" />
+        android:id="@+id/Bath"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="23dp"
+        android:layout_marginEnd="140dp"
+        android:layout_marginRight="140dp"
+        android:layout_marginTop="23dp"
+        app:layout_constraintBottom_toBottomOf="@+id/Bas"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/inventaire"
+        app:layout_constraintTop_toBottomOf="@+id/lightBed1"
+        app:srcCompat="@drawable/bathtub" />
 
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/coffeeKitchen"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
         android:background="@android:color/transparent"
-        app:srcCompat="@drawable/lightbulb"
-        tools:layout_editor_absoluteX="247dp"
-        tools:layout_editor_absoluteY="263dp" />
+        app:layout_constraintEnd_toStartOf="@+id/plugKitchen1"
+        app:layout_constraintTop_toTopOf="@+id/plugKitchen1"
+        app:srcCompat="@drawable/coffee" />
 
     <ImageButton
-        android:id="@+id/imageButton3"
+        android:id="@+id/blindBed"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginEnd="83dp"
+        android:layout_marginLeft="145dp"
+        android:layout_marginRight="83dp"
+        android:layout_marginStart="145dp"
         android:background="@android:color/transparent"
-        app:srcCompat="@drawable/lightbulb"
-        tools:layout_editor_absoluteX="87dp"
-        tools:layout_editor_absoluteY="469dp" />
+        app:layout_constraintBottom_toTopOf="@+id/radiatorBed"
+        app:layout_constraintEnd_toStartOf="@+id/Kitchen"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/blinds" />
 
     <ImageButton
-        android:id="@+id/imageButton5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/location"
+        android:layout_width="42dp"
+        android:layout_height="70dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginRight="12dp"
         android:background="@android:color/transparent"
-        app:srcCompat="@drawable/lightbulb"
-        tools:layout_editor_absoluteX="87dp"
-        tools:layout_editor_absoluteY="422dp" />
+        app:layout_constraintBottom_toTopOf="@+id/Bas"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/location" />
 
-    <ImageButton
-        android:id="@+id/imageButton12"
-        android:layout_width="40dp"
-        android:layout_height="43dp"
-        android:background="@android:color/transparent"
-        app:srcCompat="@drawable/plug"
-        tools:layout_editor_absoluteX="96dp"
-        tools:layout_editor_absoluteY="262dp" />
-
-    <ImageButton
-        android:id="@+id/imageButton16"
-        android:layout_width="40dp"
-        android:layout_height="43dp"
-        android:background="@android:color/transparent"
-        app:srcCompat="@drawable/plug"
-        tools:layout_editor_absoluteX="288dp"
-        tools:layout_editor_absoluteY="262dp" />
-
-    <ImageButton
-        android:id="@+id/imageButton15"
-        android:layout_width="40dp"
-        android:layout_height="43dp"
-        android:background="@android:color/transparent"
-        app:srcCompat="@drawable/plug"
-        tools:layout_editor_absoluteX="328dp"
-        tools:layout_editor_absoluteY="262dp" />
-
-    <ImageButton
-        android:id="@+id/imageButton14"
-        android:layout_width="40dp"
-        android:layout_height="43dp"
-        android:background="@android:color/transparent"
-        app:srcCompat="@drawable/plug"
-        tools:layout_editor_absoluteX="247dp"
-        tools:layout_editor_absoluteY="422dp" />
-
-    <ImageButton
-        android:id="@+id/imageButton13"
-        android:layout_width="40dp"
-        android:layout_height="43dp"
-        android:background="@android:color/transparent"
-        app:srcCompat="@drawable/plug"
-        tools:layout_editor_absoluteX="56dp"
-        tools:layout_editor_absoluteY="262dp" />
-
-    <ImageButton
-        android:id="@+id/imageButton18"
-        android:layout_width="45dp"
-        android:layout_height="44dp"
-        android:background="@android:color/transparent"
-        app:srcCompat="@drawable/coffee"
-        tools:layout_editor_absoluteX="226dp"
-        tools:layout_editor_absoluteY="203dp" />
-
-    <ImageButton
-        android:id="@+id/imageButton20"
-        android:layout_width="45dp"
-        android:layout_height="41dp"
-        android:background="@android:color/transparent"
-        app:srcCompat="@drawable/radiator"
-        tools:layout_editor_absoluteX="226dp"
-        tools:layout_editor_absoluteY="165dp" />
-
-    <ImageButton
-        android:id="@+id/imageButton22"
-        android:layout_width="50dp"
-        android:layout_height="42dp"
-        android:background="@android:color/transparent"
-        app:srcCompat="@drawable/blinds"
-        tools:layout_editor_absoluteX="134dp"
-        tools:layout_editor_absoluteY="205dp" />
 
 </android.support.constraint.ConstraintLayout>
