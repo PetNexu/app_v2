@@ -9,8 +9,11 @@
         android:id="@+id/imageView8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@+id/titreLumiere2"
-        app:layout_constraintEnd_toStartOf="@+id/titreLumiere2"
+        android:layout_marginLeft="30dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="107dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/arrow" />
 
     <Switch
@@ -160,13 +163,13 @@
         android:id="@+id/titreLumiere"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="9dp"
-        android:layout_marginRight="9dp"
-        android:layout_marginTop="29dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="31dp"
         android:text="Radiateur"
         android:textColor="#000000"
         android:textSize="30sp"
-        app:layout_constraintEnd_toEndOf="@+id/textLumBureau"
+        app:layout_constraintStart_toEndOf="@+id/imageView6"
         app:layout_constraintTop_toBottomOf="@+id/textLumBureau" />
 
     <TextView
@@ -174,14 +177,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="40dp"
-        android:layout_marginLeft="40dp"
+        android:layout_marginLeft="80dp"
         android:layout_marginRight="40dp"
-        android:layout_marginStart="40dp"
+        android:layout_marginStart="80dp"
         android:layout_marginTop="40dp"
         android:text="Electroménager"
         android:textColor="#000000"
         android:textSize="30sp"
         app:layout_constraintEnd_toStartOf="@+id/statistiques"
+        app:layout_constraintHorizontal_bias="0.337"
         app:layout_constraintStart_toStartOf="@+id/inventaire"
         app:layout_constraintTop_toBottomOf="@+id/textLumBureau2" />
 
@@ -189,17 +193,13 @@
         android:id="@+id/titreLumiere2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="62dp"
-        android:layout_marginLeft="56dp"
-        android:layout_marginRight="62dp"
-        android:layout_marginStart="56dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"
         android:text="Lumières"
         android:textColor="#000000"
         android:textSize="30sp"
-        app:layout_constraintEnd_toEndOf="@+id/textLumBureau2"
-        app:layout_constraintStart_toStartOf="@+id/Haut"
-        app:layout_constraintTop_toBottomOf="@+id/Haut" />
+        app:layout_constraintBottom_toBottomOf="@+id/imageView8"
+        app:layout_constraintStart_toEndOf="@+id/imageView8" />
 
     <Switch
         android:id="@+id/switch1"
@@ -304,16 +304,22 @@
         android:id="@+id/imageView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="1dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginStart="30dp"
         app:layout_constraintBottom_toBottomOf="@+id/titreLumiere3"
-        app:layout_constraintEnd_toStartOf="@+id/titreLumiere3"
+        app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/arrow" />
 
     <ImageView
         android:id="@+id/imageView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="2dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginStart="30dp"
         app:layout_constraintBottom_toBottomOf="@+id/titreLumiere"
-        app:layout_constraintEnd_toStartOf="@+id/titreLumiere"
+        app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/arrow" />
 
 </android.support.constraint.ConstraintLayout>
