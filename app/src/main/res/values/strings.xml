@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">PETNexu</string>
+    <string name="nom_de_l_objectif">Nom de l\'Objectif</string>
 </resources>
