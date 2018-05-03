@@ -18,10 +18,12 @@ public class PageCreerAmbiance extends AppCompatActivity{
     ImageButton buttonCompte;
     ImageButton valider;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.creer_ambiance);
+
 
         //Bouton vers accueil
         buttonAccueil = (ImageButton) findViewById(R.id.logo);
