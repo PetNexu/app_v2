@@ -25,8 +25,6 @@ public class PageStatistiques extends AppCompatActivity {
     ImageView bar60;
     ImageView bar80;
     ImageView bar100;
-    protected ProgressBar simpleProgressBar;
-    protected TextView loading;
     private int tempsDetravail;
     private int tempsPasse;
     private int value;
@@ -35,16 +33,8 @@ public class PageStatistiques extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.statistiques);
-<<<<<<< HEAD
-        simpleProgressBar = (ProgressBar) findViewById(R.id.progressBar2);
-        loading = (TextView) findViewById(R.id.loading);
         tempsDetravail = R.id.max;
         tempsPasse = 0;
-=======
-      //  simpleProgressBar = (ProgressBar)findViewById(R.id.progressBar2);
-        //loading =(TextView)findViewById(R.id.loading);
-        //timer_runtime = R.id.max * 3600;
->>>>>>> 55b9d5b411e365877bec66bced2128703d753cd5
 
         //Bouton vers accueil
         buttonAccueil = (ImageButton) findViewById(R.id.logo);
