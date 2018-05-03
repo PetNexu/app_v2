@@ -15,6 +15,9 @@ public class PageCompte extends AppCompatActivity{
     ImageButton buttonMap;
     ImageButton buttonStatistiques;
     ImageButton buttonCompte;
+    ImageButton buttonParam;
+    ImageButton buttonParamNotifs;
+    ImageButton buttonInfos;
     ImageButton test;
 
     @Override
@@ -33,7 +36,35 @@ public class PageCompte extends AppCompatActivity{
             }
         });
 
+        //Bouton vers Paramètres du compte
+        buttonParam = (ImageButton) findViewById(R.id.parametresCompte);
+        buttonParam.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intentLoad = new Intent(PageCompte.this, PageParametresCompte.class);
+                startActivity(intentLoad);
+            }
+        });
 
+        //Bouton vers Paramètres des Notifications
+        buttonParamNotifs = (ImageButton) findViewById(R.id.parametresNotifications);
+        buttonParamNotifs.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intentLoad = new Intent(PageCompte.this, PageParametresNotications.class);
+                startActivity(intentLoad);
+            }
+        });
+
+        //Bouton vers Informations
+        buttonInfos = (ImageButton) findViewById(R.id.informations);
+        buttonInfos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intentLoad = new Intent(PageCompte.this, PageInformations.class);
+                startActivity(intentLoad);
+            }
+        });
 
         //Bouton vers inventaire
         buttonInventaire = (ImageButton) findViewById(R.id.inventaire);
