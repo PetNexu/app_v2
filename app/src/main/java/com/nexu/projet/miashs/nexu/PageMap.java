@@ -88,7 +88,7 @@ public class PageMap extends AppCompatActivity {
         });
 
         //Bouton vers Objet de la machine à café de Cuisine
-        buttonCoffee = (ImageButton) findViewById(R.id.coffeeKitchen;
+        buttonCoffee = (ImageButton) findViewById(R.id.coffeeKitchen);
         buttonCoffee.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
