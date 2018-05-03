@@ -15,6 +15,12 @@ public class PageMap extends AppCompatActivity {
     ImageButton buttonMap;
     ImageButton buttonStatistiques;
     ImageButton buttonCompte;
+    ImageButton buttonLightBed ;
+    ImageButton buttonLightBed1 ;
+    ImageButton buttonPlugBed;
+    ImageButton buttonRadiatorBed;
+    ImageButton buttonBlind;
+    ImageButton buttonCoffee;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -27,6 +33,66 @@ public class PageMap extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intentLoad = new Intent(PageMap.this, MainActivity.class);
+                startActivity(intentLoad);
+            }
+        });
+
+        //Bouton vers Objet de la lampe Chambre 1
+        buttonLightBed = (ImageButton) findViewById(R.id.lightBed1);
+        buttonLightBed.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intentLoad = new Intent(PageMap.this, PageObjet.class);
+                startActivity(intentLoad);
+            }
+        });
+
+        //Bouton vers Objet de la lampe Chambre 2
+        buttonLightBed1 = (ImageButton) findViewById(R.id.lightBed2);
+        buttonLightBed1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intentLoad = new Intent(PageMap.this, PageObjet.class);
+                startActivity(intentLoad);
+            }
+        });
+
+        //Bouton vers Objet de la prise Chambre
+        buttonPlugBed = (ImageButton) findViewById(R.id.plugBed);
+        buttonPlugBed.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intentLoad = new Intent(PageMap.this, PageObjet.class);
+                startActivity(intentLoad);
+            }
+        });
+
+        //Bouton vers Objet du radiateur de Chambre
+        buttonRadiatorBed = (ImageButton) findViewById(R.id.radiatorBed);
+        buttonRadiatorBed.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intentLoad = new Intent(PageMap.this, PageObjet.class);
+                startActivity(intentLoad);
+            }
+        });
+
+        //Bouton vers Objet des volets de Chambre
+        buttonBlind = (ImageButton) findViewById(R.id.blindBed);
+        buttonBlind.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intentLoad = new Intent(PageMap.this, PageObjet.class);
+                startActivity(intentLoad);
+            }
+        });
+
+        //Bouton vers Objet de la machine à café de Cuisine
+        buttonCoffee = (ImageButton) findViewById(R.id.coffeeKitchen;
+        buttonCoffee.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intentLoad = new Intent(PageMap.this, PageObjet.class);
                 startActivity(intentLoad);
             }
         });
