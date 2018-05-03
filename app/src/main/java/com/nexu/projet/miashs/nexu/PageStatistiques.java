@@ -117,7 +117,6 @@ public class PageStatistiques extends AppCompatActivity {
 
     public void update(int tempsPasse){
         value =(100-(tempsDetravail - tempsPasse) * 100 / tempsDetravail);
-
         if((value<20) && (value>0)){
             bar0.setVisibility(View.INVISIBLE);
             bar020.setVisibility(View.VISIBLE);
