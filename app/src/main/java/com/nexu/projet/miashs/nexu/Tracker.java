@@ -22,14 +22,8 @@ import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.LocationListener;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationServices;
-import com.google.android.gms.maps.CameraUpdateFactory;
-import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.OnMapReadyCallback;
-import com.google.android.gms.maps.SupportMapFragment;
-import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.MarkerOptions;
 
-public class Tracker extends AppCompatActivity implements GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener, LocationListener,OnMapReadyCallback {
+public class Tracker extends AppCompatActivity implements GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener, LocationListener {
 
     ImageButton buttonInventaire;
     ImageButton buttonAccueil;
@@ -54,7 +48,7 @@ public class Tracker extends AppCompatActivity implements GoogleApiClient.Connec
     static private int FASTEST_INTERVAL = 3000; //sec
     static private int DISPLACEMENT = 10;//meters
 
-    private GoogleMap mMap;
+    //private GoogleMap mMap;
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int grantResults[]) {
@@ -178,9 +172,9 @@ public class Tracker extends AppCompatActivity implements GoogleApiClient.Connec
         });
 
         //google map
-        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
+        /*SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
-        mapFragment.getMapAsync(this);
+        mapFragment.getMapAsync(this);*/
     }
     @Override
         protected void onStart() {
@@ -297,14 +291,14 @@ public class Tracker extends AppCompatActivity implements GoogleApiClient.Connec
             displayLocation();
     }
 
-    @Override
+    /*@Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
         LatLng sydney= new LatLng( -34,151 );
         mMap.addMarker( new MarkerOptions().position( sydney).title("Marker in Sydney"));
         mMap.moveCamera( CameraUpdateFactory.newLatLng( sydney ) );
 
-    }
+    }*/
 }
 
 

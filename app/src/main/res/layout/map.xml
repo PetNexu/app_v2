@@ -222,7 +222,7 @@
         android:layout_marginRight="30dp"
         app:layout_constraintEnd_toStartOf="@+id/imageView15"
         app:srcCompat="@drawable/beater"
-        tools:layout_editor_absoluteY="133dp" />
+        tools:layout_editor_absoluteY="206dp" />
 
     <ImageView
         android:id="@+id/imageView17"
