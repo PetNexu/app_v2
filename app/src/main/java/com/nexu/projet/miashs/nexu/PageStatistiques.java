@@ -35,7 +35,6 @@ public class PageStatistiques extends AppCompatActivity {
         setContentView(R.layout.statistiques);
         tempsDetravail = R.id.max;
         tempsPasse = 0;
-
         //Bouton vers accueil
         buttonAccueil = (ImageButton) findViewById(R.id.logo);
         buttonAccueil.setOnClickListener(new View.OnClickListener() {

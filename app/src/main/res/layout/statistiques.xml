@@ -8,180 +8,239 @@
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/Haut"
-        android:layout_width="384dp"
-        android:layout_height="wrap_content"
-        android:background="@color/colorPrimary"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme" />
-
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/Bas"
-        android:layout_width="384dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="@color/colorPrimary"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="511dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/Bas"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="374dp"
+        android:layout_width="0dp"
         android:layout_height="62dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="7dp"
         android:text="Mes statistiques"
         android:textAlignment="center"
         android:textSize="30sp"
-        tools:layout_editor_absoluteX="5dp"
-        tools:layout_editor_absoluteY="7dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
         android:id="@+id/logo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@android:color/transparent"
-        app:srcCompat="@drawable/logopet1"
-        tools:layout_editor_absoluteX="324dp" />
+        app:layout_constraintEnd_toEndOf="@+id/Haut"
+        app:layout_constraintTop_toTopOf="@+id/Haut"
+        app:srcCompat="@drawable/logopet1" />
 
     <ImageButton
         android:id="@+id/Compte"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginRight="2dp"
         android:background="@android:color/transparent"
-        app:srcCompat="@drawable/account"
-        tools:layout_editor_absoluteX="328dp"
-        tools:layout_editor_absoluteY="511dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/statistiques"
+        app:layout_constraintTop_toTopOf="@+id/Bas"
+        app:srcCompat="@drawable/account" />
 
     <ImageButton
         android:id="@+id/inventaire"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginEnd="23dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginRight="23dp"
+        android:layout_marginStart="2dp"
         android:background="@android:color/transparent"
-        app:srcCompat="@drawable/list"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="511dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/calendrier"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/Bas"
+        app:srcCompat="@drawable/list" />
 
     <ImageButton
         android:id="@+id/calendrier"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginEnd="88dp"
+        android:layout_marginLeft="88dp"
+        android:layout_marginRight="88dp"
+        android:layout_marginStart="88dp"
         android:background="@android:color/transparent"
-        app:srcCompat="@drawable/calendar"
-        tools:layout_editor_absoluteX="93dp"
-        tools:layout_editor_absoluteY="511dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/encouragement"
+        app:layout_constraintStart_toStartOf="@+id/textView"
+        app:srcCompat="@drawable/calendar" />
 
     <ImageButton
         android:id="@+id/programme"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginEnd="6dp"
+        android:layout_marginRight="6dp"
         android:background="@android:color/transparent"
-        app:srcCompat="@drawable/lightbulb"
-        tools:layout_editor_absoluteX="147dp"
-        tools:layout_editor_absoluteY="511dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/map"
+        app:layout_constraintStart_toEndOf="@+id/calendrier"
+        app:layout_constraintTop_toTopOf="@+id/Bas"
+        app:srcCompat="@drawable/lightbulb" />
 
     <ImageButton
         android:id="@+id/map"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginEnd="9dp"
+        android:layout_marginRight="9dp"
         android:background="@android:color/transparent"
-        app:srcCompat="@drawable/home"
-        tools:layout_editor_absoluteX="207dp"
-        tools:layout_editor_absoluteY="511dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/statistiques"
+        app:layout_constraintStart_toEndOf="@+id/programme"
+        app:layout_constraintTop_toTopOf="@+id/Bas"
+        app:srcCompat="@drawable/home" />
 
     <ImageButton
         android:id="@+id/statistiques"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginRight="4dp"
         android:background="@android:color/transparent"
-        app:srcCompat="@drawable/bars"
-        tools:layout_editor_absoluteX="270dp"
-        tools:layout_editor_absoluteY="511dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/Compte"
+        app:layout_constraintStart_toEndOf="@+id/map"
+        app:layout_constraintTop_toTopOf="@+id/Bas"
+        app:srcCompat="@drawable/bars" />
 
     <TextView
         android:id="@+id/encouragement"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="11dp"
+        android:layout_marginStart="11dp"
         android:text="Mes objectifs : "
         android:textAlignment="center"
         android:textColor="#000000"
         android:textSize="30sp"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="69dp" />
+        app:layout_constraintStart_toStartOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <TextView
         android:id="@+id/travail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Je voudrais travailler : \n heures cette semaine"
+        android:layout_marginLeft="16dp"
 
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:text="Je voudrais travailler : \n heures cette semaine"
         android:textColor="#000000"
         android:textSize="27sp"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="134dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/encouragement" />
 
     <EditText
         android:id="@+id/max"
         android:layout_width="66dp"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="22dp"
+        android:layout_marginRight="22dp"
         android:ems="100"
         android:inputType="number"
-        tools:layout_editor_absoluteX="296dp"
-        tools:layout_editor_absoluteY="133dp" />
+        app:layout_constraintBaseline_toBaselineOf="@+id/travail"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 
     <TextView
         android:id="@+id/textView15"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="27dp"
         android:text="Objectif de la semaine :"
         android:textColor="#000000"
         android:textSize="27sp"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="261dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button3" />
 
     <Button
         android:id="@+id/button3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="7dp"
         android:text="Valider"
-        tools:layout_editor_absoluteX="280dp"
-        tools:layout_editor_absoluteY="186dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/travail" />
 
     <TextView
         android:id="@+id/textView20"
-        android:layout_width="294dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
         android:text="Aujourd'hui j'ai travaillé :  heures"
         android:textSize="27sp"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="312dp" />
+        app:layout_constraintEnd_toStartOf="@+id/textInputLayout5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView15" />
 
     <Button
         android:id="@+id/button4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="28dp"
         android:text="Envoyer"
-        tools:layout_editor_absoluteX="296dp"
-        tools:layout_editor_absoluteY="381dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout5" />
 
     <android.support.design.widget.TextInputLayout
         android:id="@+id/textInputLayout5"
-        android:layout_width="58dp"
+        android:layout_width="53dp"
         android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="310dp"
-        tools:layout_editor_absoluteY="312dp">
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="73dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView20"
+        app:layout_constraintTop_toBottomOf="@+id/button3">
 
         <android.support.design.widget.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="hint" />
+            android:layout_width="71dp"
+            android:layout_height="46dp" />
     </android.support.design.widget.TextInputLayout>
-
-    <TextView
-        android:id="@+id/textView11"
-        android:layout_width="wrap_content"
-        android:layout_height="36dp"
-        android:text="TextView"
-        tools:layout_editor_absoluteX="310dp"
-        tools:layout_editor_absoluteY="266dp" />
 
 </android.support.constraint.ConstraintLayout>
