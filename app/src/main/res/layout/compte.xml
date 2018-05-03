@@ -128,7 +128,7 @@
         android:id="@+id/statistiques"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="3dp"
+        android:layout_marginBottom="6dp"
         android:layout_marginEnd="17dp"
         android:layout_marginRight="17dp"
         android:background="@android:color/transparent"

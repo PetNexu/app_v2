@@ -5,6 +5,49 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <TextView
+        android:id="@+id/titre2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
+        android:text="Actions possibles de l'objet : "
+        android:textColor="#000000"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titre4" />
+
+    <TextView
+        android:id="@+id/titre4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="188dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="188dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="68dp"
+        android:text="Lieu : "
+        android:textColor="#000000"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="@+id/textView"
+        app:layout_constraintHorizontal_bias="0.053"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logo" />
+
+    <TextView
+        android:id="@+id/titre3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="100dp"
+        android:layout_marginRight="100dp"
+        android:layout_marginTop="16dp"
+        android:text="Nom de l'objet "
+        android:textColor="#000000"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/logo" />
+
     <android.support.v7.widget.Toolbar
         android:id="@+id/Haut"
         android:layout_width="0dp"
@@ -128,5 +171,16 @@
         app:layout_constraintEnd_toStartOf="@+id/Compte"
         app:layout_constraintStart_toEndOf="@+id/map"
         app:srcCompat="@drawable/bars" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:layout_marginLeft="23dp"
+        android:layout_marginStart="23dp"
+        android:text="Supprimer cet Objet"
+        app:layout_constraintBottom_toTopOf="@+id/Bas"
+        app:layout_constraintStart_toStartOf="@+id/calendrier" />
 
 </android.support.constraint.ConstraintLayout>
