@@ -21,6 +21,14 @@ public class PageMap extends AppCompatActivity {
     ImageButton buttonRadiatorBed;
     ImageButton buttonBlind;
     ImageButton buttonCoffee;
+    ImageButton buttonPlugK1;
+    ImageButton buttonPlugK2;
+    ImageButton buttonLightK;
+    ImageButton buttonPlugBath;
+    ImageButton buttonLightBath;
+    ImageButton buttonRadiatorBath;
+    ImageButton buttonLocation;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -97,7 +105,75 @@ public class PageMap extends AppCompatActivity {
             }
         });
 
+        //Bouton vers Objet de la prise de Cuisine 1
+        buttonPlugK1 = (ImageButton) findViewById(R.id.plugKitchen1);
+        buttonPlugK1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intentLoad = new Intent(PageMap.this, PageObjet.class);
+                startActivity(intentLoad);
+            }
+        });
 
+        //Bouton vers Objet de la prise de Cuisine 2
+        buttonPlugK2 = (ImageButton) findViewById(R.id.plugKitchen2);
+        buttonPlugK2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intentLoad = new Intent(PageMap.this, PageObjet.class);
+                startActivity(intentLoad);
+            }
+        });
+
+        //Bouton vers Objet de la lampe de Cuisine
+        buttonLightK = (ImageButton) findViewById(R.id.lightKitchen);
+        buttonLightK.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intentLoad = new Intent(PageMap.this, PageObjet.class);
+                startActivity(intentLoad);
+            }
+        });
+
+        //Bouton vers Objet de la prise de Sdb
+        buttonPlugBath = (ImageButton) findViewById(R.id.plugBath);
+        buttonPlugBath.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intentLoad = new Intent(PageMap.this, PageObjet.class);
+                startActivity(intentLoad);
+            }
+        });
+
+        //Bouton vers Objet de la lampe de Sdb
+        buttonLightBath = (ImageButton) findViewById(R.id.lightBath);
+        buttonLightBath.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intentLoad = new Intent(PageMap.this, PageObjet.class);
+                startActivity(intentLoad);
+            }
+        });
+
+        //Bouton vers Objet deu radiateur de Sdb
+        buttonRadiatorBath = (ImageButton) findViewById(R.id.radiatorBath);
+        buttonRadiatorBath.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intentLoad = new Intent(PageMap.this, PageObjet.class);
+                startActivity(intentLoad);
+            }
+        });
+
+        //Bouton vers Tracker de location
+        buttonLocation = (ImageButton) findViewById(R.id.location);
+        buttonLocation.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intentLoad = new Intent(PageMap.this, Tracker.class);
+                startActivity(intentLoad);
+            }
+        });
 
         //Bouton vers inventaire
         buttonInventaire = (ImageButton) findViewById(R.id.inventaire);
