@@ -221,7 +221,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="17dp"
-        android:text="Félicitation! vous avez atteint vos objectifs"
+        android:text="Bravo! vous avez atteint vos objectifs"
         android:textSize="24dp"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="@+id/progressBar2"

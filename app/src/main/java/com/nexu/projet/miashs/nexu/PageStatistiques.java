@@ -135,4 +135,5 @@ public class PageStatistiques extends AppCompatActivity {
     public void onContinue(){
         loading.setVisibility(View.VISIBLE);
     }
+
 }
