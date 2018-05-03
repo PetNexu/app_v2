@@ -21,7 +21,8 @@
         android:background="@color/colorPrimary"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
-        tools:layout_editor_absoluteY="518dp" />
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="511dp" />
 
     <TextView
         android:id="@+id/textView"
@@ -48,7 +49,7 @@
         android:background="@android:color/transparent"
         app:srcCompat="@drawable/account"
         tools:layout_editor_absoluteX="328dp"
-        tools:layout_editor_absoluteY="524dp" />
+        tools:layout_editor_absoluteY="511dp" />
 
     <ImageButton
         android:id="@+id/inventaire"
@@ -57,7 +58,7 @@
         android:background="@android:color/transparent"
         app:srcCompat="@drawable/list"
         tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="524dp" />
+        tools:layout_editor_absoluteY="511dp" />
 
     <ImageButton
         android:id="@+id/calendrier"
@@ -65,8 +66,8 @@
         android:layout_height="wrap_content"
         android:background="@android:color/transparent"
         app:srcCompat="@drawable/calendar"
-        tools:layout_editor_absoluteX="81dp"
-        tools:layout_editor_absoluteY="524dp" />
+        tools:layout_editor_absoluteX="93dp"
+        tools:layout_editor_absoluteY="511dp" />
 
     <ImageButton
         android:id="@+id/programme"
@@ -74,8 +75,8 @@
         android:layout_height="wrap_content"
         android:background="@android:color/transparent"
         app:srcCompat="@drawable/lightbulb"
-        tools:layout_editor_absoluteX="144dp"
-        tools:layout_editor_absoluteY="524dp" />
+        tools:layout_editor_absoluteX="147dp"
+        tools:layout_editor_absoluteY="511dp" />
 
     <ImageButton
         android:id="@+id/map"
@@ -84,7 +85,7 @@
         android:background="@android:color/transparent"
         app:srcCompat="@drawable/home"
         tools:layout_editor_absoluteX="207dp"
-        tools:layout_editor_absoluteY="524dp" />
+        tools:layout_editor_absoluteY="511dp" />
 
     <ImageButton
         android:id="@+id/statistiques"
@@ -92,8 +93,8 @@
         android:layout_height="wrap_content"
         android:background="@android:color/transparent"
         app:srcCompat="@drawable/bars"
-        tools:layout_editor_absoluteX="271dp"
-        tools:layout_editor_absoluteY="524dp" />
+        tools:layout_editor_absoluteX="270dp"
+        tools:layout_editor_absoluteY="511dp" />
 
     <TextView
         android:id="@+id/encouragement"
@@ -115,16 +116,16 @@
         android:textColor="#000000"
         android:textSize="27sp"
         tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="124dp" />
+        tools:layout_editor_absoluteY="134dp" />
 
     <EditText
         android:id="@+id/max"
-        android:layout_width="65dp"
+        android:layout_width="66dp"
         android:layout_height="wrap_content"
         android:ems="100"
         android:inputType="number"
         tools:layout_editor_absoluteX="296dp"
-        tools:layout_editor_absoluteY="124dp" />
+        tools:layout_editor_absoluteY="133dp" />
 
 
     <TextView
@@ -135,7 +136,7 @@
         android:textColor="#000000"
         android:textSize="27sp"
         tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="245dp" />
+        tools:layout_editor_absoluteY="261dp" />
 
     <Button
         android:id="@+id/button3"
@@ -143,15 +144,7 @@
         android:layout_height="wrap_content"
         android:text="Valider"
         tools:layout_editor_absoluteX="280dp"
-        tools:layout_editor_absoluteY="194dp" />
-
-    <TextView
-        android:id="@+id/textView7"
-        android:layout_width="wrap_content"
-        android:layout_height="37dp"
-        android:text="TextView"
-        tools:layout_editor_absoluteX="310dp"
-        tools:layout_editor_absoluteY="245dp" />
+        tools:layout_editor_absoluteY="186dp" />
 
     <TextView
         android:id="@+id/textView20"
@@ -160,13 +153,22 @@
         android:text="Aujourd'hui j'ai travaillé :  heures"
         android:textSize="27sp"
         tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="301dp" />
+        tools:layout_editor_absoluteY="312dp" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Envoyer"
+        tools:layout_editor_absoluteX="296dp"
+        tools:layout_editor_absoluteY="381dp" />
 
     <android.support.design.widget.TextInputLayout
-        android:layout_width="59dp"
+        android:id="@+id/textInputLayout5"
+        android:layout_width="58dp"
         android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="309dp"
-        tools:layout_editor_absoluteY="301dp">
+        tools:layout_editor_absoluteX="310dp"
+        tools:layout_editor_absoluteY="312dp">
 
         <android.support.design.widget.TextInputEditText
             android:layout_width="match_parent"
@@ -174,12 +176,12 @@
             android:hint="hint" />
     </android.support.design.widget.TextInputLayout>
 
-    <Button
-        android:id="@+id/button4"
+    <TextView
+        android:id="@+id/textView11"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Envoyer"
-        tools:layout_editor_absoluteX="280dp"
-        tools:layout_editor_absoluteY="371dp" />
+        android:layout_height="36dp"
+        android:text="TextView"
+        tools:layout_editor_absoluteX="310dp"
+        tools:layout_editor_absoluteY="266dp" />
 
 </android.support.constraint.ConstraintLayout>
