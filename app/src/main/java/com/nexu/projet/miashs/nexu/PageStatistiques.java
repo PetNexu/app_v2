@@ -8,6 +8,8 @@ import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.ImageView;
+import android.widget.Button;
+
 public class PageStatistiques extends AppCompatActivity {
 
     ImageButton buttonInventaire;
@@ -17,6 +19,8 @@ public class PageStatistiques extends AppCompatActivity {
     ImageButton buttonMap;
     ImageButton buttonStatistiques;
     ImageButton buttonCompte;
+    Button buttonObjectif;
+    Button buttonTravail;
     ImageButton test;
     ImageView bar0;
     ImageView bar020;
@@ -28,6 +32,7 @@ public class PageStatistiques extends AppCompatActivity {
     private int tempsDetravail;
     private int tempsPasse;
     private int value;
+    protected TextView nbHeureTravail;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -105,9 +110,26 @@ public class PageStatistiques extends AppCompatActivity {
                 startActivity(intentLoad);
             }
         });
-    }
-    public void setTempsPasse(int temps){
-        this.tempsPasse = temps;
+        nbHeureTravail = (TextView) findViewById(R.id.textView7);
+        //Bouton objectifs
+        buttonObjectif = (Button)findViewById(R.id.button3);
+        buttonObjectif.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                tempsDetravail = R.id.max;
+                nbHeureTravail.setText(tempsDetravail);
+            }
+        });
+        //Bouton Travail
+        buttonTravail = (Button)findViewById(R.id.button4);
+        buttonTravail.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v) {
+                tempsPasse = R.id.tempsPasse;
+                update(tempsPasse);
+            }
+        });
     }
 
     public void update(int tempsPasse){

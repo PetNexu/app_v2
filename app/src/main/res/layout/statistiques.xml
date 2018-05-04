@@ -10,9 +10,11 @@
         android:id="@+id/Haut"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="389dp"
         android:background="@color/colorPrimary"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
+        app:layout_constraintBottom_toTopOf="@+id/bar020"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -31,7 +33,7 @@
     <TextView
         android:id="@+id/textView"
         android:layout_width="0dp"
-        android:layout_height="62dp"
+        android:layout_height="0dp"
         android:layout_marginEnd="5dp"
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
@@ -40,6 +42,7 @@
         android:text="Mes statistiques"
         android:textAlignment="center"
         android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/encouragement"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -57,11 +60,10 @@
         android:id="@+id/Compte"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
         android:layout_marginEnd="2dp"
         android:layout_marginRight="2dp"
+        android:layout_marginTop="3dp"
         android:background="@android:color/transparent"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/statistiques"
         app:layout_constraintTop_toTopOf="@+id/Bas"
@@ -71,13 +73,12 @@
         android:id="@+id/inventaire"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
         android:layout_marginEnd="23dp"
         android:layout_marginLeft="2dp"
         android:layout_marginRight="23dp"
         android:layout_marginStart="2dp"
+        android:layout_marginTop="3dp"
         android:background="@android:color/transparent"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/calendrier"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/Bas"
@@ -88,25 +89,20 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
-        android:layout_marginEnd="88dp"
-        android:layout_marginLeft="88dp"
-        android:layout_marginRight="88dp"
-        android:layout_marginStart="88dp"
         android:background="@android:color/transparent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/encouragement"
-        app:layout_constraintStart_toStartOf="@+id/textView"
+        app:layout_constraintEnd_toStartOf="@+id/programme"
+        app:layout_constraintStart_toEndOf="@+id/inventaire"
         app:srcCompat="@drawable/calendar" />
 
     <ImageButton
         android:id="@+id/programme"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
         android:layout_marginEnd="6dp"
         android:layout_marginRight="6dp"
+        android:layout_marginTop="3dp"
         android:background="@android:color/transparent"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/map"
         app:layout_constraintStart_toEndOf="@+id/calendrier"
         app:layout_constraintTop_toTopOf="@+id/Bas"
@@ -116,11 +112,10 @@
         android:id="@+id/map"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
         android:layout_marginEnd="9dp"
         android:layout_marginRight="9dp"
+        android:layout_marginTop="3dp"
         android:background="@android:color/transparent"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/statistiques"
         app:layout_constraintStart_toEndOf="@+id/programme"
         app:layout_constraintTop_toTopOf="@+id/Bas"
@@ -130,11 +125,10 @@
         android:id="@+id/statistiques"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
         android:layout_marginEnd="4dp"
         android:layout_marginRight="4dp"
+        android:layout_marginTop="3dp"
         android:background="@android:color/transparent"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/Compte"
         app:layout_constraintStart_toEndOf="@+id/map"
         app:layout_constraintTop_toTopOf="@+id/Bas"
@@ -146,21 +140,22 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="11dp"
         android:layout_marginStart="11dp"
+        android:layout_marginTop="13dp"
         android:text="Mes objectifs : "
         android:textAlignment="center"
         android:textColor="#000000"
         android:textSize="30sp"
         app:layout_constraintStart_toStartOf="@+id/textView"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/Haut" />
 
     <TextView
         android:id="@+id/travail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
 
+        android:layout_marginLeft="16dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="26dp"
         android:text="Je voudrais travailler : \n heures cette semaine"
         android:textColor="#000000"
         android:textSize="27sp"
@@ -169,28 +164,30 @@
 
     <EditText
         android:id="@+id/max"
-        android:layout_width="66dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="22dp"
-        android:layout_marginRight="22dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginStart="16dp"
         android:ems="100"
         android:inputType="number"
-        app:layout_constraintBaseline_toBaselineOf="@+id/travail"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="@+id/textView"
+        app:layout_constraintStart_toStartOf="@+id/button3"
+        app:layout_constraintTop_toTopOf="@+id/travail" />
 
 
     <TextView
         android:id="@+id/textView15"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="27dp"
+        android:layout_marginLeft="18dp"
+        android:layout_marginStart="18dp"
         android:text="Objectif de la semaine :"
         android:textColor="#000000"
         android:textSize="27sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button3" />
+        app:layout_constraintBottom_toTopOf="@+id/tempsPasse"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/button3"
@@ -198,7 +195,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
-        android:layout_marginTop="7dp"
+        android:layout_marginTop="4dp"
         android:text="Valider"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/travail" />
@@ -207,40 +204,85 @@
         android:id="@+id/textView20"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginBottom="161dp"
+        android:layout_marginEnd="6dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="6dp"
+        android:layout_marginStart="5dp"
         android:text="Aujourd'hui j'ai travaillé :  heures"
         android:textSize="27sp"
-        app:layout_constraintEnd_toStartOf="@+id/textInputLayout5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView15" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/Compte"
+        app:layout_constraintStart_toStartOf="@+id/bar0" />
 
     <Button
         android:id="@+id/button4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginEnd="6dp"
+        android:layout_marginRight="6dp"
+        android:layout_marginTop="54dp"
         android:text="Envoyer"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout5" />
+        app:layout_constraintEnd_toEndOf="@+id/bar0"
+        app:layout_constraintTop_toTopOf="@+id/textView20" />
 
     <android.support.design.widget.TextInputLayout
-        android:id="@+id/textInputLayout5"
-        android:layout_width="53dp"
+        android:id="@+id/tempsPasse"
+        android:layout_width="183dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginTop="73dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView20"
-        app:layout_constraintTop_toBottomOf="@+id/button3">
+        android:layout_marginBottom="9dp"
+        android:layout_marginLeft="13dp"
+        android:layout_marginStart="13dp"
+        app:layout_constraintBottom_toTopOf="@+id/button4"
+        app:layout_constraintStart_toEndOf="@+id/textView15">
 
         <android.support.design.widget.TextInputEditText
             android:layout_width="71dp"
             android:layout_height="46dp" />
     </android.support.design.widget.TextInputLayout>
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="1dp"
+        android:layout_marginStart="1dp"
+        android:text="hhhhh"
+        android:textColor="#000000"
+        android:textSize="30sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/textView15"
+        app:layout_constraintStart_toStartOf="@+id/tempsPasse" />
+
+    <ImageView
+        android:id="@+id/bar0"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginBottom="2dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginStart="2dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@+id/bar020"
+        app:layout_constraintStart_toStartOf="@+id/bar020"
+        app:layout_constraintTop_toBottomOf="@+id/button4"
+        app:srcCompat="@drawable/bar0" />
+
+    <ImageView
+        android:id="@+id/bar020"
+        android:layout_width="382dp"
+        android:layout_height="120dp"
+        android:visibility="invisible"
+        app:srcCompat="@drawable/bar020"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="397dp" />
+
+    <ImageView
+        android:id="@+id/bar20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/Bas"
+        app:layout_constraintStart_toStartOf="@+id/Bas"
+        app:srcCompat="@drawable/bar20" />
+
 
 </android.support.constraint.ConstraintLayout>
