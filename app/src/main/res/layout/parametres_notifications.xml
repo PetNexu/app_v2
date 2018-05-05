@@ -28,22 +28,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/inventaire" />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="2dp"
-        android:layout_marginEnd="11dp"
-        android:layout_marginRight="11dp"
-        android:layout_marginTop="5dp"
-        android:text="Mon compte"
-        android:textAlignment="center"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toBottomOf="@+id/Haut"
-        app:layout_constraintEnd_toEndOf="@+id/logo"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <ImageButton
         android:id="@+id/logo"
         android:layout_width="wrap_content"
@@ -52,6 +36,22 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/Haut"
         app:srcCompat="@drawable/logopet1" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="2dp"
+        android:layout_marginEnd="11dp"
+        android:layout_marginRight="11dp"
+        android:layout_marginTop="5dp"
+        android:text="Notification"
+        android:textAlignment="center"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="@+id/Haut"
+        app:layout_constraintEnd_toEndOf="@+id/logo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
         android:id="@+id/Compte"
@@ -128,5 +128,16 @@
         app:layout_constraintEnd_toStartOf="@+id/Compte"
         app:layout_constraintStart_toEndOf="@+id/map"
         app:srcCompat="@drawable/bars" />
+
+    <TextView
+        android:id="@+id/Notif"
+        android:layout_width="297dp"
+        android:layout_height="140dp"
+        android:text=""
+        android:textColor="#000000"
+        android:textSize="30dp"
+        tools:layout_editor_absoluteX="42dp"
+        tools:layout_editor_absoluteY="109dp" />
+
 
 </android.support.constraint.ConstraintLayout>

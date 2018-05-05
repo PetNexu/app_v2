@@ -38,7 +38,6 @@ public class PageStatistiques extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.statistiques);
-        tempsDetravail = R.id.max;
         tempsPasse = 0;
         //Bouton vers accueil
         buttonAccueil = (ImageButton) findViewById(R.id.logo);
