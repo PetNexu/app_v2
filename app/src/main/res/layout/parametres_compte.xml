@@ -35,13 +35,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="155dp"
+        android:layout_marginLeft="19dp"
+        android:layout_marginStart="19dp"
         android:layout_marginTop="156dp"
         android:text="Modifier le mot de passe : "
         android:textColor="#000000"
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/textView19"
-        app:layout_constraintTop_toBottomOf="@+id/Haut"
-        tools:layout_editor_absoluteX="41dp" />
+        app:layout_constraintStart_toStartOf="@+id/editText"
+        app:layout_constraintTop_toBottomOf="@+id/Haut" />
 
     <TextView
         android:id="@+id/textView12"
@@ -277,6 +279,6 @@
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="244dp" />
+        app:layout_constraintTop_toBottomOf="@+id/textView17" />
 
 </android.support.constraint.ConstraintLayout>

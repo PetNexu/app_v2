@@ -116,7 +116,7 @@ public class PageStatistiques extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 tempsDetravail = R.id.max;
-                nbHeureTravail.setText(tempsDetravail);
+                nbHeureTravail.setText(tempsDetravail+"");
             }
         });
         //Bouton Travail

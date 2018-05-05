@@ -10,30 +10,32 @@
         android:id="@+id/Haut"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="389dp"
+        android:layout_marginBottom="386dp"
+        android:layout_marginTop="1dp"
         android:background="@color/colorPrimary"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
-        app:layout_constraintBottom_toTopOf="@+id/bar020"
+        app:layout_constraintBottom_toTopOf="@+id/imageView15"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/Bas"
-        android:layout_width="0dp"
+        android:layout_width="384dp"
         android:layout_height="wrap_content"
         android:background="@color/colorPrimary"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toStartOf="@+id/map"
+        app:layout_constraintStart_toStartOf="@+id/map" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_marginBottom="11dp"
         android:layout_marginEnd="5dp"
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
@@ -42,7 +44,7 @@
         android:text="Mes statistiques"
         android:textAlignment="center"
         android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/encouragement"
+        app:layout_constraintBottom_toBottomOf="@+id/Haut"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -60,9 +62,9 @@
         android:id="@+id/Compte"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="2dp"
-        android:layout_marginRight="2dp"
-        android:layout_marginTop="3dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="2dp"
         android:background="@android:color/transparent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/statistiques"
@@ -73,11 +75,9 @@
         android:id="@+id/inventaire"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="23dp"
-        android:layout_marginLeft="2dp"
-        android:layout_marginRight="23dp"
-        android:layout_marginStart="2dp"
-        android:layout_marginTop="3dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginTop="4dp"
         android:background="@android:color/transparent"
         app:layout_constraintEnd_toStartOf="@+id/calendrier"
         app:layout_constraintStart_toStartOf="parent"
@@ -88,20 +88,19 @@
         android:id="@+id/calendrier"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
+        android:layout_marginTop="4dp"
         android:background="@android:color/transparent"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/programme"
         app:layout_constraintStart_toEndOf="@+id/inventaire"
+        app:layout_constraintTop_toTopOf="@+id/Bas"
         app:srcCompat="@drawable/calendar" />
 
     <ImageButton
         android:id="@+id/programme"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="6dp"
-        android:layout_marginRight="6dp"
-        android:layout_marginTop="3dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginRight="4dp"
         android:background="@android:color/transparent"
         app:layout_constraintEnd_toStartOf="@+id/map"
         app:layout_constraintStart_toEndOf="@+id/calendrier"
@@ -112,8 +111,8 @@
         android:id="@+id/map"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="9dp"
-        android:layout_marginRight="9dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginRight="12dp"
         android:layout_marginTop="3dp"
         android:background="@android:color/transparent"
         app:layout_constraintEnd_toStartOf="@+id/statistiques"
@@ -125,8 +124,8 @@
         android:id="@+id/statistiques"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="4dp"
-        android:layout_marginRight="4dp"
+        android:layout_marginEnd="7dp"
+        android:layout_marginRight="7dp"
         android:layout_marginTop="3dp"
         android:background="@android:color/transparent"
         app:layout_constraintEnd_toStartOf="@+id/Compte"
@@ -138,14 +137,14 @@
         android:id="@+id/encouragement"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="11dp"
-        android:layout_marginStart="11dp"
-        android:layout_marginTop="13dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="4dp"
         android:text="Mes objectifs : "
         android:textAlignment="center"
         android:textColor="#000000"
         android:textSize="30sp"
-        app:layout_constraintStart_toStartOf="@+id/textView"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Haut" />
 
     <TextView
@@ -153,12 +152,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
+        android:layout_marginEnd="9dp"
         android:layout_marginLeft="16dp"
+        android:layout_marginRight="9dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="26dp"
+        android:layout_marginTop="12dp"
         android:text="Je voudrais travailler : \n heures cette semaine"
         android:textColor="#000000"
         android:textSize="27sp"
+        app:layout_constraintEnd_toStartOf="@+id/max"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/encouragement" />
 
@@ -166,27 +168,28 @@
         android:id="@+id/max"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="15dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="15dp"
-        android:layout_marginStart="16dp"
+        android:layout_marginEnd="18dp"
+        android:layout_marginRight="18dp"
         android:ems="100"
         android:inputType="number"
-        app:layout_constraintEnd_toEndOf="@+id/textView"
-        app:layout_constraintStart_toStartOf="@+id/button3"
-        app:layout_constraintTop_toTopOf="@+id/travail" />
+        app:layout_constraintBaseline_toBaselineOf="@+id/travail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/travail" />
 
 
     <TextView
         android:id="@+id/textView15"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="18dp"
-        android:layout_marginStart="18dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="1dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="1dp"
         android:text="Objectif de la semaine :"
         android:textColor="#000000"
         android:textSize="27sp"
         app:layout_constraintBottom_toTopOf="@+id/tempsPasse"
+        app:layout_constraintEnd_toStartOf="@+id/textView7"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
@@ -195,46 +198,42 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="2dp"
         android:text="Valider"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/travail" />
 
     <TextView
         android:id="@+id/textView20"
-        android:layout_width="0dp"
+        android:layout_width="314dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="161dp"
-        android:layout_marginEnd="6dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="6dp"
-        android:layout_marginStart="5dp"
+        android:layout_marginBottom="31dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
         android:text="Aujourd'hui j'ai travaillé :  heures"
         android:textSize="27sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/Compte"
-        app:layout_constraintStart_toStartOf="@+id/bar0" />
+        app:layout_constraintBottom_toBottomOf="@+id/button4"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/button4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="6dp"
-        android:layout_marginRight="6dp"
-        android:layout_marginTop="54dp"
+        android:layout_marginEnd="7dp"
+        android:layout_marginRight="7dp"
+        android:layout_marginTop="12dp"
         android:text="Envoyer"
-        app:layout_constraintEnd_toEndOf="@+id/bar0"
-        app:layout_constraintTop_toTopOf="@+id/textView20" />
+        app:layout_constraintEnd_toEndOf="@+id/textView20"
+        app:layout_constraintTop_toBottomOf="@+id/tempsPasse" />
 
     <android.support.design.widget.TextInputLayout
         android:id="@+id/tempsPasse"
         android:layout_width="183dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="9dp"
-        android:layout_marginLeft="13dp"
-        android:layout_marginStart="13dp"
-        app:layout_constraintBottom_toTopOf="@+id/button4"
-        app:layout_constraintStart_toEndOf="@+id/textView15">
+        android:layout_marginLeft="14dp"
+        android:layout_marginStart="14dp"
+        app:layout_constraintStart_toEndOf="@+id/textView15"
+        app:layout_constraintTop_toBottomOf="@+id/textView7">
 
         <android.support.design.widget.TextInputEditText
             android:layout_width="71dp"
@@ -245,44 +244,85 @@
         android:id="@+id/textView7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="1dp"
-        android:layout_marginStart="1dp"
-        android:text=""
+        android:text="hhh"
         android:textColor="#000000"
         android:textSize="30sp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/textView15"
-        app:layout_constraintStart_toStartOf="@+id/tempsPasse" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView15"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/bar0"
         android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_marginBottom="2dp"
-        android:layout_marginLeft="2dp"
-        android:layout_marginStart="2dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="@+id/bar020"
-        app:layout_constraintStart_toStartOf="@+id/bar020"
+        app:layout_constraintEnd_toStartOf="@+id/map"
+        app:layout_constraintStart_toStartOf="@+id/map"
         app:layout_constraintTop_toBottomOf="@+id/button4"
         app:srcCompat="@drawable/bar0" />
 
     <ImageView
         android:id="@+id/bar020"
-        android:layout_width="382dp"
-        android:layout_height="120dp"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginBottom="73dp"
         android:visibility="invisible"
-        app:srcCompat="@drawable/bar020"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="397dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/map"
+        app:layout_constraintStart_toStartOf="@+id/map"
+        app:layout_constraintTop_toBottomOf="@+id/Haut"
+        app:srcCompat="@drawable/bar020" />
 
     <ImageView
         android:id="@+id/bar20"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:visibility="invisible"
-        app:layout_constraintBottom_toTopOf="@+id/Bas"
-        app:layout_constraintStart_toStartOf="@+id/Bas"
+        app:layout_constraintEnd_toStartOf="@+id/map"
+        app:layout_constraintStart_toStartOf="@+id/map"
+        app:layout_constraintTop_toTopOf="@+id/bar020"
         app:srcCompat="@drawable/bar20" />
+
+    <ImageView
+        android:id="@+id/bar40"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/bar0"
+        app:layout_constraintEnd_toStartOf="@+id/map"
+        app:layout_constraintStart_toStartOf="@+id/map"
+        app:srcCompat="@drawable/bar40" />
+
+    <ImageView
+        android:id="@+id/bar60"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="2dp"
+        android:layout_marginStart="2dp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="@+id/bar020"
+        app:layout_constraintTop_toTopOf="@+id/bar20"
+        app:srcCompat="@drawable/bar60" />
+
+    <ImageView
+        android:id="@+id/bar80"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="@+id/bar60"
+        app:layout_constraintTop_toTopOf="@+id/bar0"
+        app:srcCompat="@drawable/bar80" />
+
+    <ImageView
+        android:id="@+id/imageView20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="@+id/bar80"
+        app:layout_constraintTop_toTopOf="@+id/bar80"
+        app:srcCompat="@drawable/bar100" />
 
 
 </android.support.constraint.ConstraintLayout>
