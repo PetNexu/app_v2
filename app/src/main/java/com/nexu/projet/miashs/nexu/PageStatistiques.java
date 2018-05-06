@@ -1,14 +1,18 @@
 package com.nexu.projet.miashs.nexu;
 
 import android.content.Intent;
+import android.nfc.Tag;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.ImageView;
 import android.widget.Button;
+
+import org.w3c.dom.Text;
 
 public class PageStatistiques extends AppCompatActivity {
 
@@ -110,12 +114,13 @@ public class PageStatistiques extends AppCompatActivity {
             }
         });
         nbHeureTravail = (TextView) findViewById(R.id.textView7);
+        final EditText nbHeureMax = (EditText) findViewById(R.id.max);
         //Bouton objectifs
         buttonObjectif = (Button)findViewById(R.id.button3);
         buttonObjectif.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                tempsDetravail = R.id.max;
+                tempsDetravail = Integer.parseInt(nbHeureMax.getText().toString());
                 nbHeureTravail.setText(tempsDetravail+"");
             }
         });

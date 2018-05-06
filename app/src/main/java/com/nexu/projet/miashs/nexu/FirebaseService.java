@@ -7,6 +7,7 @@ import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.pdf.PdfDocument;
 import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.Build;
@@ -54,6 +55,7 @@ public class FirebaseService extends FirebaseMessagingService {
 
         // Check if message contains a notification payload.
         if (remoteMessage.getNotification() != null) {
+            Realm.init(getApplicationContext());
             Log.e(TAG, "Message Notification Body: " + remoteMessage.getNotification().getBody());
             Realm realm = Realm.getDefaultInstance();
             realm.beginTransaction();
@@ -73,12 +75,10 @@ public class FirebaseService extends FirebaseMessagingService {
 
 
     private void sendNotification(String messageBody) {
-        Intent intent = new Intent(this, PageParametresNotications.class);
-        intent.putExtra("test","test");
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0 /* Request code */, intent,
-                PendingIntent.FLAG_ONE_SHOT);
-
+        Intent intent = new Intent(this,PageParametresNotications.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_SINGLE_TOP);
+        intent.putExtra("startActivity","PageParametresNotications");
+        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0 /* Request code */, intent, PendingIntent.FLAG_UPDATE_CURRENT);
         String channelId = getString(R.string.default_notification_channel_id);
         Uri defaultSoundUri= RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
         NotificationCompat.Builder notificationBuilder =

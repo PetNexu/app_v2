@@ -26,7 +26,12 @@
         <activity android:name=".PageParametresCompte"></activity>
         <activity android:name=".PageCreerProgramme"></activity>
         <activity android:name=".PageCreerAmbiance"></activity>
-        <activity android:name=".PageParametresNotications"></activity>
+        <activity
+           android:launchMode="singleTask"
+            android:taskAffinity=""
+            android:excludeFromRecents="true"
+            android:name=".PageParametresNotications">
+        </activity>
         <activity android:name=".Tracker"></activity>
 
         <meta-data

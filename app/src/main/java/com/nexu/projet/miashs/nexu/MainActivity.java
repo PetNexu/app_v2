@@ -45,7 +45,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
+        Realm.init(getApplicationContext());
+        Intent i = getIntent();
+        String activityToStart = i.getStringExtra("startActivity");
+        Log.e(TAG,activityToStart+"");
+        if(activityToStart!=null&&activityToStart.equals("PageParametresNotications")){
+            startActivity(new Intent(MainActivity.this,PageParametresNotications.class));
+        }
         /*if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             // Create channel to show notifications.
             NotificationManager notificationManager =
@@ -66,7 +72,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intentLoad);
             }
         });
-
 
 
         //Bouton vers inventaire
@@ -128,31 +133,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intentLoad);
             }
         });
-        // Initialize Realm (just once per application)
-        Realm.init(getApplicationContext());
-
-// Get a Realm instance for this thread
-        Realm realm = Realm.getDefaultInstance();
-        final RealmResults<Notification> notifications =realm.where(Notification.class).findAll();
-        notifications.addChangeListener(new OrderedRealmCollectionChangeListener<RealmResults<Notification>>() {
-            @Override
-            public void onChange(RealmResults<Notification> results, OrderedCollectionChangeSet changeSet) {
-                // Query results are updated in real time with fine grained notifications.
-                changeSet.getInsertions(); // => [0] is added.
-                Log.e(TAG,results.first().toString());
-            }
-        });
-        realm.beginTransaction();
-        Notification notification = new Notification();
-        notification.setName("Notif");
-        notification.setText("blabla");
-        notification.setTimestamp(System.currentTimeMillis());
-        Notification notification2 = realm.copyToRealm(notification);
-
-        realm.commitTransaction();
 
     }
-
-
-
 }

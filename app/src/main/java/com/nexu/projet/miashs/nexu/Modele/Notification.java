@@ -1,5 +1,9 @@
 package com.nexu.projet.miashs.nexu.Modele;
 
+import java.sql.Date;
+import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
+
 import io.realm.RealmModel;
 import io.realm.RealmObject;
 import io.realm.annotations.PrimaryKey;
@@ -10,11 +14,9 @@ public class Notification extends RealmObject {
 
     @Override
     public String toString() {
-        return "Notification{" +
-                "name='" + name + '\'' +
-                ", timestamp=" + timestamp +
-                ", text='" + text + '\'' +
-                '}';
+        Timestamp date = new Timestamp(this.getTimestamp());
+        SimpleDateFormat sdf=new SimpleDateFormat("dd/MM/yyyy HH:mm");
+        return "Notification "+sdf.format(date)+"  "+"\n"+this.getText();
     }
 
     public String getName() {

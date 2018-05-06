@@ -23,7 +23,7 @@ import io.realm.Sort;
 public class PageParametresNotications extends AppCompatActivity {
 
 
-    private static final String TAG ="PageParametreNotifications" ;
+    private final String TAG ="PageParametreNotifications" ;
     ImageButton buttonInventaire;
     ImageButton buttonAccueil;
     ImageButton buttonCalendrier;
@@ -32,6 +32,7 @@ public class PageParametresNotications extends AppCompatActivity {
     ImageButton buttonStatistiques;
     ImageButton buttonCompte;
     private TextView notification;
+    @SuppressLint("LongLogTag")
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
@@ -109,18 +110,12 @@ public class PageParametresNotications extends AppCompatActivity {
             }
         });
         notification = (TextView) findViewById(R.id.Notif);
+        Realm.init(getApplicationContext());
         Realm realm = Realm.getDefaultInstance();
         RealmResults<Notification> result = realm.where(Notification.class).sort("timestamp", Sort.DESCENDING).findAll();
-        result.addChangeListener(new OrderedRealmCollectionChangeListener<RealmResults<Notification>>() {
-            @SuppressLint("LongLogTag")
-            @Override
-            public void onChange(RealmResults<Notification> results, OrderedCollectionChangeSet changeSet) {
-                // Query results are updated in real time with fine grained notifications.
-                changeSet.getInsertions(); // => [0] is added.
-                Log.e(TAG,results.first().toString());
-                Date date = new Date(results.first().getTimestamp());
-                notification.setText(results.first().getName()+"\n"+date.getDay()+"/"+date.getMonth()+"/"+date.getYear()+"  "+date.getHours()+":"+date.getMinutes()+"\n"+results.first().getText());
-            }
-        });
+        Notification notif= result.first();
+        String Chaine = notif.toString();
+        notification.setText(Chaine);
+        Log.e(TAG,Chaine);
     }
 }
