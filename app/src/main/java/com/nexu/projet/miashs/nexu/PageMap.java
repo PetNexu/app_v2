@@ -17,7 +17,6 @@ public class PageMap extends AppCompatActivity {
     ImageButton buttonCompte;
     ImageButton buttonLightBed ;
     ImageButton buttonLightBed1 ;
-    ImageButton buttonPlugBed;
     ImageButton buttonRadiatorBed;
     ImageButton buttonBlind;
     ImageButton buttonCoffee;
@@ -51,18 +50,8 @@ public class PageMap extends AppCompatActivity {
         });
 
         //Bouton vers Objet de la lampe du bureau Chambre
-        buttonLightBed1 = (ImageButton) findViewById(R.id.lightBed2);
+        buttonLightBed1 = (ImageButton) findViewById(R.id.lightBedDesk);
         buttonLightBed1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intentLoad = new Intent(PageMap.this, PageObjet.class);
-                startActivity(intentLoad);
-            }
-        });
-
-        //Bouton vers Objet de la prise Chambre
-        buttonPlugBed = (ImageButton) findViewById(R.id.plugBed);
-        buttonPlugBed.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intentLoad = new Intent(PageMap.this, PageObjet.class);
