@@ -1,14 +1,29 @@
 package com.nexu.projet.miashs.nexu;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.TextView;
+
+import com.nexu.projet.miashs.nexu.Modele.Notification;
+
+import java.sql.Date;
+import java.sql.Timestamp;
+
+import io.realm.OrderedCollectionChangeSet;
+import io.realm.OrderedRealmCollectionChangeListener;
+import io.realm.Realm;
+import io.realm.RealmResults;
+import io.realm.Sort;
 
 public class PageParametresNotications extends AppCompatActivity {
 
 
+    private final String TAG ="PageParametreNotifications" ;
     ImageButton buttonInventaire;
     ImageButton buttonAccueil;
     ImageButton buttonCalendrier;
@@ -16,11 +31,13 @@ public class PageParametresNotications extends AppCompatActivity {
     ImageButton buttonMap;
     ImageButton buttonStatistiques;
     ImageButton buttonCompte;
-
+    private TextView notification;
+    @SuppressLint("LongLogTag")
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.parametres_notifications);
+
 
         //Bouton vers accueil
         buttonAccueil = (ImageButton) findViewById(R.id.logo);
@@ -92,7 +109,13 @@ public class PageParametresNotications extends AppCompatActivity {
                 startActivity(intentLoad);
             }
         });
-
-
+        notification = (TextView) findViewById(R.id.Notif);
+        Realm.init(getApplicationContext());
+        Realm realm = Realm.getDefaultInstance();
+        RealmResults<Notification> result = realm.where(Notification.class).sort("timestamp", Sort.DESCENDING).findAll();
+        Notification notif= result.first();
+        String Chaine = notif.toString();
+        notification.setText(Chaine);
+        Log.e(TAG,Chaine);
     }
 }

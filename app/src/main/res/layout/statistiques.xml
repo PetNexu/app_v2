@@ -8,11 +8,17 @@
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/Haut"
-        android:layout_width="384dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="386dp"
+        android:layout_marginTop="1dp"
         android:background="@color/colorPrimary"
         android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme" />
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintBottom_toTopOf="@+id/bar020"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/Bas"
@@ -21,167 +27,302 @@
         android:background="@color/colorPrimary"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="511dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/map"
+        app:layout_constraintStart_toStartOf="@+id/map" />
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="374dp"
-        android:layout_height="62dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="11dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="7dp"
         android:text="Mes statistiques"
         android:textAlignment="center"
         android:textSize="30sp"
-        tools:layout_editor_absoluteX="5dp"
-        tools:layout_editor_absoluteY="7dp" />
+        app:layout_constraintBottom_toBottomOf="@+id/Haut"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
         android:id="@+id/logo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@android:color/transparent"
-        app:srcCompat="@drawable/logopet1"
-        tools:layout_editor_absoluteX="324dp" />
+        app:layout_constraintEnd_toEndOf="@+id/Haut"
+        app:layout_constraintTop_toTopOf="@+id/Haut"
+        app:srcCompat="@drawable/logopet1" />
 
     <ImageButton
         android:id="@+id/Compte"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="2dp"
         android:background="@android:color/transparent"
-        app:srcCompat="@drawable/account"
-        tools:layout_editor_absoluteX="328dp"
-        tools:layout_editor_absoluteY="511dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/statistiques"
+        app:layout_constraintTop_toTopOf="@+id/Bas"
+        app:srcCompat="@drawable/account" />
 
     <ImageButton
         android:id="@+id/inventaire"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="4dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginTop="4dp"
         android:background="@android:color/transparent"
-        app:srcCompat="@drawable/list"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="511dp" />
+        app:layout_constraintEnd_toStartOf="@+id/calendrier"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/Bas"
+        app:srcCompat="@drawable/list" />
 
     <ImageButton
         android:id="@+id/calendrier"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
         android:background="@android:color/transparent"
-        app:srcCompat="@drawable/calendar"
-        tools:layout_editor_absoluteX="93dp"
-        tools:layout_editor_absoluteY="511dp" />
+        app:layout_constraintEnd_toStartOf="@+id/programme"
+        app:layout_constraintStart_toEndOf="@+id/inventaire"
+        app:layout_constraintTop_toTopOf="@+id/Bas"
+        app:srcCompat="@drawable/calendar" />
 
     <ImageButton
         android:id="@+id/programme"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="4dp"
+        android:layout_marginRight="4dp"
         android:background="@android:color/transparent"
-        app:srcCompat="@drawable/lightbulb"
-        tools:layout_editor_absoluteX="147dp"
-        tools:layout_editor_absoluteY="511dp" />
+        app:layout_constraintEnd_toStartOf="@+id/map"
+        app:layout_constraintStart_toEndOf="@+id/calendrier"
+        app:layout_constraintTop_toTopOf="@+id/Bas"
+        app:srcCompat="@drawable/lightbulb" />
 
     <ImageButton
         android:id="@+id/map"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginTop="3dp"
         android:background="@android:color/transparent"
-        app:srcCompat="@drawable/home"
-        tools:layout_editor_absoluteX="207dp"
-        tools:layout_editor_absoluteY="511dp" />
+        app:layout_constraintEnd_toStartOf="@+id/statistiques"
+        app:layout_constraintStart_toEndOf="@+id/programme"
+        app:layout_constraintTop_toTopOf="@+id/Bas"
+        app:srcCompat="@drawable/home" />
 
     <ImageButton
         android:id="@+id/statistiques"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="7dp"
+        android:layout_marginRight="7dp"
+        android:layout_marginTop="3dp"
         android:background="@android:color/transparent"
-        app:srcCompat="@drawable/bars"
-        tools:layout_editor_absoluteX="270dp"
-        tools:layout_editor_absoluteY="511dp" />
+        app:layout_constraintEnd_toStartOf="@+id/Compte"
+        app:layout_constraintStart_toEndOf="@+id/map"
+        app:layout_constraintTop_toTopOf="@+id/Bas"
+        app:srcCompat="@drawable/bars" />
 
     <TextView
         android:id="@+id/encouragement"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="4dp"
         android:text="Mes objectifs : "
         android:textAlignment="center"
         android:textColor="#000000"
         android:textSize="30sp"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="69dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Haut" />
 
     <TextView
         android:id="@+id/travail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Je voudrais travailler : \n heures cette semaine"
 
+        android:layout_marginEnd="9dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="9dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
+        android:text="Je voudrais travailler : \n heures cette semaine"
         android:textColor="#000000"
         android:textSize="27sp"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="134dp" />
+        app:layout_constraintEnd_toStartOf="@+id/max"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/encouragement" />
 
     <EditText
         android:id="@+id/max"
-        android:layout_width="66dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="18dp"
+        android:layout_marginRight="18dp"
         android:ems="100"
         android:inputType="number"
-        tools:layout_editor_absoluteX="296dp"
-        tools:layout_editor_absoluteY="133dp" />
+        app:layout_constraintBaseline_toBaselineOf="@+id/travail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/travail" />
 
 
     <TextView
         android:id="@+id/textView15"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="1dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="1dp"
         android:text="Objectif de la semaine :"
         android:textColor="#000000"
         android:textSize="27sp"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="261dp" />
+        app:layout_constraintBottom_toTopOf="@+id/tempsPasse"
+        app:layout_constraintEnd_toStartOf="@+id/textView7"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/button3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="2dp"
         android:text="Valider"
-        tools:layout_editor_absoluteX="280dp"
-        tools:layout_editor_absoluteY="186dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/travail" />
 
     <TextView
         android:id="@+id/textView20"
-        android:layout_width="294dp"
+        android:layout_width="314dp"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="31dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
         android:text="Aujourd'hui j'ai travaillé :  heures"
         android:textSize="27sp"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="312dp" />
+        app:layout_constraintBottom_toBottomOf="@+id/button4"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/button4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="7dp"
+        android:layout_marginRight="7dp"
+        android:layout_marginTop="12dp"
         android:text="Envoyer"
-        tools:layout_editor_absoluteX="296dp"
-        tools:layout_editor_absoluteY="381dp" />
+        app:layout_constraintEnd_toEndOf="@+id/textView20"
+        app:layout_constraintTop_toBottomOf="@+id/tempsPasse" />
 
     <android.support.design.widget.TextInputLayout
-        android:id="@+id/textInputLayout5"
-        android:layout_width="58dp"
+        android:id="@+id/tempsPasse"
+        android:layout_width="183dp"
         android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="310dp"
-        tools:layout_editor_absoluteY="312dp">
+        android:layout_marginLeft="14dp"
+        android:layout_marginStart="14dp"
+        app:layout_constraintStart_toEndOf="@+id/textView15"
+        app:layout_constraintTop_toBottomOf="@+id/textView7">
 
         <android.support.design.widget.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="hint" />
+            android:layout_width="71dp"
+            android:layout_height="46dp" />
     </android.support.design.widget.TextInputLayout>
 
     <TextView
-        android:id="@+id/textView11"
+        android:id="@+id/textView7"
         android:layout_width="wrap_content"
-        android:layout_height="36dp"
-        android:text="TextView"
-        tools:layout_editor_absoluteX="310dp"
-        tools:layout_editor_absoluteY="266dp" />
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textColor="#000000"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView15"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/bar0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toStartOf="@+id/map"
+        app:layout_constraintStart_toStartOf="@+id/map"
+        app:layout_constraintTop_toBottomOf="@+id/button4"
+        app:srcCompat="@drawable/bar0" />
+
+    <ImageView
+        android:id="@+id/bar020"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginBottom="73dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/map"
+        app:layout_constraintStart_toStartOf="@+id/map"
+        app:layout_constraintTop_toBottomOf="@+id/Haut"
+        app:srcCompat="@drawable/bar020" />
+
+    <ImageView
+        android:id="@+id/bar20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toStartOf="@+id/map"
+        app:layout_constraintStart_toStartOf="@+id/map"
+        app:layout_constraintTop_toTopOf="@+id/bar020"
+        app:srcCompat="@drawable/bar20" />
+
+    <ImageView
+        android:id="@+id/bar40"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/bar0"
+        app:layout_constraintEnd_toStartOf="@+id/map"
+        app:layout_constraintStart_toStartOf="@+id/map"
+        app:srcCompat="@drawable/bar40" />
+
+    <ImageView
+        android:id="@+id/bar60"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="2dp"
+        android:layout_marginStart="2dp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="@+id/bar020"
+        app:layout_constraintTop_toTopOf="@+id/bar20"
+        app:srcCompat="@drawable/bar60" />
+
+    <ImageView
+        android:id="@+id/bar80"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="@+id/bar60"
+        app:layout_constraintTop_toTopOf="@+id/bar0"
+        app:srcCompat="@drawable/bar80" />
+
+    <ImageView
+        android:id="@+id/imageView20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="@+id/bar80"
+        app:layout_constraintTop_toTopOf="@+id/bar80"
+        app:srcCompat="@drawable/bar100" />
+
 
 </android.support.constraint.ConstraintLayout>
