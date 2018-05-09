@@ -3,6 +3,7 @@ package com.nexu.projet.miashs.nexu;
 import android.content.Intent;
 import android.nfc.Tag;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
@@ -26,12 +27,12 @@ public class PageStatistiques extends AppCompatActivity {
     Button buttonObjectif;
     Button buttonTravail;
     ImageButton test;
-    ImageView bar0;
+    ImageView bar0 ;
     ImageView bar020;
-    ImageView bar20;
-    ImageView bar40;
+    ImageView bar20 ;
+    ImageView bar40 ;
     ImageView bar60;
-    ImageView bar80;
+    ImageView bar80 ;
     ImageView bar100;
     private int tempsDetravail;
     private int tempsPasse;
@@ -121,23 +122,32 @@ public class PageStatistiques extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 tempsDetravail = Integer.parseInt(nbHeureMax.getText().toString());
-                nbHeureTravail.setText(tempsDetravail+"");
+                nbHeureTravail.setText(tempsDetravail+"h");
             }
         });
+        final EditText nbHeurePasse = (EditText) findViewById(R.id.tempsPasse);
         //Bouton Travail
         buttonTravail = (Button)findViewById(R.id.button4);
         buttonTravail.setOnClickListener(new View.OnClickListener(){
 
             @Override
             public void onClick(View v) {
-                tempsPasse = R.id.tempsPasse;
+                tempsPasse = Integer.parseInt(nbHeurePasse.getText().toString());
                 update(tempsPasse);
             }
         });
+        ImageView bar0 = (ImageView) findViewById(R.id.bar0);
+        ImageView bar020 = (ImageView) findViewById(R.id.bar020);
+        ImageView bar20 = (ImageView) findViewById(R.id.bar20);
+        ImageView bar40 = (ImageView) findViewById(R.id.bar40);
+        ImageView bar60 = (ImageView) findViewById(R.id.bar60);
+        ImageView bar80 = (ImageView) findViewById(R.id.bar80);
+        ImageView bar100 = (ImageView) findViewById(R.id.bar100);
     }
 
+
     public void update(int tempsPasse){
-        value =(100-(tempsDetravail - tempsPasse) * 100 / tempsDetravail);
+        value=(tempsPasse*100/tempsDetravail);
         if((value<20) && (value>0)){
             bar0.setVisibility(View.INVISIBLE);
             bar020.setVisibility(View.VISIBLE);
