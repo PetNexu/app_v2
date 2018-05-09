@@ -7,30 +7,15 @@
     tools:layout_editor_absoluteY="25dp">
 
     <ImageButton
-        android:id="@+id/radiatorBath"
-        android:layout_width="35dp"
-        android:layout_height="39dp"
-        android:layout_marginEnd="84dp"
-        android:layout_marginLeft="228dp"
-        android:layout_marginRight="84dp"
-        android:layout_marginStart="228dp"
-        android:layout_marginTop="184dp"
-        android:background="@android:color/transparent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.68"
-        app:layout_constraintStart_toStartOf="@+id/lightBed1"
-        app:layout_constraintTop_toTopOf="@+id/lightBed1"
-        app:srcCompat="@drawable/radiator" />
-
-    <ImageButton
         android:id="@+id/radiatorBed"
         android:layout_width="35dp"
         android:layout_height="39dp"
-        android:layout_marginLeft="124dp"
-        android:layout_marginStart="124dp"
+        android:layout_marginLeft="88dp"
+        android:layout_marginStart="88dp"
+        android:layout_marginTop="4dp"
         android:background="@android:color/transparent"
-        app:layout_constraintStart_toStartOf="@+id/lightBed1"
-        app:layout_constraintTop_toTopOf="@+id/lightBed1"
+        app:layout_constraintStart_toStartOf="@+id/lightBed"
+        app:layout_constraintTop_toTopOf="@+id/lightBed"
         app:srcCompat="@drawable/radiator" />
 
     <ImageButton
@@ -41,41 +26,8 @@
         android:layout_marginStart="88dp"
         android:layout_marginTop="144dp"
         android:background="@android:color/transparent"
-        app:layout_constraintStart_toStartOf="@+id/lightBed1"
-        app:layout_constraintTop_toTopOf="@+id/lightBed1"
-        app:srcCompat="@drawable/plug" />
-
-    <ImageButton
-        android:id="@+id/plugKitchen2"
-        android:layout_width="35dp"
-        android:layout_height="39dp"
-        android:layout_marginLeft="280dp"
-        android:layout_marginStart="280dp"
-        android:background="@android:color/transparent"
-        app:layout_constraintStart_toStartOf="@+id/lightBed1"
-        app:layout_constraintTop_toTopOf="@+id/lightBed1"
-        app:srcCompat="@drawable/plug" />
-
-    <ImageButton
-        android:id="@+id/plugKitchen1"
-        android:layout_width="35dp"
-        android:layout_height="39dp"
-        android:layout_marginLeft="244dp"
-        android:layout_marginStart="244dp"
-        android:background="@android:color/transparent"
-        app:layout_constraintStart_toStartOf="@+id/lightBed1"
-        app:layout_constraintTop_toTopOf="@+id/lightBed1"
-        app:srcCompat="@drawable/plug" />
-
-    <ImageButton
-        android:id="@+id/plugBed"
-        android:layout_width="35dp"
-        android:layout_height="39dp"
-        android:layout_marginLeft="88dp"
-        android:layout_marginStart="88dp"
-        android:background="@android:color/transparent"
-        app:layout_constraintStart_toStartOf="@+id/lightBed1"
-        app:layout_constraintTop_toTopOf="@+id/lightBed1"
+        app:layout_constraintStart_toStartOf="@+id/lightBed"
+        app:layout_constraintTop_toTopOf="@+id/lightBed"
         app:srcCompat="@drawable/plug" />
 
     <TextView
@@ -102,10 +54,10 @@
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lightBed1" />
+        app:layout_constraintTop_toBottomOf="@+id/lightBed" />
 
     <ImageButton
-        android:id="@+id/lightBed1"
+        android:id="@+id/lightBed"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="208dp"
@@ -115,45 +67,21 @@
         android:background="@android:color/transparent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/Kitchen"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.499"
         app:srcCompat="@drawable/lightbulb" />
 
     <ImageButton
-        android:id="@+id/lightBed2"
+        android:id="@+id/lightBedDesk"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="44dp"
         android:layout_marginStart="44dp"
         android:background="@android:color/transparent"
-        app:layout_constraintStart_toStartOf="@+id/lightBed1"
-        app:layout_constraintTop_toTopOf="@+id/lightBed1"
-        app:srcCompat="@drawable/lightbulb" />
-
-    <ImageButton
-        android:id="@+id/lightKitchen"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="12dp"
-        android:layout_marginLeft="316dp"
-        android:layout_marginRight="12dp"
-        android:layout_marginStart="316dp"
-        android:background="@android:color/transparent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/lightBed1"
-        app:layout_constraintTop_toTopOf="@+id/lightBed1"
-        app:srcCompat="@drawable/lightbulb" />
-
-    <ImageButton
-        android:id="@+id/lightBath"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="84dp"
-        android:layout_marginStart="84dp"
-        android:layout_marginTop="184dp"
-        android:background="@android:color/transparent"
-        app:layout_constraintStart_toStartOf="@+id/lightBed1"
-        app:layout_constraintTop_toTopOf="@+id/lightBed1"
+        app:layout_constraintStart_toStartOf="@+id/lightBed"
+        app:layout_constraintTop_toTopOf="@+id/lightBed"
         app:srcCompat="@drawable/lightbulb" />
 
     <TextView
@@ -350,24 +278,22 @@
         app:layout_constraintBottom_toBottomOf="@+id/Bas"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/inventaire"
-        app:layout_constraintTop_toBottomOf="@+id/lightBed1"
+        app:layout_constraintTop_toBottomOf="@+id/lightBed"
         app:srcCompat="@drawable/bathtub" />
 
     <ImageButton
         android:id="@+id/coffeeKitchen"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="3dp"
         android:background="@android:color/transparent"
-        app:layout_constraintEnd_toStartOf="@+id/plugKitchen1"
-        app:layout_constraintTop_toTopOf="@+id/plugKitchen1"
-        app:srcCompat="@drawable/coffee" />
+        app:srcCompat="@drawable/coffee"
+        tools:layout_editor_absoluteX="267dp"
+        tools:layout_editor_absoluteY="267dp" />
 
     <ImageButton
         android:id="@+id/blindBed"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
         android:layout_marginEnd="83dp"
         android:layout_marginLeft="145dp"
         android:layout_marginRight="83dp"
