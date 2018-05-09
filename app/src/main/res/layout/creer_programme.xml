@@ -3,213 +3,196 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:layout_editor_absoluteY="25dp">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/Haut"
-        android:layout_width="0dp"
+        android:layout_width="384dp"
         android:layout_height="wrap_content"
         android:background="@color/colorPrimary"
         android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:theme="?attr/actionBarTheme" />
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/Bas"
-        android:layout_width="0dp"
+        android:layout_width="384dp"
         android:layout_height="wrap_content"
         android:background="@color/colorPrimary"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/inventaire" />
+        tools:layout_editor_absoluteY="518dp" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="294dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="2dp"
-        android:layout_marginEnd="11dp"
-        android:layout_marginRight="11dp"
-        android:layout_marginTop="5dp"
+        android:layout_height="49dp"
         android:text="Créer un programme"
         android:textAlignment="center"
         android:textSize="30sp"
-        app:layout_constraintBottom_toBottomOf="@+id/Haut"
-        app:layout_constraintEnd_toEndOf="@+id/logo"
-        app:layout_constraintHorizontal_bias="0.379"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        tools:layout_editor_absoluteX="30dp"
+        tools:layout_editor_absoluteY="5dp" />
 
     <ImageButton
         android:id="@+id/logo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@android:color/transparent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/Haut"
-        app:srcCompat="@drawable/logopet1" />
+        app:srcCompat="@drawable/logopet1"
+        tools:layout_editor_absoluteX="324dp" />
 
     <ImageButton
         android:id="@+id/Compte"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="3dp"
         android:background="@android:color/transparent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/statistiques"
-        app:srcCompat="@drawable/account" />
+        app:srcCompat="@drawable/account"
+        tools:layout_editor_absoluteX="328dp"
+        tools:layout_editor_absoluteY="524dp" />
 
     <ImageButton
         android:id="@+id/inventaire"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="3dp"
-        android:layout_marginEnd="9dp"
-        android:layout_marginRight="9dp"
         android:background="@android:color/transparent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/calendrier"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/list" />
+        app:srcCompat="@drawable/list"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="524dp" />
 
     <ImageButton
         android:id="@+id/calendrier"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="3dp"
-        android:layout_marginEnd="7dp"
-        android:layout_marginRight="7dp"
         android:background="@android:color/transparent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/programme"
-        app:layout_constraintStart_toEndOf="@+id/inventaire"
-        app:srcCompat="@drawable/calendar" />
+        app:srcCompat="@drawable/calendar"
+        tools:layout_editor_absoluteX="81dp"
+        tools:layout_editor_absoluteY="524dp" />
 
     <ImageButton
         android:id="@+id/programme"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="3dp"
-        android:layout_marginEnd="7dp"
-        android:layout_marginRight="7dp"
         android:background="@android:color/transparent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/map"
-        app:layout_constraintStart_toEndOf="@+id/calendrier"
-        app:srcCompat="@drawable/lightbulb" />
+        app:srcCompat="@drawable/lightbulb"
+        tools:layout_editor_absoluteX="144dp"
+        tools:layout_editor_absoluteY="524dp" />
 
     <ImageButton
         android:id="@+id/map"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="3dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
         android:background="@android:color/transparent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/statistiques"
-        app:layout_constraintStart_toEndOf="@+id/programme"
-        app:srcCompat="@drawable/home" />
+        app:srcCompat="@drawable/home"
+        tools:layout_editor_absoluteX="207dp"
+        tools:layout_editor_absoluteY="524dp" />
 
     <ImageButton
         android:id="@+id/statistiques"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="3dp"
-        android:layout_marginEnd="1dp"
-        android:layout_marginRight="1dp"
         android:background="@android:color/transparent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/Compte"
-        app:layout_constraintStart_toEndOf="@+id/map"
-        app:srcCompat="@drawable/bars" />
+        app:srcCompat="@drawable/bars"
+        tools:layout_editor_absoluteX="271dp"
+        tools:layout_editor_absoluteY="524dp" />
 
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="26dp"
-        android:layout_marginStart="26dp"
-        android:layout_marginTop="20dp"
-        android:text="Action 1 : "
-        android:textColor="#000000"
-        android:textSize="24sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="39dp"
-        android:layout_marginLeft="26dp"
-        android:layout_marginRight="39dp"
-        android:layout_marginStart="26dp"
-        android:layout_marginTop="27dp"
-        android:text="Nom : "
-        android:textColor="#000000"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toStartOf="@+id/NomProgrammeInput"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Haut" />
+    <ScrollView
+        android:id="@+id/scrollVieww"
+        android:layout_width="348dp"
+        android:layout_height="439dp"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="18dp"
+        tools:layout_editor_absoluteY="64dp">
 
-    <android.support.design.widget.TextInputLayout
-        android:id="@+id/NomProgrammeInput"
-        android:layout_width="0dp"
-        android:layout_height="25dp"
-        android:layout_marginBottom="28dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginTop="30dp"
-        app:layout_constraintBottom_toTopOf="@+id/spinner"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView5"
-        app:layout_constraintTop_toBottomOf="@+id/logo">
-
-        <android.support.design.widget.TextInputEditText
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Nom du programme" />
-    </android.support.design.widget.TextInputLayout>
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-    <Spinner
-        android:id="@+id/spinner"
-        android:layout_width="230dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="26dp"
-        android:layout_marginRight="26dp"
-        app:layout_constraintBottom_toBottomOf="@+id/textView4"
-        app:layout_constraintEnd_toEndOf="parent" />
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="26dp"
+                android:layout_marginStart="26dp"
+                android:layout_marginTop="20dp"
+                android:text="Action 1 : "
+                android:textColor="#000000"
+                android:textSize="24sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
-    <ImageButton
-        android:id="@+id/ajouterAction"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="26dp"
-        android:layout_marginStart="26dp"
-        android:layout_marginTop="22dp"
-        android:background="@android:color/transparent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4"
-        app:srcCompat="@drawable/signs" />
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="39dp"
+                android:layout_marginLeft="26dp"
+                android:layout_marginRight="39dp"
+                android:layout_marginStart="26dp"
+                android:layout_marginTop="27dp"
+                android:text="Nom : "
+                android:textColor="#000000"
+                android:textSize="24sp"
+                app:layout_constraintEnd_toStartOf="@+id/NomProgrammeInput"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/Haut" />
 
-    <ImageButton
-        android:id="@+id/valider"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:background="@android:color/transparent"
-        app:layout_constraintBottom_toTopOf="@+id/Bas"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/check" />
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/NomProgrammeInput"
+                android:layout_width="0dp"
+                android:layout_height="25dp"
+                android:layout_marginBottom="28dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="30dp"
+                app:layout_constraintBottom_toTopOf="@+id/spinner"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/textView5"
+                app:layout_constraintTop_toBottomOf="@+id/logo">
+
+                <android.support.design.widget.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Nom du programme" />
+            </android.support.design.widget.TextInputLayout>
+
+            <ImageButton
+                android:id="@+id/ajouterAction"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="26dp"
+                android:layout_marginStart="26dp"
+                android:layout_marginTop="22dp"
+                android:background="@android:color/transparent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView4"
+                app:srcCompat="@drawable/signs" />
+
+            <ImageButton
+                android:id="@+id/valider"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@android:color/transparent"
+                app:layout_constraintBottom_toTopOf="@+id/Bas"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:srcCompat="@drawable/check" />
+
+
+            <Spinner
+                android:id="@+id/spinner"
+                android:layout_width="230dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="26dp"
+                android:layout_marginRight="26dp"
+                app:layout_constraintBottom_toBottomOf="@+id/textView4"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+        </LinearLayout>
+
+    </ScrollView>
 
 </android.support.constraint.ConstraintLayout>
