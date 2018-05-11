@@ -5,19 +5,32 @@ import android.app.TimePickerDialog;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.DialogFragment;
+import android.text.format.DateFormat;
+import android.widget.TextView;
+import android.widget.TimePicker;
+import android.view.View;
 
 import java.util.Calendar;
 
-public class TimePickerFragment extends DialogFragment {
+public class TimePickerFragment extends DialogFragment
+        implements TimePickerDialog.OnTimeSetListener {
 
-
-    @NonNull
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
-        Calendar c = Calendar.getInstance();
+        // Use the current time as the default values for the picker
+        final Calendar c = Calendar.getInstance();
         int hour = c.get(Calendar.HOUR_OF_DAY);
         int minute = c.get(Calendar.MINUTE);
-        return new TimePickerDialog(getActivity(), (TimePickerDialog.OnTimeSetListener) getActivity(), hour, minute, true );
 
+        // Create a new instance of TimePickerDialog and return it
+        return new TimePickerDialog(getActivity(), this, hour, minute, true);
+    }
+
+    public void onTimeSet(TimePicker view, int hour, int minute) {
+        // Do something with the time chosen by the user
+        TextView heureDeb = getActivity().findViewById(R.id.hdeb);
+        TextView minuteDeb = getActivity().findViewById(R.id.mdeb);
+        heureDeb.setText(hour+"");
+        minuteDeb.setText(minute+"");
     }
 }

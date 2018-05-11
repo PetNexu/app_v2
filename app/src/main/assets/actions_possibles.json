@@ -19,6 +19,10 @@
 		{
 			"nom" : "Prise Salle de Bain",
 			"actions" : ["Allumer", "Eteindre"]
+		},
+		{
+			"nom" : "Télévision",
+			"actions" : ["Allumer", "Eteindre"]
 		}
 	]
 }

@@ -1,9 +1,9 @@
 {
 	"programmes" : [
 		{
-		"nomProgramme" : "test",
-		"Objets" : ["Lampe de chevet", "Prise du reveil"],
-		"Actions" : ["Allumer", "Eteindre"]
+		"nomProgramme" : "revision",
+        "Objets": ["Lampe Principale","Volets","Machine à Café"],
+		"Actions": ["Allumer","Ouvrir","Faire un café"]
 		}
 	]
 }

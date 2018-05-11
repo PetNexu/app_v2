@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:layout_editor_absoluteY="25dp">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/Haut"
@@ -32,15 +33,13 @@
         android:id="@+id/textView"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="2dp"
-        android:layout_marginEnd="11dp"
-        android:layout_marginRight="11dp"
+        android:layout_marginBottom="6dp"
         android:layout_marginTop="5dp"
         android:text="Mes programmes"
         android:textAlignment="center"
         android:textSize="30sp"
-        app:layout_constraintBottom_toBottomOf="@+id/Haut"
-        app:layout_constraintEnd_toEndOf="@+id/logo"
+        app:layout_constraintBottom_toBottomOf="@+id/logo"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -49,7 +48,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@android:color/transparent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/Haut"
         app:layout_constraintTop_toTopOf="@+id/Haut"
         app:srcCompat="@drawable/logopet1" />
 
@@ -159,12 +158,12 @@
         android:id="@+id/creerprogramme"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="21dp"
         android:layout_marginLeft="50dp"
         android:layout_marginStart="50dp"
+        android:layout_marginTop="5dp"
         android:background="@android:color/transparent"
-        app:layout_constraintBottom_toTopOf="@+id/imageView9"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/programme4"
         app:srcCompat="@drawable/signs" />
 
     <ImageView
@@ -173,32 +172,182 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="308dp"
+        android:layout_marginTop="5dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Haut"
+        app:layout_constraintTop_toTopOf="@+id/textView2"
         app:srcCompat="@drawable/arrow" />
 
     <ImageView
         android:id="@+id/imageView10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
         android:layout_marginLeft="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="28dp"
+        app:layout_constraintBottom_toBottomOf="@+id/textView3"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Haut"
         app:srcCompat="@drawable/arrow" />
 
     <ImageButton
-        android:id="@+id/imageButton2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="13dp"
-        android:layout_marginLeft="50dp"
-        android:layout_marginStart="50dp"
+        android:id="@+id/creer_ambiance"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_marginBottom="4dp"
+        android:layout_marginLeft="45dp"
+        android:layout_marginStart="45dp"
         android:background="@android:color/transparent"
         app:layout_constraintBottom_toTopOf="@+id/Bas"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/signs" />
+
+    <TextView
+        android:id="@+id/programme1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textColor="#000000"
+        android:textSize="26sp"
+        app:layout_constraintEnd_toEndOf="@+id/programme2"
+        app:layout_constraintStart_toStartOf="@+id/programme2"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <TextView
+        android:id="@+id/programme2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="7dp"
+        android:textColor="#000000"
+        android:textSize="26sp"
+        app:layout_constraintEnd_toEndOf="@+id/programme3"
+        app:layout_constraintStart_toStartOf="@+id/programme3"
+        app:layout_constraintTop_toBottomOf="@+id/programme1" />
+
+    <TextView
+        android:id="@+id/programme4"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="7dp"
+        android:textColor="#000000"
+        android:textSize="26sp"
+        app:layout_constraintEnd_toEndOf="@+id/ambiancetext1"
+        app:layout_constraintStart_toStartOf="@+id/creerprogramme"
+        app:layout_constraintTop_toBottomOf="@+id/programme3" />
+
+    <TextView
+        android:id="@+id/programme3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="7dp"
+        android:textColor="#000000"
+        android:textSize="26sp"
+        app:layout_constraintEnd_toEndOf="@+id/programme4"
+        app:layout_constraintStart_toStartOf="@+id/programme4"
+        app:layout_constraintTop_toBottomOf="@+id/programme2" />
+
+    <ImageButton
+        android:id="@+id/modifier1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="8dp"
+        android:background="@android:color/transparent"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/programme2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3"
+        app:srcCompat="@drawable/edit" />
+
+    <ImageButton
+        android:id="@+id/modifier2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="10dp"
+        android:background="@android:color/transparent"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/modifier1"
+        app:srcCompat="@drawable/edit" />
+
+    <ImageButton
+        android:id="@+id/modifier3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="10dp"
+        android:background="@android:color/transparent"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/modifier2"
+        app:srcCompat="@drawable/edit" />
+
+    <ImageButton
+        android:id="@+id/modifier4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="10dp"
+        android:background="@android:color/transparent"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/modifier3"
+        app:srcCompat="@drawable/edit" />
+
+    <TextView
+        android:id="@+id/ambiancetext1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="13dp"
+        android:textColor="#000000"
+        android:textSize="26sp"
+        app:layout_constraintEnd_toEndOf="@+id/ambiancetext2"
+        app:layout_constraintStart_toStartOf="@+id/ambiancetext2"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <TextView
+        android:id="@+id/ambiancetext2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="48dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="48dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="7dp"
+        android:textColor="#000000"
+        android:textSize="26sp"
+        app:layout_constraintEnd_toStartOf="@+id/Compte"
+        app:layout_constraintStart_toStartOf="@+id/Bas"
+        app:layout_constraintTop_toBottomOf="@+id/ambiancetext1" />
+
+    <ImageButton
+        android:id="@+id/modifierAmbiance1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:background="@android:color/transparent"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/ambiancetext1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/ambiancetext1"
+        app:srcCompat="@drawable/edit" />
+
+    <ImageButton
+        android:id="@+id/modifierAmbiance2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="9dp"
+        android:background="@android:color/transparent"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/modifierAmbiance1"
+        app:srcCompat="@drawable/edit" />
 
 </android.support.constraint.ConstraintLayout>

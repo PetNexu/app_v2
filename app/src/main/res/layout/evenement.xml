@@ -139,7 +139,7 @@
         android:hint="Select date"
         android:textColor="#000000"
         android:textSize="30sp"
-        app:layout_constraintStart_toStartOf="@+id/Titre"
+        app:layout_constraintStart_toStartOf="@+id/textView11"
         app:layout_constraintTop_toBottomOf="@+id/Haut" />
 
     <ImageView
@@ -148,12 +148,12 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="26dp"
         android:layout_marginStart="26dp"
-        app:layout_constraintBottom_toBottomOf="@+id/Titre"
+        app:layout_constraintBottom_toBottomOf="@+id/textView11"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/arrow" />
 
     <TextView
-        android:id="@+id/Titre"
+        android:id="@+id/textView11"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="44dp"
@@ -176,6 +176,65 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/logo"
         app:srcCompat="@drawable/signs" />
+
+    <TextView
+        android:id="@+id/evenement1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="38dp"
+        android:textColor="#000000"
+        android:textSize="26sp"
+        app:layout_constraintEnd_toEndOf="@+id/Compte"
+        app:layout_constraintStart_toStartOf="@+id/textView11"
+        app:layout_constraintTop_toBottomOf="@+id/imageView11" />
+
+    <TextView
+        android:id="@+id/evenement2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textColor="#000000"
+        android:textSize="26dp"
+        app:layout_constraintEnd_toEndOf="@+id/evenement1"
+        app:layout_constraintStart_toStartOf="@+id/evenement1"
+        app:layout_constraintTop_toBottomOf="@+id/evenement1" />
+
+    <TextView
+        android:id="@+id/evenement3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textColor="#000000"
+        android:textSize="26sp"
+        app:layout_constraintEnd_toEndOf="@+id/evenement2"
+        app:layout_constraintStart_toStartOf="@+id/evenement2"
+        app:layout_constraintTop_toBottomOf="@+id/evenement2" />
+
+    <TextView
+        android:id="@+id/evenement4"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textColor="#000000"
+        android:textSize="26dp"
+        app:layout_constraintEnd_toEndOf="@+id/evenement3"
+        app:layout_constraintStart_toStartOf="@+id/evenement3"
+        app:layout_constraintTop_toBottomOf="@+id/evenement3" />
+
+    <TextView
+        android:id="@+id/textView17"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textColor="#000000"
+        android:textSize="26dp"
+        app:layout_constraintEnd_toEndOf="@+id/evenement4"
+        app:layout_constraintStart_toStartOf="@+id/evenement4"
+        app:layout_constraintTop_toBottomOf="@+id/evenement4" />
 
 
 </android.support.constraint.ConstraintLayout>

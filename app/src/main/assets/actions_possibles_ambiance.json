@@ -10,8 +10,8 @@
 			
 		},
 		{
-			"nom" : "Radiateur Principal"
+			"nom" : "Radiateur Principal",
 			"actions" : ["Allumer", "Eteindre", "Mettre à 18°C", "Mettre à 18,5°C", "Mettre à 19°C", "Mettre à 19,5°C", "Mettre à 20°C", "Mettre à 20,5°C", "Mettre à 21°C", "Mettre à 21,5°C", "Mettre à 22°C"]
-		},
+		}
 	]
 }

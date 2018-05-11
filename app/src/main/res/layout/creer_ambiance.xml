@@ -30,7 +30,7 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="288dp"
+        android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginBottom="2dp"
         android:layout_marginEnd="11dp"
@@ -41,10 +41,8 @@
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="@+id/Haut"
         app:layout_constraintEnd_toEndOf="@+id/logo"
-        app:layout_constraintHorizontal_bias="0.423"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
         android:id="@+id/logo"
@@ -132,25 +130,25 @@
         app:srcCompat="@drawable/bars" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/action1text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="26dp"
         android:layout_marginStart="26dp"
-        android:layout_marginTop="22dp"
-        android:text="Action : "
+        android:layout_marginTop="13dp"
+        android:text="Action 1 :"
         android:textColor="#000000"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+        app:layout_constraintTop_toBottomOf="@+id/objet1text" />
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/objet1text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="26dp"
         android:layout_marginStart="26dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="15dp"
         android:text="Objet 1 : "
         android:textColor="#000000"
         android:textSize="24sp"
@@ -173,60 +171,311 @@
     <android.support.design.widget.TextInputLayout
         android:id="@+id/NomAmbianceInput"
         android:layout_width="230dp"
-        android:layout_height="25dp"
-        android:layout_marginBottom="20dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginRight="24dp"
-        app:layout_constraintBottom_toTopOf="@+id/textView6"
-        app:layout_constraintEnd_toEndOf="parent">
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="26dp"
+        android:layout_marginRight="26dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logo">
 
         <android.support.design.widget.TextInputEditText
+            android:id="@+id/textinputnoma"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Nom de l'ambiance" />
     </android.support.design.widget.TextInputLayout>
 
     <Spinner
-        android:id="@+id/listeObjet"
+        android:id="@+id/action1"
         android:layout_width="230dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="26dp"
         android:layout_marginRight="26dp"
+        android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textView4" />
+        app:layout_constraintTop_toBottomOf="@+id/objet1" />
 
     <Spinner
-        android:id="@+id/listeAction"
+        android:id="@+id/objet1"
         android:layout_width="230dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="26dp"
         android:layout_marginRight="26dp"
-        app:layout_constraintBottom_toBottomOf="@+id/textView6"
-        app:layout_constraintEnd_toEndOf="parent" />
+        android:layout_marginTop="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/NomAmbianceInput" />
 
     <ImageButton
-        android:id="@+id/ajouterAction"
+        android:id="@+id/ajouterAction1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="36dp"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="196dp"
+        android:layout_marginLeft="28dp"
+        android:layout_marginStart="28dp"
         android:background="@android:color/transparent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        app:layout_constraintTop_toTopOf="@+id/objet2text"
         app:srcCompat="@drawable/signs" />
 
     <ImageButton
         android:id="@+id/valider"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
         android:background="@android:color/transparent"
         app:layout_constraintBottom_toTopOf="@+id/Bas"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/Compte"
         app:srcCompat="@drawable/check" />
 
+    <TextView
+        android:id="@+id/objet2text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="26dp"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="40dp"
+        android:text="Objet 2 : "
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/action1text" />
+
+    <TextView
+        android:id="@+id/action2text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="18dp"
+        android:layout_marginLeft="26dp"
+        android:layout_marginRight="18dp"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="13dp"
+        android:text="Action 2 :"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toStartOf="@+id/textInputLayout5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/objet2text" />
+
+    <TextView
+        android:id="@+id/objet3text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="26dp"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="40dp"
+        android:text="Objet 3 :"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/action2text" />
+
+    <TextView
+        android:id="@+id/action3text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="11dp"
+        android:layout_marginLeft="26dp"
+        android:layout_marginRight="11dp"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="16dp"
+        android:text="Action 3 :"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toStartOf="@+id/textInputLayout6"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/objet3text" />
+
+    <Spinner
+        android:id="@+id/objet2"
+        android:layout_width="230dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="26dp"
+        android:layout_marginRight="26dp"
+        android:layout_marginTop="50dp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/action1" />
+
+    <Spinner
+        android:id="@+id/action2"
+        android:layout_width="230dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="26dp"
+        android:layout_marginRight="26dp"
+        android:layout_marginTop="20dp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/objet2" />
+
+    <Spinner
+        android:id="@+id/objet3"
+        android:layout_width="230dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="26dp"
+        android:layout_marginRight="26dp"
+        android:layout_marginTop="50dp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/action2" />
+
+    <Spinner
+        android:id="@+id/action3"
+        android:layout_width="230dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="26dp"
+        android:layout_marginRight="26dp"
+        android:layout_marginTop="20dp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/objet3" />
+
+    <ImageButton
+        android:id="@+id/ajouteraction2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="26dp"
+        android:layout_marginStart="26dp"
+        android:background="@android:color/transparent"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/objet3text"
+        app:srcCompat="@drawable/signs" />
+
+    <com.rtugeek.android.colorseekbar.ColorSeekBar
+        android:id="@+id/color_seek_bar"
+        android:layout_width="230dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="26dp"
+        android:layout_marginRight="26dp"
+        android:layout_marginTop="2dp"
+        android:visibility="invisible"
+        app:barHeight="7dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/action1" />
+
+    <com.rtugeek.android.colorseekbar.ColorSeekBar
+        android:id="@+id/color_seek_bar2"
+        android:layout_width="230dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="26dp"
+        android:layout_marginRight="26dp"
+        android:layout_marginTop="2dp"
+        android:visibility="invisible"
+        app:barHeight="7dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/action2text" />
+
+    <TextView
+        android:id="@+id/Intensite1"
+        android:layout_width="111dp"
+        android:layout_height="32dp"
+        android:layout_marginLeft="26dp"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="2dp"
+        android:text="Intensité : "
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/action1text" />
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/textInputLayout4"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="2dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginRight="40dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/color_seek_bar"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/inputintesite1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="0-100"
+            android:inputType="number" />
+    </android.support.design.widget.TextInputLayout>
+
+    <TextView
+        android:id="@+id/intensite2"
+        android:layout_width="104dp"
+        android:layout_height="30dp"
+        android:layout_marginLeft="26dp"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="2dp"
+        android:text="Intensité : "
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/action2text" />
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/textInputLayout5"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginRight="40dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/color_seek_bar2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/action2text">
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/inputintensite2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="0-100"
+            android:inputType="number" />
+    </android.support.design.widget.TextInputLayout>
+
+    <com.rtugeek.android.colorseekbar.ColorSeekBar
+        android:id="@+id/color_seek_bar3"
+        android:layout_width="230dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="26dp"
+        android:layout_marginRight="26dp"
+        android:layout_marginTop="5dp"
+        android:visibility="invisible"
+        app:barHeight="7dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/action3" />
+
+    <TextView
+        android:id="@+id/intensite3"
+        android:layout_width="117dp"
+        android:layout_height="35dp"
+        android:layout_marginLeft="26dp"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="2dp"
+        android:text="Intensité : "
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/action3text" />
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/textInputLayout6"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="47dp"
+        android:layout_marginRight="47dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/color_seek_bar3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/action3text">
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/inputintensite3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="0-100" />
+    </android.support.design.widget.TextInputLayout>
 
 </android.support.constraint.ConstraintLayout>

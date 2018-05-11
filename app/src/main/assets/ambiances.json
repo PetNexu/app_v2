@@ -1,9 +1,9 @@
 {
 	"ambiances" : [
 		{
-		"nomProgramme" : "test",
-		"Objets" : ["lampe de chevet", "prise du reveil"],
-		"Actions" : ["allumer", "eteindre"]
+		"nomProgramme": "ambiance travail",
+		"Objets": ["Couleur","Intensite"],
+		"Actions": ["FF004C","30"]
 		}
 	]
 }
