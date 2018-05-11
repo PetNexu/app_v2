@@ -1,0 +1,9 @@
+{
+	"ambiances" : [
+		{
+		"nomProgramme" : "test",
+		"Objets" : ["lampe de chevet", "prise du reveil"],
+		"Actions" : ["allumer", "eteindre"]
+		}
+	]
+}

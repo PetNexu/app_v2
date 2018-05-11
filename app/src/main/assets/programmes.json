@@ -1,0 +1,9 @@
+{
+	"programmes" : [
+		{
+		"nomProgramme" : "test",
+		"Objets" : ["Lampe de chevet", "Prise du reveil"],
+		"Actions" : ["Allumer", "Eteindre"]
+		}
+	]
+}
