@@ -1,35 +1,26 @@
 package com.nexu.projet.miashs.nexu;
 
-import android.app.NotificationChannel;
-import android.app.NotificationManager;
 import android.content.Intent;
-import android.os.Build;
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
-import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.text.TextWatcher;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
-import android.view.MenuInflater;
 
-import com.google.firebase.messaging.FirebaseMessaging;
-import com.nexu.projet.miashs.nexu.Modele.Notification;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+import com.google.gson.Gson;
 
-import io.realm.OrderedCollectionChangeSet;
-import io.realm.OrderedRealmCollectionChangeListener;
-import io.realm.Realm;
-import io.realm.RealmResults;
+import java.util.List;
 
 
 public class MainActivity extends AppCompatActivity {
-    private static final String TAG = "MainActivity";
-
-
-    //commentaire pour tester
 
     ImageButton buttonInventaire;
     ImageButton buttonAccueil;
@@ -40,29 +31,32 @@ public class MainActivity extends AppCompatActivity {
     ImageButton buttonCompte;
     ImageButton test;
 
+    TextView temperatureText;
+    TextView humiditeText;
+    TextView luminositeText;
+    TextView uvText;
+
+    String url;
+    String reponse;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        buttonTools();
 
-        Realm.init(getApplicationContext());
-        Intent i = getIntent();
-        String activityToStart = i.getStringExtra("startActivity");
-        Log.e(TAG,activityToStart+"");
-        if(activityToStart!=null&&activityToStart.equals("PageParametresNotications")){
-            startActivity(new Intent(MainActivity.this,PageParametresNotications.class));
-        }
-        /*if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            // Create channel to show notifications.
-            NotificationManager notificationManager =
-                    getSystemService(NotificationManager.class);
-            notificationManager.createNotificationChannel(new NotificationChannel(System.currentTimeMillis()+"",
-                    "test", NotificationManager.IMPORTANCE_LOW));
-        }
+        url="http://172.20.10.5:8080/json.htm?type=devices&rid=65";
+        reponse = temperature(url, true);
+        System.out.println("test"+reponse);
+        url="http://172.20.10.5:8080/json.htm?type=devices&rid=7";
+        reponse = temperature(url, false);
 
-        FirebaseMessaging.getInstance().subscribeToTopic("news");
-        Log.e(TAG,"subscribe");*/
 
+
+    }
+
+
+    private void buttonTools(){
         //Bouton vers accueil
         buttonAccueil = (ImageButton) findViewById(R.id.logo);
         buttonAccueil.setOnClickListener(new View.OnClickListener() {
@@ -72,6 +66,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intentLoad);
             }
         });
+
 
 
         //Bouton vers inventaire
@@ -133,6 +128,50 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intentLoad);
             }
         });
-
     }
+
+    private String temperature(String url, final boolean temperature) {
+        RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
+        // Request a string response from the provided URL.
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        reponse = response;
+                        Capteurs capteurs = new Gson().fromJson(reponse, Capteurs.class);
+                        if(temperature) {
+                            Double temperature = capteurs.getResult().get(0).getTemp();
+                            String niveauHumidite = capteurs.getResult().get(0).getHumidityStatus();
+                            int humidite = capteurs.getResult().get(0).getHumidity();
+                            temperatureText = findViewById(R.id.temperatureText);
+                            humiditeText = findViewById(R.id.humiditeText);
+                            temperatureText.setText(temperature + "°C");
+                            humiditeText.setText(humidite + "%");
+                            if(niveauHumidite.equals("Wet")||niveauHumidite.equals("Dry")){
+                                humiditeText.setTextColor(getResources().getColor(R.color.mauvaiseHumidite));
+                            }
+                        }
+                        else {
+                            String lux = capteurs.getResult().get(0).getData();
+                            luminositeText = findViewById(R.id.luminositeText);
+                            luminositeText.setText(lux);
+                        }
+
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                System.out.println("nique ta mere");
+            }
+        });
+        System.out.println("test 3"+reponse);
+        queue.add(stringRequest);
+        return reponse;
+    }
+
+
+
+
+
+
 }

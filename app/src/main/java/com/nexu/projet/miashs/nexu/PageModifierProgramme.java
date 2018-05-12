@@ -1,21 +1,15 @@
 package com.nexu.projet.miashs.nexu;
 
 import android.content.Intent;
-
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileWriter;
-import java.io.Writer;
-import java.util.ArrayList;
-
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.design.widget.TextInputEditText;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -24,11 +18,19 @@ import android.widget.Toast;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.Writer;
+import java.util.ArrayList;
 import java.util.List;
 
-public class PageCreerProgramme extends AppCompatActivity{
+
+public class PageModifierProgramme extends AppCompatActivity{
+
 
     ImageButton buttonInventaire;
     ImageButton buttonAccueil;
@@ -39,6 +41,7 @@ public class PageCreerProgramme extends AppCompatActivity{
     ImageButton buttonCompte;
     ImageButton valider;
 
+    TextInputEditText nom;
     TextView objet1text;
     TextView objet2text;
     TextView objet3text;
@@ -59,25 +62,39 @@ public class PageCreerProgramme extends AppCompatActivity{
     ImageButton ajouteraction2;
     ImageButton ajouteraction3;
 
+
+    int pos;
+
+
+
     @Override
-    protected void onCreate(Bundle savedInstanceState){
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.creer_programme);
-        buttonToolBar();
+        setContentView(R.layout.modifier_programme);
+        buttonsTool();
+
+        Intent incomingIntent = getIntent();
+        pos = incomingIntent.getIntExtra("pos", 0);
+        String programmeJson = convertirDeJson("programmes.json");
+        String actionsJson = convertirDeJsonAssets("actions_possibles.json");
+
+        Programmes programme = new Gson().fromJson(programmeJson, Programmes.class);
+        ActionsPossibles actionsPossibles = new Gson().fromJson(actionsJson, ActionsPossibles.class);
 
 
-        String json = convertirDeJson("actions_possibles.json");
-        final ActionsPossibles actionsJson = new Gson().fromJson(json, ActionsPossibles.class);
+
         initialiserVariables();
         TextView objets[] = {objet1text, objet2text, objet3text, objet4text};
         TextView actions[] = {action1text, action2text, action3text, action4text};
         final Spinner objetSpinner[] = {objet1, objet2, objet3, objet4};
         final Spinner actionSpinner[] = {action1, action2, action3, action4};
-        adapterSpinner(actionsJson, 0, objetSpinner, actionSpinner);
         ImageButton buttons[] = {ajouteraction1, ajouteraction2, ajouteraction3};
 
+
+        initialiserInterieurSpinner(programme, objetSpinner, actionSpinner, actionsPossibles, objets, actions, buttons);
+
         for(int i=0;i<3;i++) {
-            ajouterAction(actionsJson, actionSpinner, objetSpinner, i, objets, actions, buttons);
+            ajouterAction(actionsPossibles, actionSpinner, objetSpinner, i, objets, actions, buttons);
         }
 
         //Bouton valider
@@ -91,27 +108,36 @@ public class PageCreerProgramme extends AppCompatActivity{
                     Toast.makeText(getApplicationContext(), "Le nom du programme est vide", Toast.LENGTH_SHORT).show();
                 }else {
                     convertirProgrammeJson(actionSpinner, objetSpinner);
-                    Intent intentLoad = new Intent(PageCreerProgramme.this, PageProgramme.class);
+                    Intent intentLoad = new Intent(PageModifierProgramme.this, PageProgramme.class);
                     startActivity(intentLoad);
                 }
             }
         });
 
-
+        Button supprimer = findViewById(R.id.supprimer);
+        supprimer.setOnClickListener((new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                supprimerProgramme();
+                Intent intentLoad = new Intent(PageModifierProgramme.this, PageProgramme.class);
+                startActivity(intentLoad);
+            }
+        }));
 
     }
 
     /**
-     * Met en place tous les boutons de la toolbar
+     *
      */
 
-    private void buttonToolBar(){
+
+    private void buttonsTool(){
         //Bouton vers accueil
         buttonAccueil = (ImageButton) findViewById(R.id.logo);
         buttonAccueil.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intentLoad = new Intent(PageCreerProgramme.this, MainActivity.class);
+                Intent intentLoad = new Intent(PageModifierProgramme.this, MainActivity.class);
                 startActivity(intentLoad);
             }
         });
@@ -123,7 +149,7 @@ public class PageCreerProgramme extends AppCompatActivity{
         buttonInventaire.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intentLoad = new Intent(PageCreerProgramme.this, PageInventaire.class);
+                Intent intentLoad = new Intent(PageModifierProgramme.this, PageInventaire.class);
                 startActivity(intentLoad);
             }
         });
@@ -133,7 +159,7 @@ public class PageCreerProgramme extends AppCompatActivity{
         buttonCalendrier.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intentLoad = new Intent(PageCreerProgramme.this, PageCalendrier.class);
+                Intent intentLoad = new Intent(PageModifierProgramme.this, PageCalendrier.class);
                 startActivity(intentLoad);
             }
         });
@@ -143,7 +169,7 @@ public class PageCreerProgramme extends AppCompatActivity{
         buttonProgramme.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intentLoad = new Intent(PageCreerProgramme.this, PageProgramme.class);
+                Intent intentLoad = new Intent(PageModifierProgramme.this, PageProgramme.class);
                 startActivity(intentLoad);
             }
         });
@@ -153,7 +179,7 @@ public class PageCreerProgramme extends AppCompatActivity{
         buttonMap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intentLoad = new Intent(PageCreerProgramme.this, PageMap.class);
+                Intent intentLoad = new Intent(PageModifierProgramme.this, PageMap.class);
                 startActivity(intentLoad);
             }
         });
@@ -163,25 +189,37 @@ public class PageCreerProgramme extends AppCompatActivity{
         buttonStatistiques.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intentLoad = new Intent(PageCreerProgramme.this, PageStatistiques.class);
+                Intent intentLoad = new Intent(PageModifierProgramme.this, PageStatistiques.class);
                 startActivity(intentLoad);
             }
         });
-
-        //Bouton vers compte
-        buttonCompte = (ImageButton) findViewById(R.id.Compte);
-        buttonCompte.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intentLoad = new Intent(PageCreerProgramme.this, PageCompte.class);
-                startActivity(intentLoad);
-            }
-        });
-
     }
 
     /**
-     * Permet d'initialiser toutes les variables qui seront souvent utilisées dans la classe
+     *
+     * @param fileName
+     * @return
+     */
+
+    private String convertirDeJson(String fileName){
+        String json = null;
+        try {
+            File file = new File(getFilesDir(), fileName);
+            FileInputStream inputStream = new FileInputStream(file);
+            int size = inputStream.available();
+            byte[] buffer = new byte[size];
+            inputStream.read(buffer);
+            inputStream.close();
+            json = new String(buffer, "UTF-8");
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return json;
+    }
+
+    /**
+     *
      */
 
     private void initialiserVariables(){
@@ -204,30 +242,6 @@ public class PageCreerProgramme extends AppCompatActivity{
         ajouteraction1 = findViewById(R.id.ajouterAction1);
         ajouteraction2 = findViewById(R.id.ajouteraction2);
         ajouteraction3 = findViewById(R.id.ajouteraction3);
-    }
-
-
-    /**
-     * Permet de transformer un fichier json en une chaine de caractère
-     * @param fileName désignation du fichier json à transformer en json
-     * @return une chaine de caractère qui contient le fichier json
-     */
-
-    private String convertirDeJson(String fileName){
-        String json = null;
-        InputStream inputStream = null;
-        try {
-            inputStream = getAssets().open(fileName);
-            int size = inputStream.available();
-            byte[] buffer = new byte[size];
-            inputStream.read(buffer);
-            inputStream.close();
-            json = new String(buffer, "UTF-8");
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return json;
     }
 
 
@@ -262,6 +276,33 @@ public class PageCreerProgramme extends AppCompatActivity{
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 if(objetSpinner[pos].getSelectedItemPosition()!=0) {
+                    //actionSpinner[0].setSelection(0);
+                    addItemOnSpinnerAction(actionSpinner[pos], actionsAdapter, objetSpinner[pos].getSelectedItemPosition() - 1);
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+    }
+
+    /**
+     *
+     * @param actionsAdapter
+     * @param pos
+     * @param objetSpinner
+     * @param actionSpinner
+     */
+
+    private void adapterModifierSpinner(final ActionsPossibles actionsAdapter, final int pos, final Spinner objetSpinner[], final Spinner actionSpinner[]){
+        //addItemOnSpinnerObjet(objetSpinner[pos], actionsAdapter);
+        objetSpinner[pos].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                if(objetSpinner[pos].getSelectedItemPosition()!=0) {
+                    actionSpinner[pos].setSelection(0);
                     addItemOnSpinnerAction(actionSpinner[pos], actionsAdapter, objetSpinner[pos].getSelectedItemPosition() - 1);
                 }
             }
@@ -293,15 +334,89 @@ public class PageCreerProgramme extends AppCompatActivity{
     }
 
     /**
-     * Gere l'evenement lorsque l'utilisateur clique sur le bouton + pour ajouter un objet et une action
-     * @param actions possibles
-     * @param actionSpinner tableau des spinners de type action
-     * @param objetSpinner tableau des spinners de type objet
-     * @param numero numero du bouton appuyé (ou non)
-     * @param objet tableau des textes Objets (=> permet de mettre la visibilité en place)
-     * @param action tableau des textes Actions (=> permet de mettre la visibiité en place)
-     * @param ajouter tableau des ImageButton ajouterAction (=> Idem)
+     * Permet de transformer un fichier json en une chaine de caractère
+     * @param fileName désignation du fichier json à transformer en json
+     * @return une chaine de caractère qui contient le fichier json
      */
+
+    private String convertirDeJsonAssets(String fileName){
+        String json = null;
+        InputStream inputStream = null;
+        try {
+            inputStream = getAssets().open(fileName);
+            int size = inputStream.available();
+            byte[] buffer = new byte[size];
+            inputStream.read(buffer);
+            inputStream.close();
+            json = new String(buffer, "UTF-8");
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return json;
+    }
+
+    /**
+     *
+     * @param objetSpinner
+     * @param pos
+     * @param actionSpinner
+     * @param actionsPossibles
+     */
+
+    private void onChangeSpinner(final Spinner objetSpinner[], final int pos, final Spinner actionSpinner[], final ActionsPossibles actionsPossibles){
+        objetSpinner[pos].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                adapterModifierSpinner(actionsPossibles, pos, objetSpinner, actionSpinner);
+            }
+            public void onNothingSelected(AdapterView<?> adapterView){}
+        });
+    }
+
+    /**
+     *
+     * @param programme
+     * @param objetSpinner
+     * @param actionSpinner
+     * @param actionsPossibles
+     * @param objets
+     * @param actions
+     * @param buttons
+     */
+
+    private void initialiserInterieurSpinner(Programmes programme, Spinner objetSpinner[], Spinner actionSpinner[], ActionsPossibles actionsPossibles, TextView objets[], TextView actions[], ImageButton buttons[]){
+        nom = findViewById(R.id.textinputnom);
+        nom.setText(programme.getProgrammes().get(pos).getNomProgramme());
+
+        for(int i=0;i<programme.getProgrammes().get(pos).getObjets().size();i++){
+            if(programme.getProgrammes().get(pos)!=null){
+                addItemOnSpinnerObjet(objetSpinner[i], actionsPossibles);
+                if(i!=0) {
+                    objets[i].setVisibility(View.VISIBLE);
+                    actions[i].setVisibility(View.VISIBLE);
+                    objetSpinner[i].setVisibility(View.VISIBLE);
+                    actionSpinner[i].setVisibility(View.VISIBLE);
+                    buttons[i-1].setVisibility(View.INVISIBLE);
+                    buttons[i].setVisibility(View.VISIBLE);
+                }
+                for(int j=0;j<actionsPossibles.getObjets().size();j++){
+                    if(actionsPossibles.getObjets().get(j).getNom().equals(programme.getProgrammes().get(pos).getObjets().get(i))){
+                        objetSpinner[i].setSelection(j+1);
+                        addItemOnSpinnerAction(actionSpinner[i], actionsPossibles, j);
+                    }
+                }
+                int posObjet = objetSpinner[i].getSelectedItemPosition()-1;
+                for(int j=0;j<actionsPossibles.getObjets().get(posObjet).getActions().size();j++){
+                    if(actionsPossibles.getObjets().get(posObjet).getActions().get(j).equals(programme.getProgrammes().get(pos).getActions().get(i))){
+                        actionSpinner[i].setSelection(j+1);
+                    }
+                }
+                onChangeSpinner(objetSpinner,i,actionSpinner,actionsPossibles);
+            }
+        }
+    }
+
 
     private void ajouterAction(final ActionsPossibles actions, final Spinner actionSpinner[], final Spinner objetSpinner[], final int numero, final  TextView objet[], final TextView action[], final ImageButton ajouter[]){
         ajouter[numero].setOnClickListener(new View.OnClickListener() {
@@ -327,30 +442,12 @@ public class PageCreerProgramme extends AppCompatActivity{
         });
     }
 
-
     private void convertirProgrammeJson(final Spinner actionSpinner[], final Spinner objetSpinner[]){
-        String programmeJson = null;
-
-        try {
-            File file = new File(getFilesDir(), "programmes.json");
-            FileInputStream inputStream = new FileInputStream(file);
-            //InputStream inputStream = getAssets().open("programmes.json");
-            int size = inputStream.available();
-            byte[] buffer = new byte[size];
-            inputStream.read(buffer);
-            inputStream.close();
-            programmeJson = new String(buffer, "UTF-8");
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-
+        String programmeJson = convertirDeJson("programmes.json");
         Programmes programmes = new Gson().fromJson(programmeJson, Programmes.class);
-        System.out.println("ha"+programmes.toString());
-        TextInputEditText nomProgramme = findViewById(R.id.textinputnom);
-        List<Programme> programmeObjet;
-        programmeObjet = programmes.getProgrammes();
+        System.out.println("test programmes"+programmes.getProgrammes().get(1).getNomProgramme());
+        System.out.println("test size"+programmes.getProgrammes().size());
+        List<Programme> programmeObjet = programmes.getProgrammes();
         List<String> listObjet = new ArrayList<>();
         List<String> listAction = new ArrayList<>();
         for(int i=0;i<4;i++){
@@ -362,11 +459,12 @@ public class PageCreerProgramme extends AppCompatActivity{
                 }
             }
         }
-        Programme programmeAjouter = new Programme();
-        programmeAjouter.setNomProgramme(nomProgramme.getText().toString());
-        programmeAjouter.setObjets(listObjet);
-        programmeAjouter.setActions(listAction);
-        programmeObjet.add(programmeAjouter);
+        System.out.println("pos"+pos);
+        System.out.println("test regarder"+programmeObjet.size());
+        nom = findViewById(R.id.textinputnom);
+        programmeObjet.get(pos).setNomProgramme(nom.getText().toString());
+        programmeObjet.get(pos).setObjets(listObjet);
+        programmeObjet.get(pos).setActions(listAction);
         programmes.setProgrammes(programmeObjet);
 
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
@@ -386,6 +484,32 @@ public class PageCreerProgramme extends AppCompatActivity{
         }
     }
 
+    private void supprimerProgramme(){
+        String programmeJson = convertirDeJson("programmes.json");
+        Programmes programmes = new Gson().fromJson(programmeJson, Programmes.class);
+        System.out.println("test programmes"+programmes.getProgrammes().get(1).getNomProgramme());
+        System.out.println("test size"+programmes.getProgrammes().size());
+        List<Programme> programmeObjet = new ArrayList<>();
+        for(int i=0;i< programmes.getProgrammes().size();i++){
+            if(i!=pos){
+                programmeObjet.add(programmes.getProgrammes().get(i));
+            }
+        }
+        programmes.setProgrammes(programmeObjet);
+
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+        String json = gson.toJson(programmes);
+
+        try {
+            Writer output;
+            File file = new File(getFilesDir(), "programmes.json");
+            output = new BufferedWriter(new FileWriter(file));
+            output.write(json);
+            output.close();
+        }
+        catch (IOException e) {
+            Log.e("Exception", "File write failed: " + e.toString());
+        }
+
+    }
 }
-
-

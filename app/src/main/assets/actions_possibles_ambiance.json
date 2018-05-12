@@ -1,0 +1,17 @@
+{
+	"objets" :[
+		{
+			"nom" : "Lampe Principale",
+			"actions" : ["Allumer", "Eteindre", "Clignoter x1", "Clignoter x2", "Clignoter x3"]
+		},
+		{
+			"nom" : "Lampe de Bureau",
+			"actions" : ["Allumer", "Eteindre", "Clignoter x1", "Clignoter x2", "Clignoter x3", "Changer de Couleur", "Changer d'intensité"]
+			
+		},
+		{
+			"nom" : "Radiateur Principal",
+			"actions" : ["Allumer", "Eteindre", "Mettre à 18°C", "Mettre à 18,5°C", "Mettre à 19°C", "Mettre à 19,5°C", "Mettre à 20°C", "Mettre à 20,5°C", "Mettre à 21°C", "Mettre à 21,5°C", "Mettre à 22°C"]
+		}
+	]
+}

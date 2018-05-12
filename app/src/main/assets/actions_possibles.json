@@ -1,0 +1,28 @@
+{
+	"objets" :[
+		{
+			"nom" : "Lampe Principale",
+			"actions" : ["Allumer", "Eteindre", "Clignoter x1", "Clignoter x2", "Clignoter x3"]
+		},
+		{
+			"nom" : "Lampe de Bureau",
+			"actions" : ["Allumer", "Eteindre", "Clignoter x1", "Clignoter x2", "Clignoter x3"]
+		},
+		{
+			"nom" : "Volets",
+			"actions" : ["Ouvrir", "Fermer"]
+		},
+		{
+			"nom" : "Machine à Café",
+			"actions" : ["Faire un café"]
+		},
+		{
+			"nom" : "Prise Salle de Bain",
+			"actions" : ["Allumer", "Eteindre"]
+		},
+		{
+			"nom" : "Télévision",
+			"actions" : ["Allumer", "Eteindre"]
+		}
+	]
+}

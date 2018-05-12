@@ -1,0 +1,9 @@
+{
+	"ambiances" : [
+		{
+		"nomProgramme": "ambiance travail",
+		"Objets": ["Couleur","Intensite"],
+		"Actions": ["FF004C","30"]
+		}
+	]
+}

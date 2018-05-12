@@ -2,20 +2,6 @@ package com.nexu.projet.miashs.nexu;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.view.View;
-import android.widget.ImageButton;
-import android.widget.Button;
-import android.widget.TextView;
-import android.widget.CalendarView;
-import android.widget.Toast;
-import android.widget.DatePicker;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.List;
-
-import android.content.Intent;
-import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -138,9 +124,12 @@ public class PageCalendrier extends AppCompatActivity{
                 Log.d(TAG, "onSelectedDayChange: mm/dd/yyyy:"+date);
                 Intent intent = new Intent(PageCalendrier.this, PageEvenement.class);
                 intent.putExtra("date", date);
+                intent.putExtra("jour",i2);
+                intent.putExtra("mois",i1+1);
                 startActivity(intent);
             }
         });
 
     }
 }
+

@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 public class PageCompte extends AppCompatActivity{
 
@@ -15,10 +16,10 @@ public class PageCompte extends AppCompatActivity{
     ImageButton buttonMap;
     ImageButton buttonStatistiques;
     ImageButton buttonCompte;
-    ImageButton buttonParam;
-    ImageButton buttonParamNotifs;
-    ImageButton buttonInfos;
-    ImageButton test;
+
+    TextView paramatresCompte;
+    TextView parametresNotifs;
+    TextView informations;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -37,8 +38,8 @@ public class PageCompte extends AppCompatActivity{
         });
 
         //Bouton vers Paramètres du compte
-        buttonParam = (ImageButton) findViewById(R.id.parametresCompte);
-        buttonParam.setOnClickListener(new View.OnClickListener() {
+        paramatresCompte = findViewById(R.id.monCompte);
+        paramatresCompte.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intentLoad = new Intent(PageCompte.this, PageParametresCompte.class);
@@ -47,8 +48,8 @@ public class PageCompte extends AppCompatActivity{
         });
 
         //Bouton vers Paramètres des Notifications
-        buttonParamNotifs = (ImageButton) findViewById(R.id.parametresNotifications);
-        buttonParamNotifs.setOnClickListener(new View.OnClickListener() {
+        parametresNotifs = findViewById(R.id.notifs);
+        parametresNotifs.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intentLoad = new Intent(PageCompte.this, PageParametresNotications.class);
@@ -57,8 +58,8 @@ public class PageCompte extends AppCompatActivity{
         });
 
         //Bouton vers Informations
-        buttonInfos = (ImageButton) findViewById(R.id.informations);
-        buttonInfos.setOnClickListener(new View.OnClickListener() {
+        informations = findViewById(R.id.infos);
+        informations.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intentLoad = new Intent(PageCompte.this, PageInformations.class);

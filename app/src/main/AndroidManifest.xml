@@ -26,6 +26,10 @@
         <activity android:name=".PageParametresCompte"></activity>
         <activity android:name=".PageCreerProgramme"></activity>
         <activity android:name=".PageCreerAmbiance"></activity>
+        <activity android:name=".PageModifierAmbiance"></activity>
+        <activity android:name=".PageModifierProgramme"></activity>
+        <activity android:name=".PageEvenement"></activity>
+        <activity android:name=".PageCreerEvenement"></activity>
         <activity
            android:launchMode="singleTask"
             android:taskAffinity=""

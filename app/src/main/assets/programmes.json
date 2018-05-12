@@ -1,0 +1,9 @@
+{
+	"programmes" : [
+		{
+		"nomProgramme" : "revision",
+        "Objets": ["Lampe Principale","Volets","Machine à Café"],
+		"Actions": ["Allumer","Ouvrir","Faire un café"]
+		}
+	]
+}

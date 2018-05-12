@@ -12,7 +12,7 @@ import android.view.View;
 
 import java.util.Calendar;
 
-public class TimePickerFragment extends DialogFragment
+public class TimePickerFragment2 extends DialogFragment
         implements TimePickerDialog.OnTimeSetListener {
 
     @Override
@@ -28,9 +28,9 @@ public class TimePickerFragment extends DialogFragment
 
     public void onTimeSet(TimePicker view, int hour, int minute) {
         // Do something with the time chosen by the user
-        TextView heureDeb = getActivity().findViewById(R.id.hdeb);
-        TextView minuteDeb = getActivity().findViewById(R.id.mdeb);
-        heureDeb.setText(hour+"");
-        minuteDeb.setText(minute+"");
+        TextView heureFin = getActivity().findViewById(R.id.hfin);
+        TextView minuteFin = getActivity().findViewById(R.id.mfin);
+        heureFin.setText(hour+"");
+        minuteFin.setText(minute+"");
     }
 }

@@ -15,7 +15,7 @@
         android:layout_marginTop="28dp"
         android:text="Accès aux Paramètres : "
         android:textColor="#000000"
-        android:textSize="24sp"
+        android:textSize="26sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Haut" />
 
@@ -143,85 +143,60 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="@android:color/transparent"
-        app:layout_constraintBottom_toBottomOf="@+id/textView10"
-        app:layout_constraintEnd_toEndOf="@+id/textView9"
-        app:layout_constraintStart_toStartOf="@+id/textView10"
-        app:layout_constraintTop_toTopOf="@+id/textView10"
+        app:layout_constraintBottom_toBottomOf="@+id/monCompte"
+        app:layout_constraintEnd_toEndOf="@+id/notifs"
+        app:layout_constraintStart_toStartOf="@+id/monCompte"
+        app:layout_constraintTop_toTopOf="@+id/monCompte"
         app:srcCompat="@android:color/transparent" />
 
     <TextView
-        android:id="@+id/textView8"
+        android:id="@+id/infos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="164dp"
-        android:layout_marginTop="164dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="20dp"
         android:text="Informations"
         android:textColor="#000000"
         android:textSize="26sp"
-        app:layout_constraintBottom_toBottomOf="@+id/calendrier"
-        app:layout_constraintEnd_toEndOf="@+id/parametresNotifications"
-        app:layout_constraintStart_toStartOf="@+id/textView9"
-        app:layout_constraintTop_toTopOf="@+id/textView9" />
+        app:layout_constraintStart_toEndOf="@+id/imageView15"
+        app:layout_constraintTop_toBottomOf="@+id/autres" />
 
     <TextView
-        android:id="@+id/textView9"
+        android:id="@+id/notifs"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="29dp"
-        android:layout_marginStart="29dp"
-        android:layout_marginTop="85dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="25dp"
         android:text="Notifications"
         android:textColor="#000000"
-        android:textSize="26sp"
+        android:textSize="24sp"
         app:layout_constraintStart_toEndOf="@+id/imageView12"
-        app:layout_constraintTop_toBottomOf="@+id/textView14" />
-
-    <ImageButton
-        android:id="@+id/informations"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="@android:color/transparent"
-        app:layout_constraintBottom_toBottomOf="@+id/textView8"
-        app:layout_constraintEnd_toEndOf="@+id/textView8"
-        app:layout_constraintStart_toStartOf="@+id/textView8"
-        app:layout_constraintTop_toTopOf="@+id/textView8"
-        app:srcCompat="@drawable/test" />
-
-    <ImageButton
-        android:id="@+id/parametresNotifications"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="@drawable/test"
-        app:layout_constraintBottom_toBottomOf="@+id/textView9"
-        app:layout_constraintEnd_toEndOf="@+id/textView10"
-        app:layout_constraintStart_toStartOf="@+id/textView9"
-        app:layout_constraintTop_toTopOf="@+id/textView9"
-        app:srcCompat="@drawable/test" />
+        app:layout_constraintTop_toBottomOf="@+id/parametresCompte" />
 
     <TextView
-        android:id="@+id/textView10"
+        android:id="@+id/monCompte"
         android:layout_width="wrap_content"
         android:layout_height="36dp"
-        android:layout_marginBottom="70dp"
-        android:layout_marginLeft="27dp"
-        android:layout_marginStart="27dp"
-        android:layout_marginTop="70dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
         android:text="Mon Compte"
         android:textColor="#000000"
-        android:textSize="26sp"
-        app:layout_constraintBottom_toBottomOf="@+id/textView9"
+        android:textSize="24sp"
         app:layout_constraintStart_toEndOf="@+id/imageView13"
-        app:layout_constraintTop_toBottomOf="@+id/logo" />
+        app:layout_constraintTop_toBottomOf="@+id/textView14" />
 
     <ImageView
         android:id="@+id/imageView12"
         android:layout_width="27dp"
-        android:layout_height="0dp"
-        android:layout_marginLeft="48dp"
-        android:layout_marginStart="48dp"
-        app:layout_constraintBottom_toBottomOf="@+id/textView9"
+        android:layout_height="35dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="25dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textView9"
+        app:layout_constraintTop_toBottomOf="@+id/imageView13"
         app:srcCompat="@drawable/arrow" />
 
     <ImageView
@@ -243,5 +218,29 @@
         app:layout_constraintEnd_toStartOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView15"
+        android:layout_width="27dp"
+        android:layout_height="35dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/autres"
+        app:srcCompat="@drawable/arrow" />
+
+    <TextView
+        android:id="@+id/autres"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="40dp"
+        android:text="Autres : "
+        android:textColor="#000000"
+        android:textSize="26sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView12" />
 
 </android.support.constraint.ConstraintLayout>

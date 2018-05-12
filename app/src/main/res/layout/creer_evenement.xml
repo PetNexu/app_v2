@@ -3,17 +3,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:layout_editor_absoluteY="25dp">
+
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/Haut"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="380dp"
         android:background="@color/colorPrimary"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
-        app:layout_constraintBottom_toTopOf="@+id/hFin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -22,27 +22,25 @@
         android:id="@+id/Bas"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="49dp"
         android:background="@color/colorPrimary"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/inventaire" />
+        app:layout_constraintTop_toTopOf="@+id/valider" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/titre"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="2dp"
-        android:layout_marginEnd="11dp"
-        android:layout_marginRight="11dp"
+        android:layout_marginBottom="6dp"
         android:layout_marginTop="5dp"
-        android:text="Calendrier"
+        android:text="Nouvel évenement"
         android:textAlignment="center"
         android:textSize="30sp"
-        app:layout_constraintBottom_toBottomOf="@+id/Haut"
-        app:layout_constraintEnd_toEndOf="@+id/logo"
+        app:layout_constraintBottom_toBottomOf="@+id/logo"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -51,7 +49,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@android:color/transparent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/Haut"
         app:layout_constraintTop_toTopOf="@+id/Haut"
         app:srcCompat="@drawable/logopet1" />
 
@@ -132,17 +130,215 @@
         app:srcCompat="@drawable/bars" />
 
     <TextView
-        android:id="@+id/titre"
+        android:id="@+id/textProgramme"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="17dp"
-        android:layout_marginRight="17dp"
-        android:layout_marginTop="24dp"
-        android:text="Nouvel évenement"
+        android:layout_marginLeft="26dp"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="25dp"
+        android:text="Programme : "
         android:textColor="#000000"
-        android:textSize="30sp"
-        app:layout_constraintEnd_toStartOf="@+id/logo"
-        app:layout_constraintTop_toBottomOf="@+id/Haut" />
+        android:textSize="26sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputtitre" />
+
+    <TextView
+        android:id="@+id/textAmbiance"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:layout_marginBottom="60dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginRight="2dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="60dp"
+        android:text="Ambiance :"
+        android:textColor="#000000"
+        android:textSize="26sp"
+        app:layout_constraintBottom_toBottomOf="@+id/textView4"
+        app:layout_constraintEnd_toEndOf="@+id/programme"
+        app:layout_constraintStart_toStartOf="@+id/textView4"
+        app:layout_constraintTop_toTopOf="@+id/textProgramme" />
+
+    <ImageButton
+        android:id="@+id/valider"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:background="@android:color/transparent"
+        app:layout_constraintBottom_toTopOf="@+id/Compte"
+        app:layout_constraintEnd_toEndOf="@+id/Compte"
+        app:srcCompat="@drawable/check" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="2dp"
+        android:layout_marginEnd="14dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginRight="14dp"
+        android:layout_marginStart="24dp"
+        android:text="Heure de début :"
+        android:textColor="#000000"
+        android:textSize="26sp"
+        app:layout_constraintBottom_toBottomOf="@+id/changerheuredeb"
+        app:layout_constraintEnd_toStartOf="@+id/changerheuredeb"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/hdeb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="2dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginRight="2dp"
+        android:text="HH"
+        android:textColor="#000000"
+        android:textSize="26sp"
+        app:layout_constraintBottom_toBottomOf="@+id/changerheuredeb"
+        app:layout_constraintEnd_toStartOf="@+id/textView7" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="4dp"
+        android:layout_marginRight="4dp"
+        android:text=":"
+        android:textColor="#000000"
+        android:textSize="26sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/hdeb"
+        app:layout_constraintEnd_toStartOf="@+id/mdeb" />
+
+    <TextView
+        android:id="@+id/mdeb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="2dp"
+        android:layout_marginEnd="37dp"
+        android:layout_marginRight="37dp"
+        android:text="MM"
+        android:textColor="#000000"
+        android:textSize="26sp"
+        app:layout_constraintBottom_toBottomOf="@+id/changerheuredeb"
+        app:layout_constraintEnd_toEndOf="@+id/changerheuredeb" />
+
+    <ImageView
+        android:id="@+id/changerheuredeb"
+        android:layout_width="0dp"
+        android:layout_height="34dp"
+        android:layout_marginBottom="205dp"
+        android:layout_marginEnd="22dp"
+        android:layout_marginRight="22dp"
+        android:layout_marginTop="205dp"
+        android:onClick="showTimePickerDialog"
+        app:layout_constraintBottom_toTopOf="@+id/Bas"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView4"
+        app:layout_constraintTop_toTopOf="@+id/inputtitre"
+        app:srcCompat="@drawable/test" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="27dp"
+        android:layout_marginLeft="26dp"
+        android:layout_marginRight="27dp"
+        android:layout_marginStart="26dp"
+        android:text="Heure de fin : "
+        android:textColor="#000000"
+        android:textSize="26sp"
+        app:layout_constraintBottom_toBottomOf="@+id/changeHeureFIn"
+        app:layout_constraintEnd_toStartOf="@+id/changeHeureFIn"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/hfin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="6dp"
+        android:layout_marginRight="6dp"
+        android:text="HH"
+        android:textColor="#000000"
+        android:textSize="26sp"
+        app:layout_constraintBottom_toBottomOf="@+id/changeHeureFIn"
+        app:layout_constraintEnd_toStartOf="@+id/textView15" />
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=":"
+        android:textColor="#000000"
+        android:textSize="26sp"
+        app:layout_constraintBottom_toBottomOf="@+id/changeHeureFIn"
+        app:layout_constraintEnd_toEndOf="@+id/textView7"
+        app:layout_constraintStart_toEndOf="@+id/textView7" />
+
+    <TextView
+        android:id="@+id/mfin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginStart="5dp"
+        android:text="MM"
+        android:textColor="#000000"
+        android:textSize="26sp"
+        app:layout_constraintBottom_toBottomOf="@+id/changeHeureFIn"
+        app:layout_constraintStart_toEndOf="@+id/textView15" />
+
+    <ImageView
+        android:id="@+id/changeHeureFIn"
+        android:layout_width="0dp"
+        android:layout_height="33dp"
+        android:layout_marginBottom="147dp"
+        android:layout_marginEnd="22dp"
+        android:layout_marginRight="22dp"
+        android:layout_marginTop="147dp"
+        android:onClick="showTimePickerDialogFin"
+        app:layout_constraintBottom_toTopOf="@+id/Bas"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView13"
+        app:layout_constraintTop_toBottomOf="@+id/textProgramme"
+        app:srcCompat="@drawable/test" />
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/inputtitre"
+        android:layout_width="230dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="26dp"
+        android:layout_marginRight="26dp"
+        android:layout_marginTop="14dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logo">
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/textinputtitre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Titre de l'evenement" />
+    </android.support.design.widget.TextInputLayout>
+
+    <Spinner
+        android:id="@+id/programmeSpinner"
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="2dp"
+        android:layout_marginEnd="26dp"
+        android:layout_marginRight="26dp"
+        app:layout_constraintBottom_toBottomOf="@+id/textProgramme"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Spinner
+        android:id="@+id/ambianceSpinner"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="2dp"
+        app:layout_constraintBottom_toBottomOf="@+id/textAmbiance"
+        app:layout_constraintEnd_toEndOf="@+id/inputtitre"
+        app:layout_constraintStart_toStartOf="@+id/programmeSpinner" />
 
     <TextView
         android:id="@+id/textTitre"
@@ -150,125 +346,14 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="26dp"
         android:layout_marginStart="26dp"
-        android:layout_marginTop="34dp"
         android:text="Titre :"
         android:textColor="#000000"
         android:textSize="26sp"
+        app:layout_constraintBottom_toBottomOf="@+id/inputtitre"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/titre" />
+        app:layout_constraintTop_toTopOf="@+id/inputtitre" />
 
-    <TextView
-        android:id="@+id/textProgramme"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="26dp"
-        android:layout_marginStart="26dp"
-        android:layout_marginTop="30dp"
-        android:text="Programme : "
-        android:textColor="#000000"
-        android:textSize="26sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textTitre" />
 
-    <TextView
-        android:id="@+id/textAmbiance"
-        android:layout_width="302dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="26dp"
-        android:layout_marginStart="26dp"
-        android:layout_marginTop="30dp"
-        android:text="Ambiance :"
-        android:textColor="#000000"
-        android:textSize="26sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textProgramme" />
-
-    <ImageButton
-        android:id="@+id/valider"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="18dp"
-        android:layout_marginEnd="23dp"
-        android:layout_marginRight="23dp"
-        android:background="@android:color/transparent"
-        app:layout_constraintBottom_toTopOf="@+id/Bas"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/check" />
-
-    <Button
-        android:id="@+id/debut"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="44dp"
-        android:layout_marginLeft="50dp"
-        android:layout_marginRight="44dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="30dp"
-        android:text="Début"
-        android:textAllCaps="false"
-        android:textSize="26sp"
-        app:layout_constraintEnd_toStartOf="@+id/hDeb"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textAmbiance" />
-
-    <Button
-        android:id="@+id/fin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="44dp"
-        android:layout_marginLeft="50dp"
-        android:layout_marginRight="44dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="104dp"
-        android:text="Fin"
-        android:textAllCaps="false"
-        android:textSize="26sp"
-        app:layout_constraintEnd_toStartOf="@+id/hFin"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textAmbiance" />
-
-    <TextView
-        android:id="@+id/hDeb"
-        android:layout_width="128dp"
-        android:layout_height="31dp"
-        android:layout_marginBottom="174dp"
-        android:layout_marginEnd="54dp"
-        android:layout_marginRight="54dp"
-        android:text="  "
-        android:textSize="26sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/debut"
-        app:layout_constraintTop_toBottomOf="@+id/Haut"
-        app:layout_constraintVertical_bias="1.0" />
-
-    <TextView
-        android:id="@+id/textView18"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="162dp"
-        android:layout_marginEnd="2dp"
-        android:layout_marginRight="2dp"
-        android:text=":"
-        android:textColor="#000000"
-        android:textSize="26sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/hDeb"
-        app:layout_constraintStart_toEndOf="@+id/debut"
-        app:layout_constraintTop_toBottomOf="@+id/Haut" />
-
-    <TextView
-        android:id="@+id/hFin"
-        android:layout_width="0dp"
-        android:layout_height="28dp"
-        android:layout_marginBottom="97dp"
-        android:layout_marginEnd="60dp"
-        android:layout_marginRight="60dp"
-        android:textSize="26sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/fin"
-        app:layout_constraintTop_toBottomOf="@+id/Haut" />
 
 
 </android.support.constraint.ConstraintLayout>

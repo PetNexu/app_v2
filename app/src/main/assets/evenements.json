@@ -1,0 +1,15 @@
+{
+	"evenements" :[
+		{
+			"nom" : "test",
+			"heureDebut" : 17,
+			"heureFin" : 18,
+			"minuteDebut" : 20,
+			"minuteFin" : 30,
+			"jour" : 11,
+			"mois" : 05,
+			"Objets" : ["Lampe de chevet", "Prise du reveil"],
+			"Actions" : ["Allumer", "Eteindre"]
+		}
+	]
+}

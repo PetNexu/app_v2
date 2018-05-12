@@ -22,6 +22,7 @@ public class PageMap extends AppCompatActivity {
     ImageButton buttonCoffee;
     ImageButton buttonPlugBath;
     ImageButton buttonLocation;
+    ImageButton buttontv;
 
 
     @Override
@@ -72,6 +73,16 @@ public class PageMap extends AppCompatActivity {
         //Bouton vers Objet des volets de Chambre
         buttonBlind = (ImageButton) findViewById(R.id.blindBed);
         buttonBlind.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intentLoad = new Intent(PageMap.this, PageObjet.class);
+                startActivity(intentLoad);
+            }
+        });
+
+        //Bouton vers Objet de la télé de Chambre
+        buttontv = (ImageButton) findViewById(R.id.tv);
+        buttontv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intentLoad = new Intent(PageMap.this, PageObjet.class);

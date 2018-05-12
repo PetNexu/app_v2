@@ -27,13 +27,7 @@ public class PageStatistiques extends AppCompatActivity {
     Button buttonObjectif;
     Button buttonTravail;
     ImageButton test;
-    ImageView bar0 ;
-    ImageView bar020;
-    ImageView bar20 ;
-    ImageView bar40 ;
-    ImageView bar60;
-    ImageView bar80 ;
-    ImageView bar100;
+    ImageView bar;
     private int tempsDetravail;
     private int tempsPasse;
     private int value;
@@ -115,6 +109,7 @@ public class PageStatistiques extends AppCompatActivity {
             }
         });
         nbHeureTravail = (TextView) findViewById(R.id.textView7);
+        bar = (ImageView) findViewById(R.id.progressBar);
         final EditText nbHeureMax = (EditText) findViewById(R.id.max);
         //Bouton objectifs
         buttonObjectif = (Button)findViewById(R.id.button3);
@@ -136,41 +131,28 @@ public class PageStatistiques extends AppCompatActivity {
                 update(tempsPasse);
             }
         });
-        ImageView bar0 = (ImageView) findViewById(R.id.bar0);
-        ImageView bar020 = (ImageView) findViewById(R.id.bar020);
-        ImageView bar20 = (ImageView) findViewById(R.id.bar20);
-        ImageView bar40 = (ImageView) findViewById(R.id.bar40);
-        ImageView bar60 = (ImageView) findViewById(R.id.bar60);
-        ImageView bar80 = (ImageView) findViewById(R.id.bar80);
-        ImageView bar100 = (ImageView) findViewById(R.id.bar100);
     }
 
 
     public void update(int tempsPasse){
         value=(tempsPasse*100/tempsDetravail);
         if((value<20) && (value>0)){
-            bar0.setVisibility(View.INVISIBLE);
-            bar020.setVisibility(View.VISIBLE);
+            bar.setImageResource(R.drawable.bar020);
         }
         else if((value>=20)&&(value<40)){
-                bar020.setVisibility(View.INVISIBLE);
-                bar20.setVisibility(View.VISIBLE);
+            bar.setImageResource(R.drawable.bar20);
         }
         else if((value>=40)&&(value<60)){
-            bar20.setVisibility(View.INVISIBLE);
-            bar40.setVisibility(View.VISIBLE);
+            bar.setImageResource(R.drawable.bar40);
         }
         else if((value>=60)&&(value<80)){
-            bar40.setVisibility(View.INVISIBLE);
-            bar60.setVisibility(View.VISIBLE);
+           bar.setImageResource(R.drawable.bar60);
         }
         else if((value>=80)&&(value<100)){
-            bar60.setVisibility(View.INVISIBLE);
-            bar80.setVisibility(View.VISIBLE);
+            bar.setImageResource(R.drawable.bar80);
         }
         else{
-            bar80.setVisibility(View.INVISIBLE);
-            bar100.setVisibility(View.VISIBLE);
+            bar.setImageResource(R.drawable.bar100);
         }
     }
 }
