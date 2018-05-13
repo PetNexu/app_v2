@@ -29,7 +29,7 @@ public class PageStatistiques extends AppCompatActivity {
     ImageButton test;
     ImageView bar;
     private int tempsDetravail;
-    private int tempsPasse;
+    private static int tempsPasse = 0 ;
     private int value;
     protected TextView nbHeureTravail;
 
@@ -127,7 +127,7 @@ public class PageStatistiques extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                tempsPasse = Integer.parseInt(nbHeurePasse.getText().toString());
+                tempsPasse = tempsPasse +Integer.parseInt(nbHeurePasse.getText().toString());
                 update(tempsPasse);
             }
         });

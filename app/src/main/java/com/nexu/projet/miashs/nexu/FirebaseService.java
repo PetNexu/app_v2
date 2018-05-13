@@ -43,14 +43,6 @@ public class FirebaseService extends FirebaseMessagingService {
         if (remoteMessage.getData().size() > 0) {
             Log.e(TAG, "Message data payload: " + remoteMessage.getData());
 
-           /* if (/* Check if data needs to be processed by long running job true) {
-                // For long-running tasks (10 seconds or more) use Firebase Job Dispatcher.
-                scheduleJob();
-            } else {
-                // Handle message within 10 seconds
-                handleNow();
-            }*/
-
         }
 
         // Check if message contains a notification payload.

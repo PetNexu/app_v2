@@ -286,8 +286,13 @@
         android:id="@+id/progressBar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/bar0"
-        tools:layout_editor_absoluteX="11dp"
-        tools:layout_editor_absoluteY="444dp" />
+        android:layout_marginBottom="23dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="35dp"
+        app:layout_constraintBottom_toTopOf="@+id/Compte"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button4"
+        app:srcCompat="@drawable/bar0" />
 
 </android.support.constraint.ConstraintLayout>
