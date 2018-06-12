@@ -330,19 +330,19 @@ public class PageCreerProgramme extends AppCompatActivity{
 
     private void convertirProgrammeJson(final Spinner actionSpinner[], final Spinner objetSpinner[]){
         String programmeJson = null;
+        programmeJson = convertirDeJson("programmes.json");
+        if(programmeJson==null) {
+            try {
+                InputStream inputStream = getAssets().open("programmes.json");
+                int size = inputStream.available();
+                byte[] buffer = new byte[size];
+                inputStream.read(buffer);
+                inputStream.close();
+                programmeJson = new String(buffer, "UTF-8");
 
-        try {
-            File file = new File(getFilesDir(), "programmes.json");
-            FileInputStream inputStream = new FileInputStream(file);
-            //InputStream inputStream = getAssets().open("programmes.json");
-            int size = inputStream.available();
-            byte[] buffer = new byte[size];
-            inputStream.read(buffer);
-            inputStream.close();
-            programmeJson = new String(buffer, "UTF-8");
-
-        } catch (IOException e) {
-            e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
 
 

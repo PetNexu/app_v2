@@ -409,18 +409,21 @@ public class PageCreerAmbiance extends AppCompatActivity{
     private void convertirAmbianceJson(final Spinner actionSpinner[], final Spinner objetSpinner[]){
         String programmeJson = null;
 
-        try {
-            File file = new File(getFilesDir(), "ambiances.json");
-            FileInputStream inputStream = new FileInputStream(file);
-            //InputStream inputStream = getAssets().open("ambiances.json");
-            int size = inputStream.available();
-            byte[] buffer = new byte[size];
-            inputStream.read(buffer);
-            inputStream.close();
-            programmeJson = new String(buffer, "UTF-8");
+        programmeJson = convertirDeJson("ambiances.json");
+        if(programmeJson==null) {
+            try {
+                File file = new File(getFilesDir(), "ambiances.json");
+                FileInputStream inputStream = new FileInputStream(file);
+                //InputStream inputStream = getAssets().open("ambiances.json");
+                int size = inputStream.available();
+                byte[] buffer = new byte[size];
+                inputStream.read(buffer);
+                inputStream.close();
+                programmeJson = new String(buffer, "UTF-8");
 
-        } catch (IOException e) {
-            e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
 
         System.out.println("hey"+programmeJson);

@@ -1,9 +1,14 @@
 package com.nexu.projet.miashs.nexu;
 
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 
 public class PageParametresCompte extends AppCompatActivity {
@@ -15,7 +20,7 @@ public class PageParametresCompte extends AppCompatActivity {
     ImageButton buttonMap;
     ImageButton buttonStatistiques;
     ImageButton buttonCompte;
-    ImageButton test;
+    Button test;
 
 
     @Override
@@ -95,6 +100,16 @@ public class PageParametresCompte extends AppCompatActivity {
                 startActivity(intentLoad);
             }
         });
+
+        test = findViewById(R.id.button5);
+        test.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+
+
 
     }
 }

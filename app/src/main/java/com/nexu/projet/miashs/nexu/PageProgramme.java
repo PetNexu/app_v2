@@ -13,6 +13,7 @@ import com.nexu.projet.miashs.nexu.R;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 
 public class PageProgramme extends AppCompatActivity {
 
@@ -173,9 +174,19 @@ public class PageProgramme extends AppCompatActivity {
     private void afficherNoms(final TextView tabprogramme[], final TextView tabambiance[], final ImageButton tabmodifier[], final ImageButton tabmodifierAmbiance[]){
 
         String programme = convertirDeJson("programmes.json");
+        if(programme==null){
+            System.out.print("test dans la boucle ");
+            programme = convertirDeJsonRessource("programmes.json");
+            System.out.println("test programme"+programme);
+        }
         String ambiance = convertirDeJson("ambiances.json");
+        if(ambiance==null){
+            ambiance = convertirDeJsonRessource("ambiances.json");
+        }
+        System.out.println("test ambiance"+programme);
         Ambiances ambianceJson = new Gson().fromJson(ambiance, Ambiances.class);
         Programmes programmeJson = new Gson().fromJson(programme, Programmes.class);
+        System.out.println(programmeJson);
         for(int i=0;i<programmeJson.getProgrammes().size();i++) {
             if(i<3) {
                 tabprogramme[i].setText(programmeJson.getProgrammes().get(i).getNomProgramme());
@@ -206,6 +217,25 @@ public class PageProgramme extends AppCompatActivity {
             e.printStackTrace();
         }
         return json;
+    }
+
+    private String convertirDeJsonRessource(String fileName){
+        String programmeJson = null;
+
+        try {
+            //File file = new File(getFilesDir(), fileName);
+            //FileInputStream inputStream = new FileInputStream(file);
+            InputStream inputStream = getAssets().open(fileName);
+            int size = inputStream.available();
+            byte[] buffer = new byte[size];
+            inputStream.read(buffer);
+            inputStream.close();
+            programmeJson = new String(buffer, "UTF-8");
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return programmeJson;
     }
 
     private void modifierButton(final ImageButton modifier[],final int i){
